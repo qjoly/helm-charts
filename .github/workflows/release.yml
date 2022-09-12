@@ -1,9 +1,9 @@
 name: Release Charts
- on:
+on:
    push:
      branches:
        - main
- jobs:
+jobs:
    release:
      runs-on: ubuntu-latest
      steps:
