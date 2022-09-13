@@ -3,6 +3,16 @@ entries:
   hello-world:
   - apiVersion: v2
     appVersion: v1.0.0
+    created: "2022-09-13T11:48:33.329039779Z"
+    description: Hello Docker !
+    digest: 1258b18dce07dee05e2b246f47a52bf02a44d8874bf1bbdbcc7348813038f775
+    name: hello-world
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/hello-world-0.1.4/hello-world-0.1.4.tgz
+    version: 0.1.4
+  - apiVersion: v2
+    appVersion: v1.0.0
     created: "2022-09-13T09:24:55.501477885Z"
     description: Hello Docker !
     digest: 3aa5651ddeb7857c9abd36d17bf15c258f2ab4a0b50fd89d810554cc9fb6548b
