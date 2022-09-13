@@ -1,7 +1,7 @@
 {{/*
 Expand the name of the chart.
 */}}
-{{- define "TheBidouilleur.xyz.name" -}}
+{{- define "hello-world.name" -}}
 {{- default .Chart.Name .Values.nameOverride | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
@@ -10,7 +10,7 @@ Create a default fully qualified app name.
 We truncate at 63 chars because some Kubernetes name fields are limited to this (by the DNS naming spec).
 If release name contains chart name it will be used as a full name.
 */}}
-{{- define "TheBidouilleur.xyz.fullname" -}}
+{{- define "hello-world.fullname" -}}
 {{- if .Values.fullnameOverride }}
 {{- .Values.fullnameOverride | trunc 63 | trimSuffix "-" }}
 {{- else }}
@@ -26,16 +26,16 @@ If release name contains chart name it will be used as a full name.
 {{/*
 Create chart name and version as used by the chart label.
 */}}
-{{- define "TheBidouilleur.xyz.chart" -}}
+{{- define "hello-world.chart" -}}
 {{- printf "%s-%s" .Chart.Name .Chart.Version | replace "+" "_" | trunc 63 | trimSuffix "-" }}
 {{- end }}
 
 {{/*
 Common labels
 */}}
-{{- define "TheBidouilleur.xyz.labels" -}}
-helm.sh/chart: {{ include "TheBidouilleur.xyz.chart" . }}
-{{ include "TheBidouilleur.xyz.selectorLabels" . }}
+{{- define "hello-world.labels" -}}
+helm.sh/chart: {{ include "hello-world.chart" . }}
+{{ include "hello-world.selectorLabels" . }}
 {{- if .Chart.AppVersion }}
 app.kubernetes.io/version: {{ .Chart.AppVersion | quote }}
 {{- end }}
@@ -45,17 +45,17 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
-{{- define "TheBidouilleur.xyz.selectorLabels" -}}
-app.kubernetes.io/name: {{ include "TheBidouilleur.xyz.name" . }}
+{{- define "hello-world.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "hello-world.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
 
 {{/*
 Create the name of the service account to use
 */}}
-{{- define "TheBidouilleur.xyz.serviceAccountName" -}}
+{{- define "hello-world.serviceAccountName" -}}
 {{- if .Values.serviceAccount.create }}
-{{- default (include "TheBidouilleur.xyz.fullname" .) .Values.serviceAccount.name }}
+{{- default (include "hello-world.fullname" .) .Values.serviceAccount.name }}
 {{- else }}
 {{- default "default" .Values.serviceAccount.name }}
 {{- end }}
