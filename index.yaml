@@ -1,26 +1,5 @@
 apiVersion: v1
 entries:
-  TheBidouilleur.xyz:
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2022-09-13T06:14:42.61581642Z"
-    description: A Helm chart for Kubernetes
-    digest: 87544ca3bdd6c81cb2ee13298ca986be7e11ee79323d199ebe83c99742f030ec
-    name: TheBidouilleur.xyz
-    type: application
-    urls:
-    - https://github.com/QJoly/helm-charts/releases/download/TheBidouilleur.xyz-0.1.2/TheBidouilleur.xyz-0.1.2.tgz
-    version: 0.1.2
-  - apiVersion: v2
-    appVersion: 1.16.0
-    created: "2022-09-12T15:56:43.475286849Z"
-    description: A Helm chart for Kubernetes
-    digest: 3eec9dc4036cd8de629aa9c84ca0bc54b971356b3f709aab6827918366a6a97f
-    name: TheBidouilleur.xyz
-    type: application
-    urls:
-    - https://github.com/QJoly/helm-charts/releases/download/TheBidouilleur.xyz-0.1.0/TheBidouilleur.xyz-0.1.0.tgz
-    version: 0.1.0
   hello-world:
   - apiVersion: v2
     appVersion: 1.16.0
