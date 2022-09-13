@@ -21,6 +21,17 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/TheBidouilleur.xyz-0.1.0/TheBidouilleur.xyz-0.1.0.tgz
     version: 0.1.0
+  hello-world:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-13T06:23:10.358293775Z"
+    description: A Helm chart for Kubernetes
+    digest: 5e05778b417a059dc8294b3704d49d4902f15b55b53a42aeaea126e03f7827a0
+    name: hello-world
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/hello-world-0.1.0/hello-world-0.1.0.tgz
+    version: 0.1.0
   thebidouilleur:
   - apiVersion: v2
     appVersion: 1.16.0
