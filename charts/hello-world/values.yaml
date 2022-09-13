@@ -46,11 +46,11 @@ ingress:
   annotations: {}
     # kubernetes.io/ingress.class: nginx
     # kubernetes.io/tls-acme: "true"
-  hosts:
-    - host: hw.kube.thoughtless.eu
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
+  domain: hw.kube.thoughtless.eu
+  entrypoints:
+    - web
+    - websecure
+
   tls: []
   #  - secretName: chart-example-tls
   #    hosts:
