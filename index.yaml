@@ -41,4 +41,15 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/hello-world-0.1.0/hello-world-0.1.0.tgz
     version: 0.1.0
+  openldap:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-16T07:27:45.182274693Z"
+    description: A Helm chart for Kubernetes
+    digest: 75692a198f238f5dcf89bb9ccd0ac66128f679c3f724f4edef92148635f14f85
+    name: openldap
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/openldap-0.1.0/openldap-0.1.0.tgz
+    version: 0.1.0
 generated: "2022-09-12T15:56:43.005944621Z"
