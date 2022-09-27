@@ -50,6 +50,7 @@ ingress:
   annotations: {}
   domain: rss.thoughtless.eu
   entrypoint: websecure
+  certResolver: letsencrypt
 
 resources: {}
   # limits:
