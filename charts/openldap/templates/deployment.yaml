@@ -32,19 +32,19 @@ spec:
             - name: KEEP_EXISTING_CONFIG
               value: "false"
             - name: LDAP_ADMIN_PASSWORD
-              value: admin
+              value: "admin"
             - name: LDAP_BACKEND
-              value: mdb
+              value: "mdb"
             - name: LDAP_BASE_DN
-              value: xyz
+              value: "xyz"
             - name: LDAP_CONFIG_PASSWORD
-              value: confighugepass
+              value: "confighugepass"
             - name: LDAP_DOMAIN
               value: "thebidouilleur.xyz"
             - name: LDAP_LOG_LEVEL
               value: "256"
             - name: LDAP_ORGANISATION
-              value: "Thoughtless Inc."
+              value: "TheBidouilleur"
             - name: LDAP_READONLY_USER
               value: "false"
             - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
@@ -54,7 +54,7 @@ spec:
             - name: LDAP_RFC2307BIS_SCHEMA
               value: "false"
             - name: LDAP_SSL_HELPER_PREFIX
-              value: ldap
+              value: "ldap"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
