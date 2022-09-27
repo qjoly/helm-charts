@@ -1,0 +1,70 @@
+replicaCount: 1
+
+image:
+  repository: lscr.io/linuxserver/freshrss
+  pullPolicy: IfNotPresent
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: 
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+volumes:
+- name: config
+  persistentVolumeClaim:
+    claimName: freshrss_claim
+    
+volumeMounts:
+- name: config
+  mountPath: /config/
+
+ingress:
+  enabled: true
+  className: ""
+  annotations: {}
+  domain: rss.thoughtless.eu
+  entrypoints:
+    - web
+    - websecure
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
