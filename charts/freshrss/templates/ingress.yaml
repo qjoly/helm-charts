@@ -26,4 +26,4 @@ spec:
     services:
     - name: {{ $fullName }}
       port: {{ $svcPort }}
-
+{{- end}}
