@@ -54,7 +54,7 @@ spec:
       volumes:
         - name: config
           persistentVolumeClaim:
-            claimName: freshrss_claim 
+            claimName:  {{ include "freshrss.fullname" . }}
 {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
