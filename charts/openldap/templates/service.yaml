@@ -10,6 +10,6 @@ spec:
     - port: {{ .Values.service.port }}
       targetPort: {{ .Values.service.port }}
       protocol: TCP
-      name: "{{ .Values.service.port }}"
+      name: port-{{ .Values.service.port }}
   selector:
     {{- include "openldap.selectorLabels" . | nindent 4 }}
