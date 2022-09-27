@@ -31,11 +31,15 @@ service:
   type: ClusterIP
   port: 80
 
+
+persistence:
+  storageClassName: "longhorn"
+  enabled: true 
+
 volumes:
   - name: config
     persistentVolumeClaim:
-      claimName: freshrss_claim
-    
+      claimName: freshrss_claim 
 volumeMounts:
   - name: config
     mountPath: /config/

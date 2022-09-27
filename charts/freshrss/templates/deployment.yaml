@@ -47,10 +47,15 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.persistence.enabled }}
           volumeMounts:
-            {{- toYaml .Values.volumeMounts | default "" | nindent 12 }} 
+            - name: config
+              mountPath: /config/
       volumes:
-        {{- toYaml .Values.volumes | default "" | nindent 8 }}
+        - name: config
+          persistentVolumeClaim:
+            claimName: freshrss_claim 
+{{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
