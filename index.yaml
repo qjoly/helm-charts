@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  freshrss:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-09-27T10:57:55.318219083Z"
+    description: A Helm chart for Kubernetes
+    digest: aab78f8b494d8489d83fc19c35268e35888ff76d144d471bee2da225341b7058
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.2/freshrss-0.0.2.tgz
+    version: 0.0.2
   hello-world:
   - apiVersion: v2
     appVersion: v1.0.0
