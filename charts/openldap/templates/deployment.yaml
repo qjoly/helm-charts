@@ -65,10 +65,10 @@ spec:
               protocol: TCP
           livenessProbe:
             tcpSocket:
-              port: "{{ .Values.service.port }}"
+              port: {{ .Values.service.port }}
           readinessProbe:
             tcpSocket:
-              port: "{{ .Values.service.port }}"
+              port: {{ .Values.service.port }}
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}
