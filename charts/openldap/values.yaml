@@ -7,7 +7,7 @@ image:
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: ""
+fullnameOverride: "openldap"
 
 podAnnotations: {}
 
@@ -25,14 +25,31 @@ service:
   type: ClusterIP
   port: 389
 
-ingress:
-  enabled: true
-  annotations: {}
-  domain: ur_domain.tld
-  entrypoints:
-    - web
-    - websecure
+settings:
+  KEEP_EXISTING_CONFIG: "false"
+  LDAP_ADMIN_PASSWORD: admin
+  LDAP_BACKEND: mdb
+  LDAP_BASE_DN: eu
+  LDAP_CONFIG_PASSWORD: confighugepass
+  LDAP_DOMAIN: thoughtless.eu
+  LDAP_LOG_LEVEL: "256"
+  LDAP_ORGANISATION: ThoughtlessInc.
+  LDAP_READONLY_USER: "false"
+  LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
+  LDAP_REPLICATION: "false"
+  LDAP_RFC2307BIS_SCHEMA: "false"
+  LDAP_SSL_HELPER_PREFIX: ldap
 
+
+
+#ingress:
+#  enabled: true
+#  annotations: {}
+#  domain: ur_domain.tld
+#  entrypoints:
+#    - web
+#    - websecure
+#
 
 resources: {}
   # limits:
