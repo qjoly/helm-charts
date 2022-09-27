@@ -28,6 +28,33 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
+          env:
+            - name: KEEP_EXISTING_CONFIG
+              value: "false"
+            - name: LDAP_ADMIN_PASSWORD
+              value: admin
+            - name: LDAP_BACKEND
+              value: mdb
+            - name: LDAP_BASE_DN
+              value: eu
+            - name: LDAP_CONFIG_PASSWORD
+              value: confighugepass
+            - name: LDAP_DOMAIN
+              value: thoughtless.eu
+            - name: LDAP_LOG_LEVEL
+              value: "256"
+            - name: LDAP_ORGANISATION
+              value: Thoughtless Inc.
+            - name: LDAP_READONLY_USER
+              value: "false"
+            - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
+              value: "true"
+            - name: LDAP_REPLICATION
+              value: "false"
+            - name: LDAP_RFC2307BIS_SCHEMA
+              value: "false"
+            - name: LDAP_SSL_HELPER_PREFIX
+              value: ldap
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
