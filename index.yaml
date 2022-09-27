@@ -44,6 +44,16 @@ entries:
   openldap:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-09-27T09:05:28.551674658Z"
+    description: A Helm chart for Kubernetes
+    digest: fb734829d5e0dc3374d98317e4562a85f169185d598a7f1d73b2f0fd532fa35a
+    name: openldap
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/openldap-0.1.8/openldap-0.1.8.tgz
+    version: 0.1.8
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-09-27T09:01:03.746434643Z"
     description: A Helm chart for Kubernetes
     digest: b096b322c55bdc4a30dd8f6fecfe8a4a0e130607e0e5cae686ddd88ffd3b59bc
