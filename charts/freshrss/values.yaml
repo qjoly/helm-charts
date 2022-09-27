@@ -36,14 +36,6 @@ persistence:
   storageClassName: "longhorn"
   enabled: true 
 
-volumes:
-  - name: config
-    persistentVolumeClaim:
-      claimName: freshrss_claim 
-volumeMounts:
-  - name: config
-    mountPath: /config/
-
 ingress:
   enabled: true
   className: ""
