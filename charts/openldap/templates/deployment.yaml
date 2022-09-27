@@ -36,11 +36,11 @@ spec:
             - name: LDAP_BACKEND
               value: mdb
             - name: LDAP_BASE_DN
-              value: lan
+              value: xyz
             - name: LDAP_CONFIG_PASSWORD
               value: confighugepass
             - name: LDAP_DOMAIN
-              value: ldap.lan
+              value: "thebidouilleur.xyz"
             - name: LDAP_LOG_LEVEL
               value: "256"
             - name: LDAP_ORGANISATION
