@@ -19,7 +19,7 @@ metadata:
 spec:
   entryPoints:
   {{- range .Values.entrypoints}} 
-    - {{ toYaml . | nindent 4 }}
+    {{ toYaml . | nindent 4 }}
   {{- end }}
   - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
