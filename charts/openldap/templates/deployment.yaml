@@ -36,15 +36,15 @@ spec:
             - name: LDAP_BACKEND
               value: mdb
             - name: LDAP_BASE_DN
-              value: eu
+              value: lan
             - name: LDAP_CONFIG_PASSWORD
               value: confighugepass
             - name: LDAP_DOMAIN
-              value: thoughtless.eu
+              value: ldap.lan
             - name: LDAP_LOG_LEVEL
               value: "256"
             - name: LDAP_ORGANISATION
-              value: Thoughtless Inc.
+              value: "Thoughtless Inc."
             - name: LDAP_READONLY_USER
               value: "false"
             - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
