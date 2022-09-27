@@ -41,16 +41,6 @@ settings:
   LDAP_SSL_HELPER_PREFIX: ldap
 
 
-
-#ingress:
-#  enabled: true
-#  annotations: {}
-#  domain: ur_domain.tld
-#  entrypoints:
-#    - web
-#    - websecure
-#
-
 resources: {}
   # limits:
   #   cpu: 100m
