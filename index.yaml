@@ -3,6 +3,16 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2022-09-27T12:52:01.020890232Z"
+    description: A WebUI to read article via RSS
+    digest: 645908b48192fcae86d62acf82101a05db9bb8d81d6677404f585b9704d4e00c
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.6/freshrss-0.0.6.tgz
+    version: 0.0.6
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-09-27T12:35:22.252273368Z"
     description: A WebUI to read article via RSS
     digest: ac797a50a76d5d17737e4b9468adc454dc704ed666d85de8ada8d69437368f8a
