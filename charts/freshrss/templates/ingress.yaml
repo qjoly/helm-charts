@@ -19,5 +19,6 @@ spec:
     services:
     - name: {{ $fullName }}
       port: {{ $svcPort }}
+  tls:
     certResolver: {{ .Values.ingress.certresolver }}
 {{- end}}
