@@ -21,9 +21,9 @@ spec:
   {{- range .Values.entrypoints}} 
     - {{ . }}
   {{- end }}
-  - match: Host(`{{ .Values.ingress.domain }}`)
+  - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
     services:
     - name: {{ $fullName }}
       port: {{ $svcPort }}
-
+{{- end }}

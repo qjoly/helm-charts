@@ -9,18 +9,11 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ $fullName }}
-  labels:
-    {{- include "freshrss.labels" . | nindent 4 }}
-  {{- with .Values.ingress.annotations }}
-  annotations:
-    {{- toYaml . | nindent 4 }}
-  {{- end }}
+  name: aled
 spec:
-  entryPoints:
-  {{- range .Values.entrypoints}} 
-    {{ toYaml . | nindent 4 }}
-  {{- end }}
+  entrypoints:
+  - {{ .Values.ingress.entrypoint }}
+  routes: 
   - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
     services:
