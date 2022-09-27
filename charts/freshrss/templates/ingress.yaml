@@ -9,9 +9,9 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: aled
+  name: {{ $fullName }}
 spec:
-  entrypoints:
+  entryPoints:
   - {{ .Values.ingress.entrypoint }}
   routes: 
   - match: Host(`{{ .Values.ingress.domain }}`)
