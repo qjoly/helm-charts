@@ -1,3 +1,17 @@
+# Helm FreshRSS
+## How to deploy ? 
+I use HELM to deploy this application on my cluster. You can install helm on [this documentation](https://helm.sh/docs/intro/install/) and add my repo : 
+```bash
+helm repo add qjoly https://qjoly.github.io/helm-charts
+helm install freshrss qjoly/freshrss -n ur-namespace --debug
+```
+
+:warning::warning::warning: **The method I use to add ingress is exclusively for __traefik__ ! If you use NGinx, you will have to disable ingress (in valuefile) and create it manually** :warning::warning::warning:
+
+Readme of FreshRSS: 
+---
+
+
 [![Liberapay donations](https://img.shields.io/liberapay/receives/FreshRSS.svg?logo=liberapay)](https://liberapay.com/FreshRSS/donate)
 
 * Read this document on [github.com/FreshRSS/FreshRSS/](https://github.com/FreshRSS/FreshRSS/blob/edge/README.md) to get the correct links and pictures.
