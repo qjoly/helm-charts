@@ -13,16 +13,19 @@ jobs:
        - name: Setup Python
          uses: actions/setup-python@v2.3.3
 
+       - name: Configure Git
+         run: |
+           git config user.name "$GITHUB_ACTOR"
+           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+
        - name: Install requirements
          run: |
           cd .github/workflows/
           python -m pip install -r requirements.txt 
           python3 get_readme.py
-
-       - name: Configure Git
-         run: |
-           git config user.name "$GITHUB_ACTOR"
-           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
+          cd ../..
+          git add README.md
+          git commit -m "[AUTO] Update README with Charts versions"
 
        - name: Run chart-releaser
          uses: helm/chart-releaser-action@v1.4.1

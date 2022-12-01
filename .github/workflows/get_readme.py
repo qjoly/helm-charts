@@ -8,7 +8,6 @@ from yaml.loader import SafeLoader
 from jinja2 import Template
 
 def main():
-    print()
     files = glob('../../**/Chart.yaml', recursive=True)
     charts = []
     for chart in files:
@@ -23,6 +22,7 @@ def main():
     print("----")
     readme_template=Path('../../README.md.tmpl').read_text().replace("CHARTS_TABLE",tableValue)
     print(readme_template)
+    Path("../../README.md").write_text(readme_template)
 
 if __name__ == "__main__":
     main()
