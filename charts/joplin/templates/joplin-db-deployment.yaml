@@ -1,0 +1,41 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joplin-db
+spec:
+  selector:
+    matchLabels:
+      app: joplin-db
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      labels:
+        app: joplin-db 
+    spec:
+      containers:
+        - env:
+            - name: POSTGRES_DB
+              value: joplin
+            - name: POSTGRES_PASSWORD
+              value: veryhugepasswordhere
+            - name: POSTGRES_USER
+              value: joplin
+            - name: PGDATA
+              value: /var/lib/postgresql/data/pgdata
+          image: postgres:15
+          name: joplin-db
+          ports:
+            - containerPort: 5432
+          resources: {}
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              subPath: pgdata
+              name: db
+      restartPolicy: Always
+      volumes:
+        - name: db
+          persistentVolumeClaim:
+            claimName: joplin-beta-db
+status: {}

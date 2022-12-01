@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: joplin-app
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: joplin-app
+  strategy: {}
+  template:
+    metadata:
+      labels:
+        app: joplin-app 
+    spec:
+      containers:
+        - env:
+            - name: APP_BASE_URL
+              value: http://localhost:22300
+            - name: APP_PORT
+              value: "22300"
+            - name: DB_CLIENT
+              value: pg
+            - name: MAILER_ENABLED
+              value: "0"
+            - name: MAILER_HOST
+              value: smtp.domain.tld
+            - name: MAILER_NOREPLY_EMAIL
+              value: joplin-noreply@domain.tld
+            - name: MAILER_NOREPLY_NAME
+              value: joplin-server
+            - name: MAILER_PORT
+              value: "25"
+            - name: MAILER_SECURITY
+              value: none
+            - name: POSTGRES_DATABASE
+              value: joplin
+            - name: POSTGRES_HOST
+              value: joplin-db
+            - name: POSTGRES_PASSWORD
+              value: veryhugepasswordhere
+            - name: POSTGRES_PORT
+              value: "5432"
+            - name: POSTGRES_USER
+              value: joplin
+          image: joplin/server:2.9.7-beta
+          name: joplin-app
+          ports:
+            - containerPort: 22300
+          resources: {}
+      restartPolicy: Always
+status: {}

@@ -1,0 +1,17 @@
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: joplin-ingressroute
+spec:
+  entryPoints:
+    - web
+    - websecure
+  routes:
+  - match: Host(`ur_app`)
+    kind: Rule
+    services:
+    - name: joplin-app
+      port: 22300
+  tls:
+    certResolver: letsencrypt 
+
