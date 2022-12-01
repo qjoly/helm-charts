@@ -26,6 +26,7 @@ jobs:
           cd ../..
           git add README.md
           git commit -m "[AUTO] Update README with Charts versions"
+          git push
 
        - name: Run chart-releaser
          uses: helm/chart-releaser-action@v1.4.1
