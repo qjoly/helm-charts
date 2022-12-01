@@ -20,6 +20,14 @@ jobs:
            git config user.name "$GITHUB_ACTOR"
            git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
 
+       - uses: azure/setup-helm@v3
+         with:
+            token: ${{ secrets.GITHUB_TOKEN }} # only needed if version is 'latest'
+       
+       - name: Helm Lint
+         run: |
+           ./helm_lint.sh
+
        - name: Run chart-releaser
          uses: helm/chart-releaser-action@v1.4.1
          env:
