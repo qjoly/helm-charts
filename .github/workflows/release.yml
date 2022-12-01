@@ -26,6 +26,7 @@ jobs:
        
        - name: Helm Lint
          run: |
+           cd .github/workflows/
            ./helm_lint.sh
 
        - name: Run chart-releaser
