@@ -1,0 +1,38 @@
+apiVersion: v1
+entries:
+  freshrss:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-01T15:28:39.363089146Z"
+    description: A WebUI to read article via RSS
+    digest: 4dfe99c3ba994d883550e09665dd092d0eae99aadfb2ddf1bf08ef4d102524bd
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.6/freshrss-0.0.6.tgz
+    version: 0.0.6
+  joplin:
+  - apiVersion: v1
+    appVersion: 2.9.7-beta
+    created: "2022-12-01T15:28:39.546428231Z"
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: e4358ac05b9727bbfb7a3af0bfd07bb9d7a47f008e9fc4abaf3547df5b86e753
+    keywords:
+    - joplin
+    name: joplin
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-0.0.1/joplin-0.0.1.tgz
+    version: 0.0.1
+  openldap:
+  - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2022-12-01T15:28:39.722164971Z"
+    description: 'a simple OpenLDAP Server. ( :warning: do no use in prod)'
+    digest: 48012a08476fa5ea07151c3dafa4cee9feba51a8c0badd916434557ff7fd87d9
+    name: openldap
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
+    version: 1.0.1
+generated: "2022-12-01T15:28:39.722170571Z"
