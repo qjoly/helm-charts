@@ -9,6 +9,6 @@ List of Charts :
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
-| openldap | a simple OpenLDAP Server. ( :warning: do no use in prod) | 1.0.0 | 1.5.0 |
+| openldap | a simple OpenLDAP Server. ( :warning: do no use in prod) | 1.0.1 | 1.5.0 |
 | hello-world | Hello Docker ! | 0.1.4 | v1.0.0 |
 | freshrss | A WebUI to read article via RSS | 0.0.6 | 1.16.0 |
