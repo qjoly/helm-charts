@@ -9,18 +9,14 @@ jobs:
      steps:
        - name: Checkout
          uses: actions/checkout@v1
-         
-       - name: Install Nix
-         uses: cachix/install-nix-action@v18
-         with:
-           nix_path: nixpkgs=channel:nixos-unstable
-         
-       - name: Run nix-shell and python-script
+
+       - name: Setup Python
+         uses: actions/setup-python@v2.3.3
+
+       - name: Install requirements
          run: |
-            cd .github/workflows/
-            nix-shell
-            python3 get_readme.py
-         
+          python -m pip install -r requirements.txt 
+
        - name: Configure Git
          run: |
            git config user.name "$GITHUB_ACTOR"
