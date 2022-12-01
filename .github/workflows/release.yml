@@ -22,8 +22,6 @@ jobs:
 
        - name: Run chart-releaser
          uses: web-seven/chart-releaser-action@v2.0.10
-         with:
-          charts_dir: charts
          env:
            CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
            
