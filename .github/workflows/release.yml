@@ -26,6 +26,7 @@ jobs:
            CR_TOKEN: "${{ secrets.GITHUB_TOKEN }}"
            
        - name: Install requirements
+         continue-on-error: true
          run: |
           cd .github/workflows/
           python -m pip install -r requirements.txt 
