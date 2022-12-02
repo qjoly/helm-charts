@@ -1,0 +1,39 @@
+---
+name: Testing charts
+on:
+  push:
+    branches:
+      - '*'
+      - '!main'
+  pull_request:
+    branches:
+      - main
+jobs:
+  testing:
+     runs-on: ubuntu-latest
+     steps:
+       - name: Checkout
+         uses: actions/checkout@v2
+         with:
+           fetch-depth: 0
+
+       - uses: azure/setup-helm@v3
+         with:
+            token: ${{ secrets.GITHUB_TOKEN }} 
+       
+       - name: Helm Lint
+         run: |
+           cd .github/workflows/
+           ./helm_lint.sh
+
+       - name: Create k8s Kind Cluster
+         uses: helm/kind-action@v1.3.0
+         
+       - name: Install kubectl
+         uses: Azure/setup-kubectl@v3
+         
+       - name: Deploy all charts to kind
+         run: |
+           cd .github/workflows/
+           ./helm_deploy.sh
+
