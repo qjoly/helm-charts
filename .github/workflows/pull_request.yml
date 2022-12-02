@@ -1,12 +1,11 @@
 
 name: Testing charts 
 on:  
-  push:
   pull_request:
     branches:
       - main
 jobs:
-   release:
+   testing:
      runs-on: ubuntu-latest
      steps:
        - name: Checkout
