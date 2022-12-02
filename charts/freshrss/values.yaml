@@ -37,7 +37,7 @@ persistence:
   enabled: true 
 
 ingress:
-  enabled: true
+  enabled: false
   className: ""
   annotations: {}
   domain: rss.thoughtless.eu
