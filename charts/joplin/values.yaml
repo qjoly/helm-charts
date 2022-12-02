@@ -1,0 +1,66 @@
+replicaCount: 1
+
+image:
+  repository: joplin/server
+  pullPolicy: IfNotPresent
+  tag: 2.9.7-beta
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: false
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: 
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  #  runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 80
+
+
+persistence:
+  storageClassName: "longhorn"
+  enabled: true 
+
+ingress:
+  isIngressRoute: false
+  enabled: false
+  className: ""
+  annotations: {}
+  domain: ur_domain.tld
+  entrypoint: websecure
+  certresolver: letsencrypt
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+autoscaling:
+  enabled: false
+  minReplicas: 1
+  maxReplicas: 100
+  targetCPUUtilizationPercentage: 80
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
