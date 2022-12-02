@@ -1,5 +1,5 @@
 
-name: Release Charts
+name: Testing charts 
 on:  
   push:
   pull_request:
@@ -22,3 +22,5 @@ jobs:
          run: |
            cd .github/workflows/
            ./helm_lint.sh
+
+
