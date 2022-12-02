@@ -2,6 +2,8 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: joplin-app
+  labels:
+    {{- include "joplin.labels" . | nindent 4 }}
 spec:
   replicas: 1
   strategy:
@@ -36,15 +38,15 @@ spec:
             - name: MAILER_SECURITY
               value: none
             - name: POSTGRES_DATABASE
-              value: joplin
+              value: {{ .Values.database.dbname }}
             - name: POSTGRES_HOST
-              value: joplin-db
+              value: {{ .Chart.Name }}-db
             - name: POSTGRES_PASSWORD
-              value: veryhugepasswordhere
+              value: {{ .Values.database.dbpassword }}
             - name: POSTGRES_PORT
               value: "5432"
             - name: POSTGRES_USER
-              value: joplin
+              value: {{ .Values.database.dbuser }}
           image: joplin/server:2.9.7-beta
           name: joplin-app
           ports:
