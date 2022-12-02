@@ -5,15 +5,22 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: joplin-db
+      app: {{ .Chart.Name }}-db
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
       labels:
-        app: joplin-db 
+        app: {{ .Chart.Name }}-db 
     spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      serviceAccountName: {{ include "joplin.serviceAccountName" . }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - env:
             - name: POSTGRES_DB
@@ -25,7 +32,7 @@ spec:
             - name: PGDATA
               value: /var/lib/postgresql/data/pgdata
           image: postgres:15
-          name: joplin-db
+          name: {{ .Chart.Name }}-db
           ports:
             - containerPort: 5432
           resources: {}
@@ -37,5 +44,5 @@ spec:
       volumes:
         - name: db
           persistentVolumeClaim:
-            claimName: joplin-beta-db
+            claimName: joplin-pvc-db
 status: {}
