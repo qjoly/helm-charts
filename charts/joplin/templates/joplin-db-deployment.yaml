@@ -43,7 +43,6 @@ spec:
             - containerPort: 5432
           livenessProbe:
             tcpSocket:
-              path: /
               port: 5432
             initialDelaySeconds: 190
           readinessProbe:
