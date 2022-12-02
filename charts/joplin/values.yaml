@@ -1,18 +1,24 @@
 replicaCount: 1
 
 image:
-  repository: joplin/server
-  pullPolicy: IfNotPresent
-  tag: 2.9.7-beta
+  joplin:
+    repository: joplin/server
+    pullPolicy: IfNotPresent
+    tag: 2.9.7-beta
+  postgres:
+    repository: postgres
+    pullPolicy: IfNotPresent
+    tag: 15
+
+database:
+  dbname: joplindb
+  dbuser: joplinuser
+  dbpassword: veryhugepasswordhere
 
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
 
-serviceAccount:
-  create: false
-  annotations: {}
-  name: ""
 
 podAnnotations: {}
 
@@ -28,13 +34,20 @@ securityContext:
   #  runAsUser: 1000
 
 service:
-  type: ClusterIP
-  port: 80
+  joplin:
+    type: ClusterIP
+    port: 22300
+  database:
+    type: ClusterIP
+    port: 5432
 
 
 persistence:
   storageClassName: "longhorn"
   enabled: true 
+  size: "4Gi"
+# Uncomment if you want to use an existing PVC
+#  pvcClaim: ur_pvc
 
 ingress:
   isIngressRoute: false
@@ -52,12 +65,6 @@ resources: {}
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
 
 nodeSelector: {}
 
