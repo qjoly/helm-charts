@@ -37,8 +37,8 @@ jobs:
          
        - name: Deploy Joplin (just to test) 
          run: |
-           cd charts/joplin
-           helm install joplin . 
+           cd charts/freshrss
+           helm install freshrss . 
            kubectl get all
 
        - name: Run chart-releaser
