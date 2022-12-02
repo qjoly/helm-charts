@@ -1,15 +1,19 @@
+{{- if .Values.persistence.enabled -}}
+{{- if not .Values.persistence.pvcClaim }}
 apiVersion: v1
 kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    io.kompose.service: db
-  name: joplin-beta-db
+    {{- include "joplin.labels" . | nindent 4 }}
+  name: {{ .Chart.Name }}
 spec:
   storageClassName: "longhorn"
   accessModes:
     - ReadWriteOnce
   resources:
     requests:
-      storage: 4Gi
+      storage: {{ .Values.persistence.size }}
 status: {}
+{{- end }}
+{{- end }}
