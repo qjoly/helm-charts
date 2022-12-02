@@ -22,7 +22,7 @@ jobs:
 
        - uses: azure/setup-helm@v3
          with:
-            token: ${{ secrets.GITHUB_TOKEN }} # only needed if version is 'latest'
+            token: ${{ secrets.GITHUB_TOKEN }} 
        
        - name: Helm Lint
          run: |
@@ -35,11 +35,10 @@ jobs:
        - name: Install kubectl
          uses: Azure/setup-kubectl@v3
          
-       - name: Deploy Joplin (just to test) 
+       - name: Deploy all charts to kind
          run: |
-           cd charts/freshrss
-           helm install freshrss . 
-           kubectl get all
+           cd .github/workflows/
+           ./helm_deploy.sh
 
        - name: Run chart-releaser
          uses: helm/chart-releaser-action@v1.4.1
