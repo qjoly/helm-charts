@@ -69,7 +69,7 @@ ingress:
   enabled: true
   className: ""
   annotations: {}
-  domain: ur_domain.tld
+  domain: ur-domain.tld
   entrypoint: websecure # Useless if you use ingressroute
   certresolver: letsencrypt
 
