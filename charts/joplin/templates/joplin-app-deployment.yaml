@@ -1,42 +1,57 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: joplin-app
+  name: {{ .Chart.Name }}-app
   labels:
     {{- include "joplin.labels" . | nindent 4 }}
 spec:
-  replicas: 1
+  replicas: {{ .Values.replicaCount }}
   strategy:
     type: Recreate
   selector:
     matchLabels:
-      app: joplin-app
+      app: {{ .Chart.Name }}-app
   strategy: {}
   template:
     metadata:
       labels:
-        app: joplin-app 
+        app: {{ .Chart.Name }}-app
     spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - env:
             - name: APP_BASE_URL
-              value: http://localhost:22300
+              value: {{ .Values.joplin.base_url }}
             - name: APP_PORT
               value: "22300"
             - name: DB_CLIENT
               value: pg
+{{- if .Values.mailer.enabled }}
+            - name: MAILER_ENABLED
+              value: "1"
+            - name: MAILER_HOST
+              value: "{{ .Values.mailer.host }}"
+            - name: MAILER_NOREPLY_EMAIL
+              value: {{ .Values.mailer.noreplymail }}
+            - name: MAILER_NOREPLY_NAME
+              value: {{ .Values.mailer.noreplyname }}
+            - name: MAILER_PORT
+              value: "{{ .Values.mailer.port }}"
+            - name: MAILER_SECURITY
+              value: {{ .Values.mailer.security }}
+            - name: MAILER_AUTH_USER
+              value: {{ .Values.mailer.user }}
+            - name: MAILER_AUTH_PASSWORD
+              value: {{ .Values.mailer.password }}
+{{- else }}
             - name: MAILER_ENABLED
               value: "0"
-            - name: MAILER_HOST
-              value: smtp.domain.tld
-            - name: MAILER_NOREPLY_EMAIL
-              value: joplin-noreply@domain.tld
-            - name: MAILER_NOREPLY_NAME
-              value: joplin-server
-            - name: MAILER_PORT
-              value: "25"
-            - name: MAILER_SECURITY
-              value: none
+{{- end }}
             - name: POSTGRES_DATABASE
               value: {{ .Values.database.dbname }}
             - name: POSTGRES_HOST
@@ -47,10 +62,23 @@ spec:
               value: "5432"
             - name: POSTGRES_USER
               value: {{ .Values.database.dbuser }}
-          image: joplin/server:2.9.7-beta
+          image: "{{ .Values.image.joplin.repository }}:{{ .Values.image.joplin.tag }}"
           name: joplin-app
           ports:
             - containerPort: 22300
           resources: {}
       restartPolicy: Always
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
 status: {}
+
