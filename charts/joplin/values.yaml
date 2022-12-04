@@ -15,6 +15,21 @@ database:
   dbuser: joplinuser
   dbpassword: veryhugepasswordhere
 
+joplin: 
+  base_url: http://localhost:22300 
+
+mailer: 
+  enabled: true
+  host: mailserver
+  noreplymail: noreply@mailserver
+  noreplyname: noreplyname@mailserver
+  port: 25
+  user: usermail
+  password: password
+  security: none #  none / TLS / STARTLS
+
+
+
 imagePullSecrets: []
 nameOverride: ""
 fullnameOverride: ""
@@ -22,8 +37,8 @@ fullnameOverride: ""
 
 podAnnotations: {}
 
-podSecurityContext: {}
-  # fsGroup: 2000
+podSecurityContext: 
+  fsGroup: 2000
 
 securityContext: 
   # capabilities:
@@ -43,19 +58,19 @@ service:
 
 
 persistence:
-  storageClassName: "longhorn"
+  storageClassName: "" # leave empty if you want to use default
   enabled: true 
-  size: "4Gi"
+  size: "1Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
 # Uncomment if you want to use an existing PVC
 #  pvcClaim: ur_pvc
 
 ingress:
   isIngressRoute: false
-  enabled: false
+  enabled: true
   className: ""
   annotations: {}
   domain: ur_domain.tld
-  entrypoint: websecure
+  entrypoint: websecure # Useless if you use ingressroute
   certresolver: letsencrypt
 
 resources: {}
