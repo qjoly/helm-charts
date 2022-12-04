@@ -35,8 +35,8 @@ spec:
             - name: POSTGRES_USER
               value: {{ .Values.database.dbuser }}
             - name: PGDATA
-              value: /var/lib/postgresql/data/pgdata
-          image: "{{ .Values.image.joplin.repository }}:{{ .Values.image.joplin.tag | default .Chart.AppVersion }}"
+              value: "/var/lib/postgresql/data/pgdata"
+          image: "{{ .Values.image.postgres.repository }}:{{ .Values.image.postgres.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           name: {{ .Chart.Name }}-db
           ports:
