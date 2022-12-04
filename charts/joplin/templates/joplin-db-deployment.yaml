@@ -2,40 +2,75 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: joplin-db
+  labels:
+    {{- include "joplin.labels" . | nindent 4 }}
 spec:
   selector:
     matchLabels:
-      app: joplin-db
+      app: {{ .Chart.Name }}-db
   replicas: 1
   strategy:
     type: Recreate
   template:
     metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
       labels:
-        app: joplin-db 
+        app: {{ .Chart.Name }}-db 
     spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - env:
             - name: POSTGRES_DB
-              value: joplin
+              value: {{ .Values.database.dbname }}
             - name: POSTGRES_PASSWORD
-              value: veryhugepasswordhere
+              value: {{ .Values.database.dbpassword }}
             - name: POSTGRES_USER
-              value: joplin
+              value: {{ .Values.database.dbuser }}
             - name: PGDATA
-              value: /var/lib/postgresql/data/pgdata
-          image: postgres:15
-          name: joplin-db
+              value: "/var/lib/postgresql/data/pgdata"
+          image: "{{ .Values.image.postgres.repository }}:{{ .Values.image.postgres.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          name: {{ .Chart.Name }}-db
           ports:
             - containerPort: 5432
-          resources: {}
+          livenessProbe:
+            tcpSocket:
+              port: 5432
+            initialDelaySeconds: 190
+          readinessProbe:
+            tcpSocket:
+              port: 5432
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.persistence.enabled }}
           volumeMounts:
             - mountPath: /var/lib/postgresql/data
               subPath: pgdata
               name: db
-      restartPolicy: Always
       volumes:
         - name: db
           persistentVolumeClaim:
-            claimName: joplin-beta-db
+            claimName: {{ .Values.persistence.pvcClaim | default .Chart.Name }}
+{{- end }}
+      restartPolicy: Always
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
 status: {}

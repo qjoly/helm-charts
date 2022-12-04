@@ -1,0 +1,88 @@
+replicaCount: 1
+
+image:
+  joplin:
+    repository: joplin/server
+    pullPolicy: IfNotPresent
+    tag: 2.9.7-beta
+  postgres:
+    repository: postgres
+    pullPolicy: IfNotPresent
+    tag: 15
+
+database:
+  dbname: joplindb
+  dbuser: joplinuser
+  dbpassword: veryhugepasswordhere
+
+joplin: 
+  base_url: http://localhost:22300 
+
+mailer: 
+  enabled: true
+  host: mailserver
+  noreplymail: noreply@mailserver
+  noreplyname: noreplyname@mailserver
+  port: 25
+  user: usermail
+  password: password
+  security: none #  none / TLS / STARTLS
+
+
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+
+podAnnotations: {}
+
+podSecurityContext: 
+  fsGroup: 2000
+
+securityContext: 
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  #  runAsUser: 1000
+
+service:
+  joplin:
+    type: ClusterIP
+    port: 22300
+  database:
+    type: ClusterIP
+    port: 5432
+
+
+persistence:
+  storageClassName: "" # leave empty if you want to use default
+  enabled: true 
+  size: "1Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
+# Uncomment if you want to use an existing PVC
+#  pvcClaim: ur_pvc
+
+ingress:
+  isIngressRoute: false
+  enabled: true
+  className: ""
+  annotations: {}
+  domain: ur-domain.tld
+  entrypoint: websecure # Useless if you use ingressroute
+  certresolver: letsencrypt
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

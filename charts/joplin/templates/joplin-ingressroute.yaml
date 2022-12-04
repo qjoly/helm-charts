@@ -1,17 +1,20 @@
+{{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.isIngressRoute -}}
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: joplin-ingressroute
+  name: {{ .Chart.Name }}-ingressroute
+  labels:
+    {{- include "joplin.labels" . | nindent 4 }}
 spec:
-  entryPoints:
-    - web
-    - websecure
+  entryPoints: {{ .Values.ingress.entrypoint }}
   routes:
-  - match: Host(`ur_app`)
+  - match: Host(`{{ .Values.ingress.domain }} `)
     kind: Rule
     services:
-    - name: joplin-app
+    - name: {{ .Chart.Name }}-app
       port: 22300
   tls:
-    certResolver: letsencrypt 
-
+    certResolver: {{ .Values.ingress.certresolver }}
+{{- end}}
+{{- end}}

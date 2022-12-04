@@ -1,13 +1,15 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: joplin-db
+  name: {{ .Chart.Name }}-db
+  labels:
+    {{- include "joplin.labels" . | nindent 4 }}
 spec:
   ports:
-    - name: "5432"
+    - name: "postgresql"
       port: 5432
-      targetPort: 5432
+      targetPort: {{ .Values.service.database.port }}
   selector:
-    app: joplin-db
+    app: {{ .Chart.Name }}-db
 status:
   loadBalancer: {}
