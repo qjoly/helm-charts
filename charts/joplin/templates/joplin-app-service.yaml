@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: joplin-app
+  name: {{ .Chart.Name }}-app
   labels:
     {{- include "joplin.labels" . | nindent 4 }}
 spec:
@@ -10,6 +10,6 @@ spec:
       port: 22300
       targetPort: 22300
   selector:
-    name: joplin-app
+    name: {{ .Chart.Name }}-app
 status:
   loadBalancer: {}
