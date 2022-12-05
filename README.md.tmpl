@@ -10,7 +10,7 @@
 # Add the repo to your helm
 helm repo add qjoly https://qjoly.github.io/helm-charts/ 
 # Install your app
-helm install epic qjoly/joplin
+helm install myjoplin qjoly/joplin
 ```
 
 # Charts
