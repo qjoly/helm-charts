@@ -67,6 +67,7 @@ jobs:
           index=$(pandoc --from markdown README.md --to html5 --standalone --no-highlight)
           git checkout gh-pages
           echo $index > index.html
+          git add index.html
           git commit -m "[AUTO] Update index.html of gh-pages"
           git push
           
