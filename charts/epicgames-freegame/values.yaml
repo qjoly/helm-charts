@@ -6,10 +6,14 @@ image:
   tag: latest
 
 settings: 
-  baseUrl: http://localhost:8080 # 
+  account:
+    email: hello@gmail.com
+    password: abc123
+    totp: bigtotp
+  baseUrl: https://ur-domain.tld # 
   notifiers:
     discord:
-      enabled: true
+      enabled: false
       webhookUrl: "https://discordapp.com/api/webhooks/1049231686778867764/dlC39GaS09RKQQJF6bCGJFflswv-vAIVOiCXEdhuHucsgaEQfsi4U0Z-1Vk3Ms"
     mail:
       enabled: false
