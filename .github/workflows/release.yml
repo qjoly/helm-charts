@@ -48,6 +48,8 @@ jobs:
        - name: Install requirements
          continue-on-error: true
          run: |
+          git pull
+          git checkout main
           cd .github/workflows/
           python -m pip install -r requirements.txt 
           python3 get_readme.py
