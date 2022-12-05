@@ -1,0 +1,9 @@
+apiVersion: v1
+name: epicgames-freegame
+description: Automatically login and redeem promotional free games from the Epic Games Store. Handles multiple accounts, 2FA, captcha bypass, captcha notifications, and scheduled runs.
+appVersion: "4.1.0"
+version: 1.0.0
+keywords:
+  - epicgames
+
+

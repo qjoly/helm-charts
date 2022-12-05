@@ -1,0 +1,59 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ .Chart.Name }}-cm
+
+data:
+  config.json: |
+    {
+    "runOnStartup": true,
+    "cronSchedule": "5 16 * * *",
+    "logLevel": "info",
+    "webPortalConfig": {
+      "baseUrl": "{{ .Values.settings.baseUrl }}",
+    },
+    "accounts": [
+      {
+        "email": "{{ .Values.settings.account.email }}",
+        "password": "{{ .Values.settings.account.password }}",
+        "totp": "{{ .Values.settings.account.totp }}"
+      },
+    ],
+    "notifiers": [
+{{- if .Values.settings.notifiers.mail.enabled }}
+      {
+        "type": "email",
+        "smtpHost": "{{ .Values.settings.notifiers.mail.host }}",
+        "smtpPort": {{ .Values.settings.notifiers.mail.port }},
+        "emailSenderAddress": "{{ .Values.settings.notifiers.mail.emailSenderAddress }}",
+        "emailSenderName": "{{ .Values.settings.notifiers.mail.emailSenderName }}",
+        "emailRecipientAddress": "{{ .Values.settings.notifiers.mail.emailRecipientAddress }}",
+        "secure": {{ .Values.settings.notifiers.mail.secure }},
+        "auth": {
+            "user": "{{ .Values.settings.notifiers.mail.auth.user }}",
+            "pass": "{{ .Values.settings.notifiers.mail.auth.pass }}",
+        },
+      },
+{{- end }}
+{{- if .Values.settings.notifiers.discord.enabled }}
+      {
+        "type": "discord",
+        "webhookUrl": "{{ .Values.settings.notifiers.discord.webhookUrl }}",
+      },
+{{- end }}
+{{- if .Values.settings.notifiers.telegram.enabled }}
+      {
+        "type": "telegram",
+        "token": "{{ .Values.settings.notifiers.telegram.token }}",
+        "chatId": "{{ .Values.settings.notifiers.telegram.chatid }}",
+      },
+{{- end }}
+{{- if .Values.settings.notifiers.apprise.enabled }}
+      {
+        "type": "apprise",
+        "apiUrl": "{{ .Values.settings.notifiers.apprise.apiUrl }}",
+        "urls": "{{ .Values.settings.notifiers.apprise.url }}",
+      },
+{{- end }}
+    ],
+    }
