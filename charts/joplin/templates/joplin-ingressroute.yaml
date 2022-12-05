@@ -9,7 +9,7 @@ metadata:
 spec:
   entryPoints: {{ .Values.ingress.entrypoint }}
   routes:
-  - match: Host(`{{ .Values.ingress.domain }} `)
+  - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
     services:
     - name: {{ .Chart.Name }}-app
