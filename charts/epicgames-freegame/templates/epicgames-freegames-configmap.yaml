@@ -14,24 +14,24 @@ data:
     },
     "accounts": [
       {
-        "email": "hello@gmail.com",
-        "password": "abc123",
-        "totp": "ur_totp"
+        "email": "{{ .Values.settings.account.email }}",
+        "password": "{{ .Values.settings.account.password }}",
+        "totp": "{{ .Values.settings.account.totp }}"
       },
     ],
     "notifiers": [
 {{- if .Values.settings.notifiers.mail.enabled }}
       {
         "type": "email",
-        "smtpHost": "",
-        "smtpPort": 587,
-        "emailSenderAddress": "hello@gmail.com",
-        "emailSenderName": "Epic Games Captchas",
-        "emailRecipientAddress": "hello@gmail.com",
-        "secure": false,
+        "smtpHost": "{{ .Values.settings.notifiers.mail.host }}",
+        "smtpPort": {{ .Values.settings.notifiers.mail.port }},
+        "emailSenderAddress": "{{ .Values.settings.notifiers.mail.emailSenderAddress }}",
+        "emailSenderName": "{{ .Values.settings.notifiers.mail.emailSenderName }}",
+        "emailRecipientAddress": "{{ .Values.settings.notifiers.mail.emailRecipientAddress }}",
+        "secure": {{ .Values.settings.notifiers.mail.secure }},
         "auth": {
-            "user": "hello@gmail.com",
-            "pass": "abc123",
+            "user": "{{ .Values.settings.notifiers.mail.auth.user }}",
+            "pass": "{{ .Values.settings.notifiers.mail.auth.pass }}",
         },
       },
 {{- end }}
