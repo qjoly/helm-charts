@@ -10,6 +10,6 @@ spec:
       port: 3000
       targetPort: 3000
   selector:
-    name: {{ .Chart.Name }}
+    app: {{ .Chart.Name }}-app
 status:
   loadBalancer: {}

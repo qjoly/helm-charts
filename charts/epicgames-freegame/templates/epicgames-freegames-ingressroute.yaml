@@ -5,14 +5,15 @@ kind: IngressRoute
 metadata:
   name: {{ .Chart.Name }}-ingressroute
   labels:
-    {{- include "joplin.labels" . | nindent 4 }}
+    {{- include "epicgames-freegames.labels" . | nindent 4 }}
 spec:
-  entryPoints: {{ .Values.ingress.entrypoint }}
+  entryPoints: 
+   - {{ .Values.ingress.entrypoint }}
   routes:
-  - match: Host(`{{ .Values.ingress.domain }} `)
+  - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
     services:
-    - name: {{ .Chart.Name }}-app
+    - name: {{ .Chart.Name }}
       port: 3000
   tls:
     certResolver: {{ .Values.ingress.certresolver }}
