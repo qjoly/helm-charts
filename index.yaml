@@ -3,6 +3,18 @@ entries:
   epicgames-freegame:
   - apiVersion: v1
     appVersion: 4.1.0
+    created: "2022-12-05T17:54:35.561783776Z"
+    description: Automatically login and redeem promotional free games from the Epic
+      Games Store.
+    digest: e14f7df7881575b24e096c95c4363a93bc9972a64dbbbfecf1a6148e3a4f85d9
+    keywords:
+    - epicgames
+    name: epicgames-freegame
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/epicgames-freegame-1.0.1/epicgames-freegame-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v1
+    appVersion: 4.1.0
     created: "2022-12-05T15:47:26.840079038Z"
     description: Automatically login and redeem promotional free games from the Epic
       Games Store. Handles multiple accounts, 2FA, captcha bypass, captcha notifications,
@@ -85,4 +97,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
-generated: "2022-12-05T15:48:48.531606057Z"
+generated: "2022-12-05T17:54:35.561795276Z"
