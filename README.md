@@ -1,12 +1,19 @@
 <p align=“center”>
-  <a href=“https://papamica.com”>
-    <img src=“https://helm.sh/img/helm.svg” width=“140px” alt=“Helm LOGO” />
-  </a>
+    <img src=“https://helm.sh/img/helm.svg” width=“140px” alt=“Helm LOGO”/>
+    <br>
+    <a href=“https://git.io/typing-svg”><img src=“https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0F1689&background=FFFFFF00&center=true&vCenter=true&width=435&lines=QJOLY’s+Chart+Repository;qjoly.github.io%2Fhelm-charts;+Feel+free+to+contribute” alt=“Typing SVG” /></a>
 </p>
 
-<a href=“https://git.io/typing-svg”><img src=“https://readme-typing-svg.herokuapp.com?font=Fira+Code&pause=1000&color=0F1689&center=true&vCenter=true&width=435&lines=QJOLY’s+Chart+Repository;qjoly.github.io%2Fhelm-charts;feel+free+to+contribute+to+the+project” alt=“Typing SVG” /></a>
+# How to use ? 
 
-List of Charts : 
+```bash
+# Add the repo to your helm
+helm repo add qjoly https://qjoly.github.io/helm-charts/ 
+# Install your app
+helm install epic qjoly/joplin
+```
+
+# Charts
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
