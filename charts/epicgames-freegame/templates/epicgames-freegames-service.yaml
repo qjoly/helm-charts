@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Chart.Name }}
+  labels:
+    {{- include "epicgames-freegames.labels" . | nindent 4 }}
+spec:
+  ports:
+    - name: "3000"
+      port: 3000
+      targetPort: 3000
+  selector:
+    name: {{ .Chart.Name }}
+status:
+  loadBalancer: {}

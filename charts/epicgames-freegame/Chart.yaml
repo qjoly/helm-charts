@@ -1,0 +1,7 @@
+name: epicgames-freegame
+description: A generated Helm Chart for epicgames-freegame from Skippbox Kompose
+version: 0.0.1
+apiVersion: v1
+keywords:
+  - epicgames-freegame
+

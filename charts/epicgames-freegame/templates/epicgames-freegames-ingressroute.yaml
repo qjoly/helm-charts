@@ -1,0 +1,20 @@
+{{- if .Values.ingress.enabled -}}
+{{- if .Values.ingress.isIngressRoute -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Chart.Name }}-ingressroute
+  labels:
+    {{- include "joplin.labels" . | nindent 4 }}
+spec:
+  entryPoints: {{ .Values.ingress.entrypoint }}
+  routes:
+  - match: Host(`{{ .Values.ingress.domain }} `)
+    kind: Rule
+    services:
+    - name: {{ .Chart.Name }}-app
+      port: 3000
+  tls:
+    certResolver: {{ .Values.ingress.certresolver }}
+{{- end}}
+{{- end}}
