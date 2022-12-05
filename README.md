@@ -7,10 +7,10 @@
 # How to use ? 
 
 ```bash
-# Add the repo to your helm
-helm repo add qjoly https://qjoly.github.io/helm-charts/ 
-# Install your app
-helm install myjoplin qjoly/joplin
+helm repo add qjoly https://qjoly.github.io/helm-charts/ # Add the repo to your helm
+
+
+helm install myjoplin qjoly/joplin # Install your app
 ```
 
 # Charts
