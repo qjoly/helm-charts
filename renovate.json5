@@ -10,15 +10,11 @@
     "enabled": true
   },
   "helmv3": {
-    "fileMatch": ["charts/.+/Chart\\.yaml$"]
+    "fileMatch": [
+      "charts/.+/Chart\\.yaml$", 
+      "charts/.+/values\\.yaml$"
+    ]
   },
-
-  "commitMessageTopic": "helm values {{depName}}",
-  "fileMatch": [
-    "(^|/)values\\.yaml$"
-  ],
-  "pinDigests": false
-
   "packageRules": [
     // Setup datasources
     {
