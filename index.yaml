@@ -40,6 +40,18 @@ entries:
   joplin:
   - apiVersion: v1
     appVersion: 2.9.7-beta
+    created: "2022-12-06T07:15:50.051047646Z"
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: 8b48651ec28f7c1a311ef51ca9364d4917b12f36ecc2afdfb0f35b6ff07900b3
+    keywords:
+    - joplin
+    name: joplin
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-0.2.4/joplin-0.2.4.tgz
+    version: 0.2.4
+  - apiVersion: v1
+    appVersion: 2.9.7-beta
     created: "2022-12-05T15:48:48.531591457Z"
     description: Joplin is an open source note-taking app. Capture your thoughts and
       securely access them from any device.
@@ -97,4 +109,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
-generated: "2022-12-05T17:54:35.561795276Z"
+generated: "2022-12-06T07:15:50.051072746Z"
