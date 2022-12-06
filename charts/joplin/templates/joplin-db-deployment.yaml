@@ -36,7 +36,7 @@ spec:
               value: {{ .Values.database.dbuser }}
             - name: PGDATA
               value: "/var/lib/postgresql/data/pgdata"
-          image: "{{ .Values.image.postgres.repository }}:{{ .Values.image.postgres.tag }}"
+          image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
           name: {{ .Chart.Name }}-db
           ports:

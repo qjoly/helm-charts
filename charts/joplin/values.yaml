@@ -1,19 +1,18 @@
 replicaCount: 1
 
 image:
-  joplin:
-    repository: joplin/server
-    pullPolicy: IfNotPresent
-    tag: 2.9.7-beta
-  postgres:
-    repository: postgres
-    pullPolicy: IfNotPresent
-    tag: 15
+  repository: joplin/server
+  pullPolicy: IfNotPresent
+  tag: "2.9.7-beta"
 
 database:
   dbname: joplindb
   dbuser: joplinuser
   dbpassword: veryhugepasswordhere
+  image:
+    repository: postgres
+    pullPolicy: IfNotPresent
+    tag: 15
 
 joplin: 
   base_url: http://localhost:22300 

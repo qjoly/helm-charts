@@ -62,7 +62,7 @@ spec:
               value: "5432"
             - name: POSTGRES_USER
               value: {{ .Values.database.dbuser }}
-          image: "{{ .Values.image.joplin.repository }}:{{ .Values.image.joplin.tag }}"
+          image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
           name: joplin-app
           ports:
             - containerPort: 22300
