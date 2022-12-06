@@ -8,8 +8,8 @@
 
 ```bash
 helm repo add qjoly https://qjoly.github.io/helm-charts/ # Add the repo to your helm
-
-
+```
+```bash
 helm install myjoplin qjoly/joplin # Install your app
 ```
 
