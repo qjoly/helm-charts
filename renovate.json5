@@ -12,6 +12,13 @@
   "helmv3": {
     "fileMatch": ["charts/.+/Chart\\.yaml$"]
   },
+
+  "commitMessageTopic": "helm values {{depName}}",
+  "fileMatch": [
+    "(^|/)values\\.yaml$"
+  ],
+  "pinDigests": false
+
   "packageRules": [
     // Setup datasources
     {
