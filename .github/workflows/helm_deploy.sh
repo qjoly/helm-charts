@@ -2,7 +2,7 @@ cd ../../charts
 for d in *
 do
   echo "Deploying $d to kind"
-  (cd "$d" && helm install $d . && sleep 5 && helm test $d )
+  (cd "$d" && helm install $d . && sleep 5 && helm test $d --debug )
   if [ $? -ne 0 ]; then
     echo "Error during deployment"
     exit 1
