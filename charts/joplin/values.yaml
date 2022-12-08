@@ -15,10 +15,10 @@ database:
     tag: 15
 
 joplin: 
-  base_url: http://localhost:22300 
+  base_url: http://ur-domain.tld:22300 
 
 mailer: 
-  enabled: true
+  enabled: false
   host: mailserver
   noreplymail: noreply@mailserver
   noreplyname: noreplyname@mailserver

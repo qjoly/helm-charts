@@ -10,6 +10,6 @@ spec:
       port: 22300
       targetPort: 22300
   selector:
-    name: {{ .Chart.Name }}-app
+    app: {{ .Chart.Name }}-app
 status:
   loadBalancer: {}
