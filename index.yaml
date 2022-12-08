@@ -39,6 +39,16 @@ entries:
     version: 1.0.0
   freshrss:
   - apiVersion: v2
+    appVersion: 1.20.2
+    created: "2022-12-08T13:25:42.153351431Z"
+    description: A WebUI to read article via RSS
+    digest: d9f29b3da5b529cd03361455745c2fec9c6a8f4f8f41cc17f6b944545cb542e7
+    name: freshrss
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.1.1/freshrss-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
     appVersion: 1.16.0
     created: "2022-12-08T09:16:11.325266334Z"
     description: A WebUI to read article via RSS
@@ -163,4 +173,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
-generated: "2022-12-08T12:39:36.716268521Z"
+generated: "2022-12-08T13:25:42.153401734Z"
