@@ -33,7 +33,7 @@ service:
 
 
 persistence:
-  storageClassName: "longhorn"
+  storageClassName: ""
   enabled: true 
 
 ingress:
