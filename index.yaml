@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  baikal:
+  - apiVersion: v2
+    appVersion: 0.9.2
+    created: "2022-12-08T10:19:35.593993099Z"
+    description: Baïkal is a lightweight CalDAV+CardDAV server
+    digest: 8f2b0f3afb62b5f1666f47699710a3cdc7073f4fe70db2a1b070889754fe02f3
+    name: baikal
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/baikal-0.1.0/baikal-0.1.0.tgz
+    version: 0.1.0
   epicgames-freegame:
   - apiVersion: v1
     appVersion: 4.1.0
@@ -141,4 +152,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
-generated: "2022-12-08T09:16:11.605992884Z"
+generated: "2022-12-08T10:19:35.594016199Z"
