@@ -1,0 +1,11 @@
+You have just deployed {{ .Chart.Name }}.
+
+To find out more about the release, try :
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+———–
+To finish the installation of {{ .Chart.Name }}, open a proxy with the following command and go to the following url: http://localhost:8080/
+
+  $ kubectl -n {{ .Release.Namespace }} port-forward service/{{ include "baikal.fullname" . }} 8080:80 # open port 8080 to baikal
+
