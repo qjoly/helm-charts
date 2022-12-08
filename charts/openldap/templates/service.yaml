@@ -8,8 +8,8 @@ spec:
   type: {{ .Values.service.type }}
   ports:
     - port: {{ .Values.service.port }}
-      targetPort: http
+      targetPort: 1389
       protocol: TCP
-      name: http
+      name: ldap
   selector:
     {{- include "openldap.selectorLabels" . | nindent 4 }}
