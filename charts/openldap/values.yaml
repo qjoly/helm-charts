@@ -1,17 +1,19 @@
 replicaCount: 1
 
 image:
-  repository: osixia/openldap
+  repository: bitnami/openldap
   pullPolicy: IfNotPresent
-  tag: "1.5.0"
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
-fullnameOverride: "openldap"
+fullnameOverride: ""
 
 podAnnotations: {}
 
 podSecurityContext: {}
+  # fsGroup: 2000
 
 securityContext: {}
   # capabilities:
@@ -21,39 +23,30 @@ securityContext: {}
   # runAsNonRoot: true
   # runAsUser: 1000
 
+ldap:
+  admin_username: admin
+  admin_password: adminpassword
+  users: user01,user02
+  passwords: password1,password2
+  root: dc=example,dc=org
+  user_dc: users
+  
+
 service:
   type: ClusterIP
-  port: 389
-
-settings:
-  KEEP_EXISTING_CONFIG: "false"
-  LDAP_ADMIN_PASSWORD: admin
-  LDAP_BACKEND: mdb
-  LDAP_BASE_DN: eu
-  LDAP_CONFIG_PASSWORD: confighugepass
-  LDAP_DOMAIN: thoughtless.eu
-  LDAP_LOG_LEVEL: "256"
-  LDAP_ORGANISATION: ThoughtlessInc.
-  LDAP_READONLY_USER: "false"
-  LDAP_REMOVE_CONFIG_AFTER_SETUP: "true"
-  LDAP_REPLICATION: "false"
-  LDAP_RFC2307BIS_SCHEMA: "false"
-  LDAP_SSL_HELPER_PREFIX: ldap
-
+  port: 1389
 
 resources: {}
+  # We usually recommend not to specify default resources and to leave this as a conscious
+  # choice for the user. This also increases chances charts run on environments with little
+  # resources, such as Minikube. If you do want to specify resources, uncomment the following
+  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
   # limits:
   #   cpu: 100m
   #   memory: 128Mi
   # requests:
   #   cpu: 100m
   #   memory: 128Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
 
 nodeSelector: {}
 

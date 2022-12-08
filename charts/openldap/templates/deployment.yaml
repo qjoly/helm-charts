@@ -5,9 +5,6 @@ metadata:
   labels:
     {{- include "openldap.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "openldap.selectorLabels" . | nindent 6 }}
@@ -28,47 +25,33 @@ spec:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
         - name: {{ .Chart.Name }}
-          env:
-            - name: KEEP_EXISTING_CONFIG
-              value: "false"
-            - name: LDAP_ADMIN_PASSWORD
-              value: "admin"
-            - name: LDAP_BACKEND
-              value: "mdb"
-            - name: LDAP_BASE_DN
-              value: "xyz"
-            - name: LDAP_CONFIG_PASSWORD
-              value: "confighugepass"
-            - name: LDAP_DOMAIN
-              value: "thebidouilleur.xyz"
-            - name: LDAP_LOG_LEVEL
-              value: "256"
-            - name: LDAP_ORGANISATION
-              value: "TheBidouilleur"
-            - name: LDAP_READONLY_USER
-              value: "false"
-            - name: LDAP_REMOVE_CONFIG_AFTER_SETUP
-              value: "true"
-            - name: LDAP_REPLICATION
-              value: "false"
-            - name: LDAP_RFC2307BIS_SCHEMA
-              value: "false"
-            - name: LDAP_SSL_HELPER_PREFIX
-              value: "ldap"
           securityContext:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: LDAP_ADMIN_USERNAME
+              value: {{ .Values.ldap.admin_username }}
+            - name: LDAP_ADMIN_PASSWORD
+              value: {{ .Values.ldap.admin_password }}
+            - name: LDAP_USERS
+              value: {{ .Values.ldap.users }}
+            - name: LDAP_PASSWORDS
+              value: {{ .Values.ldap.passwords }}
+            - name: LDAP_ROOT
+              value: {{ .Values.ldap.root }}
+            - name: LDAP_USER_DC
+              value: {{ .Values.ldap.user_dc }}
           ports:
-            - name: tcp
-              containerPort: {{ .Values.service.port }} 
+            - name: ldap
+              containerPort: 1389
               protocol: TCP
           livenessProbe:
             tcpSocket:
-              port: {{ .Values.service.port }}
+              port: 1389
           readinessProbe:
             tcpSocket:
-              port: {{ .Values.service.port }}
+              port: 1389
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
       {{- with .Values.nodeSelector }}

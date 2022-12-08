@@ -1,6 +1,8 @@
 apiVersion: v2
 name: openldap
-description: "a simple OpenLDAP Server. ( :warning: do no use in prod)"
+description: OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol).
 type: application
-version: 1.0.2
-appVersion: "1.5.0"
+
+version: 1.0.3
+
+appVersion: "2.6.3-debian-11-r52"
