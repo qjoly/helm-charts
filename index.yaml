@@ -133,6 +133,17 @@ entries:
     version: 0.0.1
   openldap:
   - apiVersion: v2
+    appVersion: 2.6.3-debian-11-r52
+    created: "2022-12-08T12:39:36.716240819Z"
+    description: OpenLDAP is the open-source solution for LDAP (Lightweight Directory
+      Access Protocol).
+    digest: 4dd07ec2a8d8db8cc6628ff93ce37df59d0c1f6d50823edd32d8483583d97bb6
+    name: openldap
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.3/openldap-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v2
     appVersion: 1.5.0
     created: "2022-12-08T09:16:11.605961684Z"
     description: 'a simple OpenLDAP Server. ( :warning: do no use in prod)'
@@ -152,4 +163,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
-generated: "2022-12-08T10:19:35.594016199Z"
+generated: "2022-12-08T12:39:36.716268521Z"
