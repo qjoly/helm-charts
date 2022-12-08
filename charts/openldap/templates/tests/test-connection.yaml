@@ -8,8 +8,8 @@ metadata:
     "helm.sh/hook": test
 spec:
   containers:
-    - name: wget
+    - name: curl
       image: busybox
-      command: ['wget']
-      args: ['{{ include "openldap.fullname" . }}:{{ .Values.service.port }}']
+      command: ['nc']
+      args: ['-zv', '{{ include "openldap.fullname" . }}', '{{ .Values.service.port }}']
   restartPolicy: Never
