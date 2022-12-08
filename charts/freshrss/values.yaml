@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: lscr.io/linuxserver/freshrss
   pullPolicy: IfNotPresent
-  tag: "latest"
+  tag: ""
 
 imagePullSecrets: []
 nameOverride: ""
