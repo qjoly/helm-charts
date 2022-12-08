@@ -5,9 +5,6 @@ metadata:
   labels:
     {{- include "baikal.labels" . | nindent 4 }}
 spec:
-  {{- if not .Values.autoscaling.enabled }}
-  replicas: {{ .Values.replicaCount }}
-  {{- end }}
   selector:
     matchLabels:
       {{- include "baikal.selectorLabels" . | nindent 6 }}
@@ -24,7 +21,6 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "baikal.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -47,6 +43,22 @@ spec:
               port: http
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.persistence.enabled }}
+          volumeMounts:
+            - mountPath: /var/www/baikal/config
+              subPath: config
+              name: config
+            - mountPath: /var/www/baikal/Specific
+              subPath: data
+              name: data
+      volumes:
+        - name: config
+          persistentVolumeClaim:
+            claimName: {{ include "baikal.fullname" . }}-config
+        - name: data
+          persistentVolumeClaim:
+            claimName: {{ include "baikal.fullname" . }}-data
+{{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}
