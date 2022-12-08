@@ -17,9 +17,9 @@ helm install myjoplin qjoly/joplin # Install your app
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
-| openldap | a simple OpenLDAP Server. ( :warning: do no use in prod) | 1.0.1 | 1.5.0 |
-| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.2.4 | 2.9.7-beta |
-| freshrss | A WebUI to read article via RSS | 0.0.6 | 1.16.0 |
+| openldap | a simple OpenLDAP Server. ( :warning: do no use in prod) | 1.0.2 | 1.5.0 |
+| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.2.5 | 2.9.7-beta |
+| freshrss | A WebUI to read article via RSS | 0.1.0 | 1.16.0 |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.1 | 4.1.0 |
 
 
