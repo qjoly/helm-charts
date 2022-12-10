@@ -173,28 +173,6 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
-  plex:
-  - apiVersion: v2
-    appVersion: 1.29.2
-    created: "2022-12-10T11:35:21.89104242Z"
-    description: Plex Media Server Helm chart
-    digest: 5559508190a8d3dc9febe618b151dfe9a0b2d0fb5e6768b35c8357aef0fc50dc
-    home: https://www.plex.tv
-    keywords:
-    - plex
-    - nfs
-    maintainers:
-    - email: github@thoughtless.eu
-      name: QJOLY
-      url: https://thebidouilleur.xyz
-    name: plex
-    sources:
-    - https://github.com/linuxserver/docker-plex
-    - https://github.com/utkuozdemir/helm-charts
-    type: application
-    urls:
-    - https://github.com/QJoly/helm-charts/releases/download/plex-2.1.1/plex-2.1.1.tgz
-    version: 2.1.1
   plex-nfs:
   - apiVersion: v2
     appVersion: 1.29.2
