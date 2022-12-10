@@ -1,0 +1,17 @@
+apiVersion: v2
+appVersion: 1.29.2
+description: Plex Media Server Helm chart
+home: https://www.plex.tv
+keywords:
+- plex
+- nfs
+maintainers:
+- email: github@thoughtless.eu
+  name: QJOLY
+  url: https://thebidouilleur.xyz
+name: plex
+sources:
+- https://github.com/linuxserver/docker-plex
+- https://github.com/utkuozdemir/helm-charts # fork from
+type: application
+version: 2.1.1

@@ -1,0 +1,127 @@
+replicaCount: 1
+hostNetwork: true
+
+hostPort:
+  enabled: true
+  port: 32400
+
+# -- Additional port definitions for the pod
+additionalPorts: []
+  # - name: udp-1900
+  #   containerPort: 1900
+  #   protocol: UDP
+  #   hostPort: 1900
+  # - name: udp-5353
+  #   containerPort: 5353
+  #   protocol: UDP
+  #   hostPort: 5353
+  # - name: tcp-32410
+  #   containerPort: 32410
+  #   protocol: TCP
+  #   hostPort: 32410
+  # - name: tcp-32412
+  #   containerPort: 32412
+  #   protocol: TCP
+  #   hostPort: 32412
+  # - name: tcp-32413
+  #   containerPort: 32413
+  #   protocol: TCP
+  #   hostPort: 32413
+  # - name: tcp-32414
+  #   containerPort: 32414
+  #   protocol: TCP
+  #   hostPort: 32414
+  # - name: tcp-32469
+  #   containerPort: 32469
+  #   protocol: TCP
+  #   hostPort: 32469
+
+# -- Additional port definitions for the service
+additionalServicePorts: []
+
+image:
+  repository: docker.io/linuxserver/plex
+  pullPolicy: IfNotPresent
+  tag: ""
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+serviceAccount:
+  create: true
+  annotations: {}
+  name: ""
+
+podAnnotations: {}
+podSecurityContext: {}
+securityContext: {}
+  # capabilities:
+  #   add:
+  #     - NET_ADMIN
+
+strategy:
+  type: Recreate
+
+service:
+  type: ClusterIP
+  port: 32400
+
+resources: {}
+nodeSelector: {}
+#  device: nvidia_node
+
+tolerations: []
+affinity: {}
+
+persistence:
+  config:
+    enabled: true
+    isPvc: true
+    existingClaim: ""
+    storageClass: ""
+    annotations: {}
+    accessModes:
+      - ReadWriteOnce
+    size: 10Gi
+    customVolume: {}
+  data:
+    annotations: {}
+    accessModes:
+      - ReadWriteOnce
+    size: 1Ti
+    nfs:
+      path: /volume1/Plex
+      host: 192.168.1.20
+      readonly: true
+    customVolume: {}
+
+env: {}
+secretEnv: {}
+dnsConfig: {}
+dnsPolicy: ClusterFirst
+extraVolumes: []
+
+extraVolumeMounts: {}
+
+livenessProbe: {}
+readinessProbe:
+  tcpSocket:
+    port: plex
+
+initContainers: []
+  # - name: init
+  #   image: busybox:stable-musl
+  #   command:
+  #     - sh
+  #     - -c
+  #     - echo "initializing..."
+
+# -- Sidecar containers
+sidecarContainers: []
+  # - name: sidecar
+  #   image: busybox:stable-musl
+  #   command:
+  #     - tail
+  #     - -f
+  #     - /dev/null

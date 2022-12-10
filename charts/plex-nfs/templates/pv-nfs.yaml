@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: {{ include "plex.fullname" . }}-nfs-data
+spec:
+  storageClassName: ""
+  capacity:
+    storage: {{ .Values.persistence.data.size | quote }}     
+  accessModes:
+    {{- range .Values.persistence.data.accessModes }}
+    - {{ . | quote }}
+    {{- end }}
+  persistentVolumeReclaimPolicy: Retain
+  nfs:
+    path: {{ .Values.persistence.data.nfs.path }}
+    server: {{ .Values.persistence.data.nfs.host }}
+    readOnly: {{ .Values.persistence.data.nfs.readonly }}
+

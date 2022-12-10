@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: {{ include "plex.fullname" . }}-nfs-data
+  {{- with .Values.persistence.data.annotations }}
+  annotations:
+    {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  accessModes:
+    {{- range .Values.persistence.data.accessModes }}
+    - {{ . | quote }}
+    {{- end }}
+  storageClassName: ""
+  volumeName: {{ include "plex.fullname" . }}-nfs-data
+  volumeMode: Filesystem
+  resources:
+    requests:
+      storage: {{ .Values.persistence.data.size | quote }}
