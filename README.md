@@ -21,6 +21,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.2.5 | 2.9.7-beta |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.1 | 4.1.0 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.3 | 2.6.3-debian-11-r52 |
+| plex | Plex Media Server Helm chart | 2.1.1 | 1.29.2 |
 | freshrss | A WebUI to read article via RSS | 0.1.1 | 1.20.2 |
 
 
