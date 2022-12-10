@@ -18,10 +18,10 @@ helm install myjoplin qjoly/joplin # Install your app
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
 | baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.0 | 0.9.2 |
-| openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.3 | 2.6.3-debian-11-r52 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.2.5 | 2.9.7-beta |
-| freshrss | A WebUI to read article via RSS | 0.1.1 | 1.20.2 |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.1 | 4.1.0 |
+| openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.3 | 2.6.3-debian-11-r52 |
+| freshrss | A WebUI to read article via RSS | 0.1.1 | 1.20.2 |
 
 
 # Contributing 
