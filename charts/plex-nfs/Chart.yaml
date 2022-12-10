@@ -9,7 +9,7 @@ maintainers:
 - email: github@thoughtless.eu
   name: QJOLY
   url: https://thebidouilleur.xyz
-name: plex
+name: plex-nfs
 sources:
 - https://github.com/linuxserver/docker-plex
 - https://github.com/utkuozdemir/helm-charts # fork from
