@@ -3,8 +3,9 @@ for d in *
 do
   echo "Deploying $d to kind"
   (
+    set -x
     cd "$d"
-    if [ ! -f ".no_ci" ]; then
+    if [ -f ".no_ci" ]; then
       echo "No CI for this chart."
     else
       helm install $d . --wait --timeout 120s 
