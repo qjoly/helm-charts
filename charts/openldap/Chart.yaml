@@ -2,7 +2,16 @@ apiVersion: v2
 name: openldap
 description: OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol).
 type: application
-
-version: 1.0.3
-
+version: 1.0.4
 appVersion: "2.6.3-debian-11-r52"
+keywords:
+- LDAP
+- openldap
+home: https://www.openldap.org/
+maintainers:
+- email: github@thoughtless.eu
+  name: QJOLY
+  url: https://thebidouilleur.xyz
+sources:
+- https://hub.docker.com/r/bitnami/openldap/
+- https://github.com/QJoly/helm-charts

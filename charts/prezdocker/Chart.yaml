@@ -2,5 +2,17 @@ apiVersion: v2
 name: prezdocker
 description: Interactive presentation to learn Docker in a quick and easy way
 type: application
-version: 0.1.1
+version: 0.1.2
 appVersion: "0.1.0"
+home: https://docker.avec.une-tasse-de.cafe
+keywords:
+- docker
+- coffee
+maintainers:
+- email: github@thoughtless.eu
+  name: QJOLY
+  url: https://thebidouilleur.xyz
+sources:
+- https://github.com/QJoly/PrezDocker
+- https://github.com/QJoly/helm-charts
+
