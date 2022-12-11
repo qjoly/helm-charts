@@ -176,6 +176,27 @@ entries:
   plex-nfs:
   - apiVersion: v2
     appVersion: 1.29.2
+    created: "2022-12-11T08:01:00.535697865Z"
+    description: Plex Media Server Helm chart
+    digest: 8bb15e19c3ec9dd95eaf1259309fbbb1e753c812cb8e1d3d0cb2b7098a58fc8b
+    home: https://www.plex.tv
+    keywords:
+    - plex
+    - nfs
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: plex-nfs
+    sources:
+    - https://github.com/linuxserver/docker-plex
+    - https://github.com/utkuozdemir/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/plex-nfs-2.2.1/plex-nfs-2.2.1.tgz
+    version: 2.2.1
+  - apiVersion: v2
+    appVersion: 1.29.2
     created: "2022-12-10T11:42:04.965038934Z"
     description: Plex Media Server Helm chart
     digest: e717c94e2c43baeba14fcc888698112fd4c2d695b580ecd31d18154b4b7798ec
@@ -195,4 +216,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/plex-nfs-2.1.1/plex-nfs-2.1.1.tgz
     version: 2.1.1
-generated: "2022-12-10T11:42:04.965058634Z"
+generated: "2022-12-11T08:01:00.535719465Z"
