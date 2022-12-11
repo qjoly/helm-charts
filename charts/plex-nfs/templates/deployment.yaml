@@ -110,18 +110,8 @@ spec:
           emptyDir: {}
         {{- end }}
         - name: data
-        {{- if .Values.persistence.data.enabled }}
-          {{- if .Values.persistence.data.isPvc }}
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.data.existingClaim | default (include "plex.dataPvcName" .) }}
-          {{- else }}
-          {{- with .Values.persistence.data.customVolume }}
-          {{- toYaml . | nindent 10 }}
-          {{- end }}
-          {{- end }}
-        {{- else }}
-          emptyDir: {}
-        {{- end }}
+            claimName: {{ include "plex.dataPvcName" . }}
         {{- with .Values.extraVolumes }}
         {{- toYaml . | nindent 8 }}
         {{- end }}

@@ -94,7 +94,6 @@ persistence:
       path: /volume1/Plex
       host: 192.168.1.20
       readonly: true
-    customVolume: {}
 
 env: {}
 secretEnv: {}
