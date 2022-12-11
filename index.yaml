@@ -216,4 +216,15 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/plex-nfs-2.1.1/plex-nfs-2.1.1.tgz
     version: 2.1.1
-generated: "2022-12-11T08:01:00.535719465Z"
+  prezdocker:
+  - apiVersion: v2
+    appVersion: 0.1.0
+    created: "2022-12-11T11:54:52.798295042Z"
+    description: Interactive presentation to learn Docker in a quick and easy way
+    digest: b1512350f60382a1c1b8b44c178fc9b710faf69c271af8e81219f9addb1cd28f
+    name: prezdocker
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
+    version: 0.1.0
+generated: "2022-12-11T11:54:52.798337145Z"
