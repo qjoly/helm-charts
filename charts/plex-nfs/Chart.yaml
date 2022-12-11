@@ -14,4 +14,4 @@ sources:
 - https://github.com/linuxserver/docker-plex
 - https://github.com/utkuozdemir/helm-charts # fork from
 type: application
-version: 2.2.1
+version: 2.2.2

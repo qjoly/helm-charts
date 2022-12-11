@@ -2,5 +2,5 @@ apiVersion: v2
 name: prezdocker
 description: Interactive presentation to learn Docker in a quick and easy way
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "0.1.0"

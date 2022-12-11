@@ -1,5 +1,16 @@
+ ____  _                _   _ _____ ____  
+|  _ \| | _____  __    | \ | |  ___/ ___| 
+| |_) | |/ _ \ \/ /____|  \| | |_  \___ \ 
+|  __/| |  __/>  <_____| |\  |  _|  ___) |
+|_|   |_|\___/_/\_\    |_| \_|_|   |____/ 
+                                          
+You have just deployed {{ .Chart.Name }}.
 
+To find out more about the release, try :
 
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+———–
 For the initial setup, do "kubectl -n {{ .Release.Namespace }} port-forward svc/{{ include "plex.fullname" . }} 8888:{{ .Values.service.port }}",
 hit http://localhost:8888/web so Plex can find the server. This is one time operation.
 See "On a different Network" section here: https://support.plex.tv/articles/200288586-installation/
