@@ -17,7 +17,9 @@ do
     exit 1
   else
     echo "Success ! "
-    helm delete $d 
+    if [ ! -f ".no_ci" ]; then
+      helm delete $d 
+    fi
   fi
 done
 
