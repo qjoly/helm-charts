@@ -176,6 +176,27 @@ entries:
   plex-nfs:
   - apiVersion: v2
     appVersion: 1.29.2
+    created: "2022-12-11T12:01:33.328541477Z"
+    description: Plex Media Server Helm chart
+    digest: 90616b729854b9e14bf1b652a25796ce72c2554e88fa1629dc838f5ffd39a5fa
+    home: https://www.plex.tv
+    keywords:
+    - plex
+    - nfs
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: plex-nfs
+    sources:
+    - https://github.com/linuxserver/docker-plex
+    - https://github.com/utkuozdemir/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/plex-nfs-2.2.2/plex-nfs-2.2.2.tgz
+    version: 2.2.2
+  - apiVersion: v2
+    appVersion: 1.29.2
     created: "2022-12-11T08:01:00.535697865Z"
     description: Plex Media Server Helm chart
     digest: 8bb15e19c3ec9dd95eaf1259309fbbb1e753c812cb8e1d3d0cb2b7098a58fc8b
@@ -219,6 +240,16 @@ entries:
   prezdocker:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2022-12-11T12:01:33.451928892Z"
+    description: Interactive presentation to learn Docker in a quick and easy way
+    digest: 40fcf1671fe7a301b45b810b5a85129b7188f9605c802a35a38761e6703954a5
+    name: prezdocker
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.1/prezdocker-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2022-12-11T11:54:52.798295042Z"
     description: Interactive presentation to learn Docker in a quick and easy way
     digest: b1512350f60382a1c1b8b44c178fc9b710faf69c271af8e81219f9addb1cd28f
@@ -227,4 +258,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-11T11:54:52.798337145Z"
+generated: "2022-12-11T12:01:33.451962392Z"
