@@ -3,6 +3,16 @@ entries:
   baikal:
   - apiVersion: v2
     appVersion: 0.9.2
+    created: "2022-12-11T12:11:57.271484047Z"
+    description: Baïkal is a lightweight CalDAV+CardDAV server
+    digest: fc858c4d7f01b1f7615d78c1771fd667d1b2c7920a7510e9dc137292b793cfa9
+    name: baikal
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/baikal-0.1.1/baikal-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.9.2
     created: "2022-12-08T10:19:35.593993099Z"
     description: Baïkal is a lightweight CalDAV+CardDAV server
     digest: 8f2b0f3afb62b5f1666f47699710a3cdc7073f4fe70db2a1b070889754fe02f3
@@ -258,4 +268,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-11T12:01:33.451962392Z"
+generated: "2022-12-11T12:11:57.271526647Z"
