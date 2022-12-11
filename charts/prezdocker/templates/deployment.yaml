@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "prezdocker.fullname" . }}-deploy-prezdocker
+  labels:
+  {{- include "prezdocker.labels" . | nindent 4 }}
+  {{- with .Values.DeployAnnotations }}
+  annotations:
+      {{- toYaml . | nindent 4 }}
+  {{- end }}
+spec:
+  replicas: {{ .Values.deployPrezdocker.replicas }}
+  selector:
+    matchLabels:
+      app: deploy-prezdocker
+    {{- include "prezdocker.selectorLabels" . | nindent 6 }}
+  template:
+    metadata:
+      labels:
+        app: deploy-prezdocker
+      {{- include "prezdocker.selectorLabels" . | nindent 8 }}
+    spec:
+      containers:
+      - env:
+        - name: KUBERNETES_CLUSTER_DOMAIN
+          value: {{ .Values.kubernetesClusterDomain }}
+        image: {{ .Values.deployPrezdocker.prezdocker.image.repository }}:{{ .Values.deployPrezdocker.prezdocker.image.tag
+          | default .Chart.AppVersion }}
+        imagePullPolicy: Always
+        livenessProbe:
+          initialDelaySeconds: 180
+          periodSeconds: 3
+          tcpSocket:
+            host: 127.0.0.1
+            port: 80
+        name: prezdocker
+        ports:
+        - containerPort: 80
+        resources: {}

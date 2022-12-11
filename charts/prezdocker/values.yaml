@@ -1,0 +1,28 @@
+deployPrezdocker:
+  prezdocker:
+    image:
+      repository: qjoly/prezdocker
+      tag: latest
+  replicas: 1
+kubernetesClusterDomain: cluster.local
+srvcPrezdocker:
+  ports:
+  - name: srvc-prezdocker
+    port: 80
+    protocol: TCP
+    targetPort: 80
+  type: ClusterIP
+DeployAnnotations: {}
+#  argocd.argoproj.io/hook: PostSync
+#  keel.sh/policy: force
+#  keel.sh/pollSchedule: '@every 3m'
+#  keel.sh/trigger: poll
+
+ingress:
+  isIngressRoute: true
+  enabled: false
+  className: ""
+  annotations: {}
+  domain: docker.avec.une-tasse-de.cafe
+  entrypoint: websecure # Useless if you use ingressroute
+  certresolver: letsencrypt

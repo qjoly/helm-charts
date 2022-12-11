@@ -1,0 +1,13 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ include "prezdocker.fullname" . }}-srvc-prezdocker
+  labels:
+  {{- include "prezdocker.labels" . | nindent 4 }}
+spec:
+  type: {{ .Values.srvcPrezdocker.type }}
+  selector:
+    app: deploy-prezdocker
+  {{- include "prezdocker.selectorLabels" . | nindent 4 }}
+  ports:
+	{{- .Values.srvcPrezdocker.ports | toYaml | nindent 2 -}}
