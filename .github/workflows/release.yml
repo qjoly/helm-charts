@@ -55,7 +55,7 @@ jobs:
           python3 get_readme.py
           cd ../..
           git add README.md
-         git commit -m ":lock: Auto-Update README with Charts versions"
+          git commit -m ":lock: Auto-Update README with Charts versions"
           git push
           
        - name: Setup Pandoc
