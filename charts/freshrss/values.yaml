@@ -38,11 +38,11 @@ persistence:
 
 ingress:
   enabled: false
-  className: ""
+  className: "" # Only if you use ingress 
   annotations: {}
   domain: rss.thoughtless.eu
-  entrypoint: websecure
-  certresolver: letsencrypt
+  entrypoint: websecure # Useless if you use ingressroute
+  certresolver: letsencrypt # Useless if you use ingressroute
 
 resources: {}
   # limits:

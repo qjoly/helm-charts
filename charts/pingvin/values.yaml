@@ -30,7 +30,7 @@ service:
 ingress:
   isIngressRoute: false
   enabled: true
-  className: "" # Useless if you use ingress
+  className: "" # Only if you use ingress
   annotations: {}
   domain: ur-domain.tld
   entrypoint: websecure # Useless if you use ingress

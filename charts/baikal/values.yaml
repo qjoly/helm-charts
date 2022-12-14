@@ -38,7 +38,7 @@ ingress:
   annotations: {}
   domain: ur-domain.tld
   entrypoint: websecure # Useless if you use ingress
-  certresolver: letsencrypt
+  certresolver: letsencrypt # Useless if you use ingress
 
 
 resources: {}

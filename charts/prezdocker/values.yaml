@@ -21,7 +21,7 @@ DeployAnnotations: {}
 ingress:
   isIngressRoute: true
   enabled: false
-  className: ""
+  className: "" # Only if you use ingress
   annotations: {}
   domain: docker.avec.une-tasse-de.cafe
   entrypoint: websecure # Useless if you use ingressroute
