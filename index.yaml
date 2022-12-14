@@ -3,6 +3,26 @@ entries:
   baikal:
   - apiVersion: v2
     appVersion: 0.9.2
+    created: "2022-12-14T09:51:25.695710874Z"
+    description: Baïkal is a lightweight CalDAV+CardDAV server
+    digest: 2f6205a2fe33ce13364eef51c8eca0e104a9b2a7768a41af707b13c395b7df82
+    home: https://sabre.io/baikal/
+    keywords:
+    - baikal
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: baikal
+    sources:
+    - https://github.com/sabre-io/Baikal
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/baikal-0.1.3/baikal-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.9.2
     created: "2022-12-11T14:42:05.039925987Z"
     description: Baïkal is a lightweight CalDAV+CardDAV server
     digest: 6922f32c6a76a30549fc8f90ee7422205db3de2d03e82f3d04478f1c7cdd4ed6
@@ -92,6 +112,26 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.20.2
+    created: "2022-12-14T09:51:25.85825788Z"
+    description: A WebUI to read article via RSS
+    digest: 890fbe06407049221c2bd3770827985ed95be93637c88fea77e588cf69e06a76
+    home: https://freshrss.org/
+    keywords:
+    - freshrss
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.1.3/freshrss-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.20.2
     created: "2022-12-11T14:42:05.478011732Z"
     description: A WebUI to read article via RSS
     digest: 61038307b5b2defc95b6bacf1282deddd03320c1b0b48fcbd4fb56dd4b1df802
@@ -141,6 +181,26 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.6/freshrss-0.0.6.tgz
     version: 0.0.6
   joplin:
+  - apiVersion: v1
+    appVersion: 2.9.7-beta
+    created: "2022-12-14T09:51:26.397212194Z"
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: 7cb7b2d0af8c102890c900d40b303fd183d8f243ffba6ededc8baf33ba16bff4
+    home: https://joplinapp.org/
+    keywords:
+    - joplin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: joplin
+    sources:
+    - https://github.com/laurent22/joplin
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-0.2.7/joplin-0.2.7.tgz
+    version: 0.2.7
   - apiVersion: v1
     appVersion: 2.9.7-beta
     created: "2022-12-11T14:42:05.701930317Z"
@@ -290,6 +350,27 @@ entries:
   pingvin:
   - apiVersion: v2
     appVersion: 0.3.6
+    created: "2022-12-14T09:51:26.544781572Z"
+    description: Pingvin Share is self-hosted file sharing platform and an alternative
+      for WeTransfer
+    digest: dbfd7b05947f5379d2e2cecf3dcd886809fab5cfeaddc0ec518a3991f9811bfa
+    home: https://github.com/stonith404/pingvin-share
+    keywords:
+    - pingvin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: pingvin
+    sources:
+    - https://github.com/stonith404/pingvin-share
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/pingvin-0.1.1/pingvin-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 0.3.6
     created: "2022-12-14T09:18:59.367137304Z"
     description: Pingvin Share is self-hosted file sharing platform and an alternative
       for WeTransfer
@@ -397,6 +478,27 @@ entries:
   prezdocker:
   - apiVersion: v2
     appVersion: 0.1.0
+    created: "2022-12-14T09:51:26.696851558Z"
+    description: Interactive presentation to learn Docker in a quick and easy way
+    digest: d328427bf1a77d400482fe43aee0016fe124c2f1eaccbe52ad74369569b403da
+    home: https://docker.avec.une-tasse-de.cafe
+    keywords:
+    - docker
+    - coffee
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: prezdocker
+    sources:
+    - https://github.com/QJoly/PrezDocker
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.3/prezdocker-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.1.0
     created: "2022-12-11T14:42:06.431410903Z"
     description: Interactive presentation to learn Docker in a quick and easy way
     digest: f19671c3750e2688cc84de005390bb7d665773c8a79ff0b3cb00bfc6256147b4
@@ -436,4 +538,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-14T09:18:59.367193005Z"
+generated: "2022-12-14T09:51:26.697089959Z"
