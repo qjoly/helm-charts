@@ -19,7 +19,7 @@ helm install myjoplin qjoly/joplin # Install your app
 |-------|-------------|---------------|-------------|
 | baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.4 | 0.9.2 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.2.8 | 2.9.7-beta |
-| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.2 | 0.3.6 |
+| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.3 | 0.3.6 |
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.2 | 4.1.0 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
