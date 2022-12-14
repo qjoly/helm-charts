@@ -1,5 +1,4 @@
-{{- if .Values.ingress.enabled -}}
-{{- if .Values.ingress.isIngressRoute -}}
+{{- if and (.Values.ingress.enabled) (.Values.ingress.isIngressRoute) }}
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
@@ -16,5 +15,4 @@ spec:
       port: 22300
   tls:
     certResolver: {{ .Values.ingress.certresolver }}
-{{- end}}
 {{- end}}

@@ -28,7 +28,7 @@ service:
   port: 3000
 
 ingress:
-  isIngressRoute: true
+  isIngressRoute: false
   enabled: true
   className: "" # Useless if you use ingress
   annotations: {}

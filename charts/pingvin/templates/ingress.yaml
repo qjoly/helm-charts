@@ -1,5 +1,4 @@
-{{- if .Values.ingress.enabled -}}
-{{- if not .Values.ingress.isIngressRoute -}}
+{{- if and (.Values.ingress.enabled) (not .Values.ingress.isIngressRoute) }}
 {{- if semverCompare ">=1.19-0" .Capabilities.KubeVersion.GitVersion -}}
 apiVersion: networking.k8s.io/v1
 {{- else if semverCompare ">=1.14-0" .Capabilities.KubeVersion.GitVersion -}}
@@ -46,5 +45,4 @@ spec:
               serviceName: {{ .Chart.Name }}-app
               servicePort: 22300
               {{- end }}
-{{- end }}
 {{- end }}
