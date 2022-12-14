@@ -39,12 +39,12 @@ spec:
             backend:
               {{- if semverCompare ">=1.19-0" $.Capabilities.KubeVersion.GitVersion }}
               service:
-                name: {{ .Chart.Name }}-app
+                name: {{ include "baikal.fullname" . }}
                 port:
-                  number: 22300
+                  number: {{ .Values.service.port }}
               {{- else }}
-              serviceName: {{ .Chart.Name }}-app
-              servicePort: 22300
+              serviceName: {{ include "baikal.fullname" . }}
+              servicePort: {{ .Values.service.port }}
               {{- end }}
 {{- end }}
 {{- end }}

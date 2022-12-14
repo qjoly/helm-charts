@@ -13,7 +13,7 @@ spec:
   - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
     services:
-    - name: {{ .Chart.Name }}-app
+    - name: {{ include "baikal.fullname" . }}
       port: {{ .Values.service.port }}
   tls:
     certResolver: {{ .Values.ingress.certresolver }}
