@@ -350,6 +350,27 @@ entries:
   pingvin:
   - apiVersion: v2
     appVersion: 0.3.6
+    created: "2022-12-14T10:19:29.002441427Z"
+    description: Pingvin Share is self-hosted file sharing platform and an alternative
+      for WeTransfer
+    digest: 2b7d9e1df69c72ee9b4c78f98f7ff8f5c6ed021e6fa5c327858a7db7762145b9
+    home: https://github.com/stonith404/pingvin-share
+    keywords:
+    - pingvin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: pingvin
+    sources:
+    - https://github.com/stonith404/pingvin-share
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/pingvin-0.1.3/pingvin-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 0.3.6
     created: "2022-12-14T09:51:26.544781572Z"
     description: Pingvin Share is self-hosted file sharing platform and an alternative
       for WeTransfer
@@ -538,4 +559,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-14T09:51:26.697089959Z"
+generated: "2022-12-14T10:19:29.002520628Z"
