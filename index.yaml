@@ -287,6 +287,28 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/openldap-1.0.1/openldap-1.0.1.tgz
     version: 1.0.1
+  pingvin:
+  - apiVersion: v2
+    appVersion: 0.3.6
+    created: "2022-12-14T09:18:59.367137304Z"
+    description: Pingvin Share is self-hosted file sharing platform and an alternative
+      for WeTransfer
+    digest: 3578f00f979d77cb894871b517883bd37fb1ced070e8f145df40a549897e8be7
+    home: https://github.com/stonith404/pingvin-share
+    keywords:
+    - pingvin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: pingvin
+    sources:
+    - https://github.com/stonith404/pingvin-share
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/pingvin-0.1.0/pingvin-0.1.0.tgz
+    version: 0.1.0
   plex-nfs:
   - apiVersion: v2
     appVersion: 1.29.2
@@ -414,4 +436,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-11T14:42:06.431482305Z"
+generated: "2022-12-14T09:18:59.367193005Z"
