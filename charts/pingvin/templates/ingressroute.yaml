@@ -13,7 +13,7 @@ spec:
     kind: Rule
     services:
     - name: {{ include "pingvin.fullname" . }}-app
-      port: 22300
+      port: {{ .Values.service.port }}
   tls:
     certResolver: {{ .Values.ingress.certresolver }}
 {{- end}}

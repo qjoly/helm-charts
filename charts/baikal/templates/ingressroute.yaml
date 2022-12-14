@@ -14,7 +14,7 @@ spec:
     kind: Rule
     services:
     - name: {{ .Chart.Name }}-app
-      port: 22300
+      port: {{ .Values.service.port }}
   tls:
     certResolver: {{ .Values.ingress.certresolver }}
 {{- end}}
