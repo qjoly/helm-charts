@@ -6,7 +6,8 @@ metadata:
   labels:
     {{- include "pingvin.labels" . | nindent 4 }}
 spec:
-  entryPoints: {{ .Values.ingress.entrypoint }}
+  entryPoints: 
+    - {{ .Values.ingress.entrypoint }}
   routes:
   - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule

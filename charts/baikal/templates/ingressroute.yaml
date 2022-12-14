@@ -7,7 +7,8 @@ metadata:
   labels:
     {{- include "baikal.labels" . | nindent 4 }}
 spec:
-  entryPoints: {{ .Values.ingress.entrypoint }}
+  entryPoints: 
+    - {{ .Values.ingress.entrypoint }}
   routes:
   - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
