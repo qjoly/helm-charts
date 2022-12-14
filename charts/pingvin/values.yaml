@@ -1,0 +1,51 @@
+replicaCount: 1
+
+image:
+  repository: stonith404/pingvin-share
+  pullPolicy: IfNotPresent
+  # Overrides the image tag whose default is the chart appVersion.
+  tag: "latest"
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: {}
+  # fsGroup: 2000
+
+securityContext: {}
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  # runAsUser: 1000
+
+service:
+  type: ClusterIP
+  port: 3000
+
+ingress:
+  isIngressRoute: true
+  enabled: true
+  className: "" # Useless if you use ingress
+  annotations: {}
+  domain: ur-domain.tld
+  entrypoint: websecure # Useless if you use ingress
+  certresolver: letsencrypt
+
+
+resources: {}
+
+persistence:
+  storageClassName: "" # leave empty if you want to use default
+  enabled: true 
+  size: "50Gi" 
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}

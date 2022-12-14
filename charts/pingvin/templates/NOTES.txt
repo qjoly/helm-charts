@@ -1,0 +1,15 @@
+
+ _ __ (_)_ __   __ ___   _(_)_ __  
+| ‘_ \| | ‘_ \ / _` \ \ / / | ‘_ \ 
+| |_) | | | | | (_| |\ V /| | | | |
+| .__/|_|_| |_|\__, | \_/ |_|_| |_|
+|_|            |___/                                     
+
+You have just deployed {{ .Chart.Name }}.
+
+To find out more about the release, try :
+
+  $ helm status {{ .Release.Name }}
+  $ helm get all {{ .Release.Name }}
+———–
+

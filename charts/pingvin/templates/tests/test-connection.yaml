@@ -1,0 +1,15 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: "{{ include "pingvin.fullname" . }}-test-connection"
+  labels:
+    {{- include "pingvin.labels" . | nindent 4 }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: wget
+      image: busybox
+      command: ['wget']
+      args: ['{{ include "pingvin.fullname" . }}:{{ .Values.service.port }}']
+  restartPolicy: Never
