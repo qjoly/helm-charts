@@ -46,7 +46,7 @@ spec:
               command:
                - /bin/sh
                - -c
-               - exec pg_isready -U "{{ .Values.database.dbuser }}" -h 127.0.0.1 -p 5432
+               - exec pg_isready -U "{{ .Values.database.dbuser }}" -d "{{ .Values.database.dbname }}" -h 127.0.0.1 -p 5432
             initialDelaySeconds: 190
           readinessProbe:
             tcpSocket:
