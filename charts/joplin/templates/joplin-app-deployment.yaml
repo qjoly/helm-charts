@@ -67,19 +67,11 @@ spec:
           ports:
             - containerPort: 22300
           livenessProbe:
-            httpGet:
-              httpHeaders:
-               - name: Host
-                 value: "{{ .Values.ingress.domain }}"
-              path: /api/ping
+            tcpSocket:
               port: 22300
             initialDelaySeconds: 190
           readinessProbe:
-            httpGet:
-              httpHeaders:
-               - name: Host
-                 value: "{{ .Values.ingress.domain }}"
-              path: /api/ping
+            tcpSocket:
               port: 22300
           resources: {}
       restartPolicy: Always
