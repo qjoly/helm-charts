@@ -1,0 +1,17 @@
+apiVersion: v2
+name: mosquitto
+description: Eclipse Mosquitto is an message broker that implements the MQTT protocol
+type: application
+version: 0.1.0
+appVersion: "2.0.15"
+keywords:
+- MQTT
+- mosquitto
+home: https://mosquitto.org/
+maintainers:
+- email: github@thoughtless.eu
+  name: QJOLY
+  url: https://thebidouilleur.xyz
+sources:
+- https://github.com/eclipse/mosquitto
+- https://github.com/QJoly/helm-charts
