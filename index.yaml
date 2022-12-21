@@ -393,6 +393,28 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/joplin-0.0.1/joplin-0.0.1.tgz
     version: 0.0.1
+  mosquitto:
+  - apiVersion: v2
+    appVersion: 2.0.15
+    created: "2022-12-21T13:26:28.01047789Z"
+    description: Eclipse Mosquitto is an message broker that implements the MQTT protocol
+    digest: 341db2a1a01292096ca0f23c31b29b2d7c2897a7fb9026e3f6f8b566004370ca
+    home: https://mosquitto.org/
+    keywords:
+    - MQTT
+    - mosquitto
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: mosquitto
+    sources:
+    - https://github.com/eclipse/mosquitto
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/mosquitto-0.1.0/mosquitto-0.1.0.tgz
+    version: 0.1.0
   openldap:
   - apiVersion: v2
     appVersion: 2.6.3-debian-11-r52
@@ -701,4 +723,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-16T09:40:00.636181444Z"
+generated: "2022-12-21T13:26:28.010644493Z"
