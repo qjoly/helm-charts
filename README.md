@@ -17,9 +17,10 @@ helm install myjoplin qjoly/joplin # Install your app
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
-| freshrss | A WebUI to read article via RSS | 0.1.3 | 1.20.2 |
+| freshrss | A WebUI to read article via RSS | 0.1.4 | 1.20.2 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
-| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.2 | 4.1.0 |
+| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.3 | 4.1.0 |
+| home-assistant | Open source home automation. | 0.1.1 | 1.16.0 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.1 | 2.10.3-beta |
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
