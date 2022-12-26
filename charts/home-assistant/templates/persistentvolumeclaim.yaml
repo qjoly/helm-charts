@@ -1,0 +1,23 @@
+{{- if .Values.persistence.enabled -}}
+{{- if not .Values.persistence.pvcClaim }}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  creationTimestamp: null
+  labels:
+    {{- include "home-assistant.labels" . | nindent 4 }}
+  name: {{ include "home-assistant.fullname" . }}
+spec:
+{{- if .Values.persistence.storageClassName }}
+  storageClassName: "{{ .Values.persistence.storageClassName }}"
+{{ else }}
+
+{{- end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.size }}
+status: {}
+{{- end }}
+{{- end }}

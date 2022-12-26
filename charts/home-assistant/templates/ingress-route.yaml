@@ -1,0 +1,20 @@
+{{- if and (.Values.ingress.enabled) (.Values.ingress.isIngressRoute) }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Chart.Name }}-ingressroute
+  labels:
+    {{- include "home-assistant.labels" . | nindent 4 }}
+spec:
+  entryPoints: 
+    - {{ .Values.ingress.entrypoint }}
+  routes:
+  - match: Host(`{{ .Values.ingress.domain }}`)
+    kind: Rule
+    services:
+    - name: {{ include "home-assistant.fullname" . }}
+      port: 8123
+  tls:
+    certResolver: {{ .Values.ingress.certresolver }}
+{{- end}}
+
