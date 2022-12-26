@@ -104,6 +104,28 @@ entries:
   epicgames-freegame:
   - apiVersion: v1
     appVersion: 4.1.0
+    created: "2022-12-26T15:33:14.048975343Z"
+    description: Automatically login and redeem promotional free games from the Epic
+      Games Store.
+    digest: d3a7334ef9f9da1d81e51367deecf299d033b8d404e95161d28b80565ed72c2a
+    home: https://epicgames.com/
+    keywords:
+    - epicgames
+    - free games
+    - epic games
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: epicgames-freegame
+    sources:
+    - https://github.com/claabs/epicgames-freegames-node
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/epicgames-freegame-1.0.3/epicgames-freegame-1.0.3.tgz
+    version: 1.0.3
+  - apiVersion: v1
+    appVersion: 4.1.0
     created: "2022-12-11T14:42:05.262133615Z"
     description: Automatically login and redeem promotional free games from the Epic
       Games Store.
@@ -150,6 +172,26 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/epicgames-freegame-1.0.0/epicgames-freegame-1.0.0.tgz
     version: 1.0.0
   freshrss:
+  - apiVersion: v2
+    appVersion: 1.20.2
+    created: "2022-12-26T15:33:14.188481604Z"
+    description: A WebUI to read article via RSS
+    digest: 16bf1eb3105246e27b46088e314a7ac22c7d1ccb1b627ace3f6b6b70cd50523c
+    home: https://freshrss.org/
+    keywords:
+    - freshrss
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.1.4/freshrss-0.1.4.tgz
+    version: 0.1.4
   - apiVersion: v2
     appVersion: 1.20.2
     created: "2022-12-14T09:51:25.85825788Z"
@@ -220,6 +262,17 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.6/freshrss-0.0.6.tgz
     version: 0.0.6
+  home-assistant:
+  - apiVersion: v2
+    appVersion: 1.16.0
+    created: "2022-12-26T15:33:14.32705836Z"
+    description: Open source home automation.
+    digest: 0ce9f26c22a54cf418a7f87fd8cfc9fef7749a05f5f6b9deb06ccbbe53c12939
+    name: home-assistant
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/home-assistant-0.1.1/home-assistant-0.1.1.tgz
+    version: 0.1.1
   joplin:
   - apiVersion: v1
     appVersion: 2.10.3-beta
@@ -723,4 +776,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2022-12-21T13:26:28.010644493Z"
+generated: "2022-12-26T15:33:14.327300461Z"
