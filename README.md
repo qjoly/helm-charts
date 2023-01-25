@@ -17,16 +17,16 @@ helm install myjoplin qjoly/joplin # Install your app
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
-| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.3 | 4.1.0 |
-| openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
-| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.2 | 2.10.5-beta |
-| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
-| plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
-| home-assistant | Open source home automation. | 0.1.1 | 1.16.0 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
-| freshrss | A WebUI to read article via RSS | 0.1.4 | 1.20.2 |
-| baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.6 | 0.9.2 |
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
+| plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
+| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.3 | 2.10.5-beta |
+| baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
+| home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
+| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.4 | 4.1.0 |
+| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
+| openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
+| freshrss | A WebUI to read article via RSS | 0.1.5 | 1.20.2 |
 
 
 # Disclaimer
