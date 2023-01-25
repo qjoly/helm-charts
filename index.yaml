@@ -3,6 +3,26 @@ entries:
   baikal:
   - apiVersion: v2
     appVersion: 0.9.2
+    created: "2023-01-25T09:22:47.453362939Z"
+    description: Baïkal is a lightweight CalDAV+CardDAV server
+    digest: 65e7af3231ca1298dbbb46a5a1b96a286e862482e2a627136a062413e7dcfff3
+    home: https://sabre.io/baikal/
+    keywords:
+    - baikal
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: baikal
+    sources:
+    - https://github.com/sabre-io/Baikal
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/baikal-0.1.7/baikal-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
+    appVersion: 0.9.2
     created: "2022-12-14T11:01:42.827293424Z"
     description: Baïkal is a lightweight CalDAV+CardDAV server
     digest: 64c5be39ceea7c8dca9ea47fd5eed9d052df910f9ee63c306b01318ed338c726
@@ -104,6 +124,28 @@ entries:
   epicgames-freegame:
   - apiVersion: v1
     appVersion: 4.1.0
+    created: "2023-01-25T09:22:47.6197232Z"
+    description: Automatically login and redeem promotional free games from the Epic
+      Games Store.
+    digest: f47ed59dfa6b1fcf3dc8e31df3a809585cc4180863bd3767666900bd4423f3c4
+    home: https://epicgames.com/
+    keywords:
+    - epicgames
+    - free games
+    - epic games
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: epicgames-freegame
+    sources:
+    - https://github.com/claabs/epicgames-freegames-node
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/epicgames-freegame-1.0.4/epicgames-freegame-1.0.4.tgz
+    version: 1.0.4
+  - apiVersion: v1
+    appVersion: 4.1.0
     created: "2022-12-26T15:33:14.048975343Z"
     description: Automatically login and redeem promotional free games from the Epic
       Games Store.
@@ -172,6 +214,26 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/epicgames-freegame-1.0.0/epicgames-freegame-1.0.0.tgz
     version: 1.0.0
   freshrss:
+  - apiVersion: v2
+    appVersion: 1.20.2
+    created: "2023-01-25T09:22:47.755816304Z"
+    description: A WebUI to read article via RSS
+    digest: d152870c1abd3cae4ca369daf67164ea8c963a75fa48cf504e9ec0498182cf7c
+    home: https://freshrss.org/
+    keywords:
+    - freshrss
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.1.5/freshrss-0.1.5.tgz
+    version: 0.1.5
   - apiVersion: v2
     appVersion: 1.20.2
     created: "2022-12-26T15:33:14.188481604Z"
@@ -265,6 +327,16 @@ entries:
   home-assistant:
   - apiVersion: v2
     appVersion: 1.16.0
+    created: "2023-01-25T09:22:47.891662008Z"
+    description: Open source home automation.
+    digest: 40dd020eb0f0c6e7debe0958c26298aa33c4a81ff0993dc7429cabac989a6015
+    name: home-assistant
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/home-assistant-0.1.2/home-assistant-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v2
+    appVersion: 1.16.0
     created: "2022-12-26T15:33:14.32705836Z"
     description: Open source home automation.
     digest: 0ce9f26c22a54cf418a7f87fd8cfc9fef7749a05f5f6b9deb06ccbbe53c12939
@@ -274,6 +346,26 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/home-assistant-0.1.1/home-assistant-0.1.1.tgz
     version: 0.1.1
   joplin:
+  - apiVersion: v1
+    appVersion: 2.10.5-beta
+    created: "2023-01-25T09:22:48.014144632Z"
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: 88fb6e2e9ddff94d7b26ddd1b06a4cfa936e8c2106d91b427722bfb53d82ecd6
+    home: https://joplinapp.org/
+    keywords:
+    - joplin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: joplin
+    sources:
+    - https://github.com/laurent22/joplin
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-0.3.3/joplin-0.3.3.tgz
+    version: 0.3.3
   - apiVersion: v1
     appVersion: 2.10.5-beta
     created: "2023-01-10T08:14:23.940494444Z"
@@ -796,4 +888,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
-generated: "2023-01-10T08:14:23.940774341Z"
+generated: "2023-01-25T09:22:48.014414831Z"
