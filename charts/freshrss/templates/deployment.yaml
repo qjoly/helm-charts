@@ -46,6 +46,7 @@ spec:
             httpGet:
               path: /
               port: http
+            initialDelaySeconds: 190
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 {{- if .Values.persistence.enabled }}
