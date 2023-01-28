@@ -26,6 +26,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.0.4 | 4.1.0 |
 | pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
+| wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.0.1 | 2.6.1 |
 | freshrss | A WebUI to read article via RSS | 0.1.5 | 1.20.2 |
 
 
