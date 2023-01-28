@@ -6,7 +6,7 @@ metadata:
   creationTimestamp: null
   labels:
     {{- include "joplin.labels" . | nindent 4 }}
-  name: {{ .Chart.Name }}
+  name: {{ include "joplin.fullname" . }}
 spec:
 {{- if .Values.persistence.storageClassName }}
   storageClassName: "{{ .Values.persistence.storageClassName }}"

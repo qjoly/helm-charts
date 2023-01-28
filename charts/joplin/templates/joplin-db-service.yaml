@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: Service
 metadata:
-  name: {{ .Chart.Name }}-db
+  name: {{ include "joplin.fullname" . }}-db
   labels:
     {{- include "joplin.labels" . | nindent 4 }}
 spec:
@@ -10,6 +10,6 @@ spec:
       port: 5432
       targetPort: {{ .Values.service.database.port }}
   selector:
-    app: {{ .Chart.Name }}-db
+    {{- include "joplin-db.selectorLabels" . | nindent 8 }}
 status:
   loadBalancer: {}

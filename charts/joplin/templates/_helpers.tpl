@@ -45,10 +45,23 @@ app.kubernetes.io/managed-by: {{ .Release.Service }}
 {{/*
 Selector labels
 */}}
+
 {{- define "joplin.selectorLabels" -}}
 app.kubernetes.io/name: {{ include "joplin.name" . }}
 app.kubernetes.io/instance: {{ .Release.Name }}
 {{- end }}
+
+{{- define "joplin-app.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "joplin.name" . }}-app
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
+
+{{- define "joplin-db.selectorLabels" -}}
+app.kubernetes.io/name: {{ include "joplin.name" . }}-db
+app.kubernetes.io/instance: {{ .Release.Name }}
+{{- end }}
+
 
 {{/*
 Create the name of the service account to use

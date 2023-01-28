@@ -1,13 +1,13 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: joplin-db
+  name: {{ include "joplin.fullname" . }}-db
   labels:
     {{- include "joplin.labels" . | nindent 4 }}
 spec:
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}-db
+      {{- include "joplin-db.selectorLabels" . | nindent 8 }}
   replicas: 1
   strategy:
     type: Recreate
@@ -18,7 +18,7 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        app: {{ .Chart.Name }}-db 
+        {{- include "joplin-db.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -38,7 +38,7 @@ spec:
               value: "/var/lib/postgresql/data/pgdata"
           image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
-          name: {{ .Chart.Name }}-db
+          name: {{ include "joplin.fullname" . }}-db
           ports:
             - containerPort: 5432
           livenessProbe:
@@ -58,10 +58,10 @@ spec:
             - mountPath: /var/lib/postgresql/data
               subPath: pgdata
               name: db
-      volumes:
+      volumes: 
         - name: db
           persistentVolumeClaim:
-            claimName: {{ .Values.persistence.pvcClaim | default .Chart.Name }}
+            claimName: {{ .Values.persistence.pvcClaim | default (include "joplin.fullname" .)}}
 {{- end }}
       restartPolicy: Always
       {{- with .Values.nodeSelector }}
