@@ -1,0 +1,79 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: {{ include "wakapi.fullname" . }}-db
+  labels:
+    {{- include "wakapi.labels" . | nindent 4 }}
+spec:
+  selector:
+    matchLabels:
+      {{- include "wakapi-db.selectorLabels" . | nindent 8 }}
+  replicas: 1
+  strategy:
+    type: Recreate
+  template:
+    metadata:
+      {{- with .Values.podAnnotations }}
+      annotations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      labels:
+        {{- include "wakapi-db.selectorLabels" . | nindent 8 }}
+    spec:
+      {{- with .Values.imagePullSecrets }}
+      imagePullSecrets:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      securityContext:
+        {{- toYaml .Values.podSecurityContext | nindent 8 }}
+      containers:
+        - env:
+            - name: POSTGRES_DB
+              value: {{ .Values.database.dbname }}
+            - name: POSTGRES_PASSWORD
+              value: {{ .Values.database.dbpassword }}
+            - name: POSTGRES_USER
+              value: {{ .Values.database.dbuser }}
+            - name: PGDATA
+              value: "/var/lib/postgresql/data/pgdata"
+          image: "{{ .Values.database.image.repository }}:{{ .Values.database.image.tag }}"
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          name: {{ include "wakapi.fullname" . }}-db
+          ports:
+            - containerPort: 5432
+          livenessProbe:
+            exec:
+              command:
+               - /bin/sh
+               - -c
+               - exec pg_isready -U "{{ .Values.database.dbuser }}" -d "{{ .Values.database.dbname }}" -h 127.0.0.1 -p 5432
+            initialDelaySeconds: 190
+          readinessProbe:
+            tcpSocket:
+              port: 5432
+          resources:
+            {{- toYaml .Values.resources | nindent 12 }}
+{{- if .Values.persistence.enabled }}
+          volumeMounts:
+            - mountPath: /var/lib/postgresql/data
+              subPath: pgdata
+              name: db
+      volumes: 
+        - name: db
+          persistentVolumeClaim:
+            claimName: {{ .Values.persistence.pvcClaim | default (include "wakapi.fullname" .)}}
+{{- end }}
+      restartPolicy: Always
+      {{- with .Values.nodeSelector }}
+      nodeSelector:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.affinity }}
+      affinity:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+      {{- with .Values.tolerations }}
+      tolerations:
+        {{- toYaml . | nindent 8 }}
+      {{- end }}
+status: {}

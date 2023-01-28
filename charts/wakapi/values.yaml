@@ -1,0 +1,72 @@
+replicaCount: 1
+
+image:
+  repository: n1try/wakapi
+  pullPolicy: IfNotPresent
+  tag: "2.6.1"
+
+database:
+  enabled: true # Disable if you want to use SQLite as Database
+  dbname: wakapidb
+  dbuser: wakapiuser
+  dbpassword: veryhugepasswordhere
+  image:
+    repository: postgres
+    pullPolicy: IfNotPresent
+    tag: 15
+
+imagePullSecrets: []
+nameOverride: ""
+fullnameOverride: ""
+
+podAnnotations: {}
+
+podSecurityContext: 
+  fsGroup: 2000
+
+securityContext: 
+  # capabilities:
+  #   drop:
+  #   - ALL
+  # readOnlyRootFilesystem: true
+  # runAsNonRoot: true
+  #  runAsUser: 1000
+
+service:
+  wakapi:
+    type: ClusterIP
+    port: 3000
+  database:
+    type: ClusterIP
+    port: 5432
+
+
+persistence:
+  storageClassName: "" # leave empty if you want to use default
+  enabled: true 
+  size: "1Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
+# Uncomment if you want to use an existing PVC
+#  pvcClaim: ur_pvc
+
+ingress:
+  isIngressRoute: false
+  enabled: true
+  className: "" # Only if you use ingress
+  annotations: {}
+  domain: ur-domain.tld
+  entrypoint: websecure # Useless if you use ingressroute
+  certresolver: letsencrypt
+
+resources: {}
+  # limits:
+  #   cpu: 100m
+  #   memory: 128Mi
+  # requests:
+  #   cpu: 100m
+  #   memory: 128Mi
+
+nodeSelector: {}
+
+tolerations: []
+
+affinity: {}
