@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}-app
+  name: {{ include "epicgames-freegames.fullname" . }}
 #  labels:
 #    - include "epicgames-freegames.labels" . | nindent 4 
 spec:
@@ -10,12 +10,12 @@ spec:
     type: Recreate
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}-app
+    {{- include "epicgames-freegames.selectorLabels" . | nindent 8 }}
   strategy: {}
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}-app
+        {{- include "epicgames-freegames.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -36,7 +36,7 @@ spec:
       volumes:
         - name: config
           configMap:
-            name: {{ .Chart.Name }}-cm
+            name: {{ include "epicgames-freegames.fullname" . }}
 
       restartPolicy: Always
       {{- with .Values.nodeSelector }}

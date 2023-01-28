@@ -1,8 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: {{ .Chart.Name }}-cm
-
+  name: {{ include "epicgames-freegames.fullname" . }}
 data:
   config.json: |
     {
