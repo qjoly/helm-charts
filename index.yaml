@@ -930,6 +930,26 @@ entries:
     version: 0.1.0
   wakapi:
   - apiVersion: v1
+    appVersion: 2.6.2
+    created: "2023-03-07T12:19:20.186971952Z"
+    description: Wakapi is an open-source tool that helps you keep track of the time
+      you have spent coding.
+    digest: b1b5083a651713cc5272f7ad3ac2b366fcef19da602408be7572dcaeda8beae2
+    home: https://wakapi.dev/
+    keywords:
+    - wakapi
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: wakapi
+    sources:
+    - https://wakapi.dev/
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.1.2/wakapi-0.1.2.tgz
+    version: 0.1.2
+  - apiVersion: v1
     appVersion: 2.6.1
     created: "2023-01-28T09:55:19.52248675Z"
     description: Wakapi is an open-source tool that helps you keep track of the time
@@ -969,4 +989,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-02-07T08:15:25.547028552Z"
+generated: "2023-03-07T12:19:20.187075252Z"
