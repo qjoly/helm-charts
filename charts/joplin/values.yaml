@@ -3,7 +3,7 @@ replicaCount: 1
 image:
   repository: joplin/server
   pullPolicy: IfNotPresent
-  tag: "2.10.6-beta"
+  tag: "2.10.9-beta"
 
 database:
   dbname: joplindb
