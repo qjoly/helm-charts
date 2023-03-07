@@ -347,6 +347,26 @@ entries:
     version: 0.1.1
   joplin:
   - apiVersion: v1
+    appVersion: 2.10.9-beta
+    created: "2023-03-07T12:20:18.955277988Z"
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: 3fceb93b4a8b097a593d96c040623d824aac8108ae6c51aac983a0fc13384984
+    home: https://joplinapp.org/
+    keywords:
+    - joplin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: joplin
+    sources:
+    - https://github.com/laurent22/joplin
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-0.3.7/joplin-0.3.7.tgz
+    version: 0.3.7
+  - apiVersion: v1
     appVersion: 2.10.5-beta
     created: "2023-02-07T08:15:25.546855149Z"
     description: Joplin is an open source note-taking app. Capture your thoughts and
@@ -989,4 +1009,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-07T12:19:20.187075252Z"
+generated: "2023-03-07T12:20:18.955419488Z"
