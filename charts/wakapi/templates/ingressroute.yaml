@@ -3,18 +3,18 @@
 apiVersion: traefik.containo.us/v1alpha1
 kind: IngressRoute
 metadata:
-  name: {{ .Chart.Name }}-ingressroute
+  name: {{ include "wakapi.fullname" . }}-ingressroute
   labels:
-    {{- include "epicgames-freegames.labels" . | nindent 4 }}
+    {{- include "wakapi.labels" . | nindent 4 }}
 spec:
   entryPoints: 
-   - {{ .Values.ingress.entrypoint }}
+    - {{ .Values.ingress.entrypoint }}
   routes:
   - match: Host(`{{ .Values.ingress.domain }}`)
     kind: Rule
     services:
-    - name: {{ .Chart.Name }}
-      port: 3000
+    - name: {{ include "wakapi.fullname" . }}-app
+      port: {{ .Values.service.wakapi.port }}
   tls:
     certResolver: {{ .Values.ingress.certresolver }}
 {{- end}}

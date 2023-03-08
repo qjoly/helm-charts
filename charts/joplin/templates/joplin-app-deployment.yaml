@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ .Chart.Name }}-app
+  name: {{ include "joplin.fullname" . }}-app
   labels:
     {{- include "joplin.labels" . | nindent 4 }}
 spec:
@@ -10,12 +10,12 @@ spec:
     type: Recreate
   selector:
     matchLabels:
-      app: {{ .Chart.Name }}-app
+      {{- include "joplin-app.selectorLabels" . | nindent 8 }}
   strategy: {}
   template:
     metadata:
       labels:
-        app: {{ .Chart.Name }}-app
+        {{- include "joplin-app.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
@@ -55,7 +55,7 @@ spec:
             - name: POSTGRES_DATABASE
               value: {{ .Values.database.dbname }}
             - name: POSTGRES_HOST
-              value: {{ .Chart.Name }}-db
+              value: {{ include "joplin.fullname" . }}-db
             - name: POSTGRES_PASSWORD
               value: {{ .Values.database.dbpassword }}
             - name: POSTGRES_PORT

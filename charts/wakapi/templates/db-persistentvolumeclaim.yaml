@@ -5,8 +5,8 @@ kind: PersistentVolumeClaim
 metadata:
   creationTimestamp: null
   labels:
-    {{- include "joplin.labels" . | nindent 4 }}
-  name: {{ include "joplin.fullname" . }}
+    {{- include "wakapi.labels" . | nindent 4 }}
+  name: {{ include "wakapi.fullname" . }}
 spec:
 {{- if .Values.persistence.storageClassName }}
   storageClassName: "{{ .Values.persistence.storageClassName }}"
