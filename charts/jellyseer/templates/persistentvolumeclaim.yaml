@@ -1,0 +1,23 @@
+{{- if .Values.persistence.enabled -}}
+{{- if not .Values.persistence.pvcClaim }}
+{{- $fullName := include "jellyseer.fullname" . -}}
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    {{- include "jellyseer.labels" . | nindent 4 }}
+  name: {{ $fullName }}
+spec:
+{{- if .Values.persistence.storageClassName }}
+  storageClassName: "{{ .Values.persistence.storageClassName }}"
+{{ else }}
+
+{{- end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .Values.persistence.size }}
+status: {}
+{{- end }}
+{{- end }}

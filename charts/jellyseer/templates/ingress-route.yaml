@@ -1,0 +1,22 @@
+{{- if and (.Values.ingress.enabled) (.Values.ingress.isIngressRoute) }}
+{{- $fullName := include "jellyseer.fullname" . -}}
+{{- $svcPort := .Values.service.port -}}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ $fullName }}
+  labels:
+    {{- include "jellyseer.labels" . | nindent 4 }}
+spec:
+  entryPoints: 
+    - {{ .Values.ingress.entrypoint }}
+  routes:
+  - match: Host(`{{ .Values.ingress.domain }}`)
+    kind: Rule
+    services:
+    - name: {{ include "jellyseer.fullname" . }}
+      port: {{ $svcPort }}
+  tls:
+    certResolver: {{ .Values.ingress.certresolver }}
+{{- end}}
+
