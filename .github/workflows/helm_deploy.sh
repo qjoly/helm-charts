@@ -8,7 +8,7 @@ do
     if [ -f ".no_ci" ]; then
       echo "No CI for this chart."
     else
-      helm install $d . --wait --timeout 190s 
+      helm install $d . --wait --timeout 300s 
       helm test $d
     fi
   )
