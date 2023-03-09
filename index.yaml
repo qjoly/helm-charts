@@ -216,6 +216,26 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.20.2
+    created: "2023-03-09T14:18:43.923341885Z"
+    description: A WebUI to read article via RSS
+    digest: 0453990248b4917a4cf451d98271c17185e3b8f3b458a11680a0c3224b1bed49
+    home: https://freshrss.org/
+    keywords:
+    - freshrss
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.1.6/freshrss-0.1.6.tgz
+    version: 0.1.6
+  - apiVersion: v2
+    appVersion: 1.20.2
     created: "2023-01-25T09:22:47.755816304Z"
     description: A WebUI to read article via RSS
     digest: d152870c1abd3cae4ca369daf67164ea8c963a75fa48cf504e9ec0498182cf7c
@@ -345,6 +365,17 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/home-assistant-0.1.1/home-assistant-0.1.1.tgz
     version: 0.1.1
+  jellyseer:
+  - apiVersion: v2
+    appVersion: 1.4.1
+    created: "2023-03-09T14:18:44.059087792Z"
+    description: A Helm chart for Kubernetes
+    digest: 025c18c46a674ab64880a16bef9f53acd6933fb6a23d69fa97279c8f09199126
+    name: jellyseer
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/jellyseer-0.1.0/jellyseer-0.1.0.tgz
+    version: 0.1.0
   joplin:
   - apiVersion: v1
     appVersion: 2.10.9-beta
@@ -1009,4 +1040,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-07T12:20:18.955419488Z"
+generated: "2023-03-09T14:18:44.059197495Z"
