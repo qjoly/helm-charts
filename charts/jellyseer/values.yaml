@@ -7,8 +7,7 @@ replicaCount: 1
 image:
   repository: fallenbagel/jellyseerr
   pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  tag: "1.4.1"
 
 imagePullSecrets: []
 nameOverride: ""
@@ -55,30 +54,26 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local  
+
 # Only for ingressroute
   isIngressRoute: false
-  enabled: true
   domain: ur-domain.tld
   entrypoint: websecure # Useless if you use ingress
   certresolver: letsencrypt # Useless if you use ingress
 
 persistence:
-  storageClassName: "longhorn" # leave empty if you want to use default
+  storageClassName: "" # leave empty if you want to use default
   enabled: true 
   size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
   pvcClaim: "" # leave empty unless if you want to use an existing PVC
 
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+resources:
+  limits:
+     cpu: 500m
+     memory: 256Mi
+  requests:
+     cpu: 250m
+     memory: 128Mi
 
 autoscaling:
   enabled: false
