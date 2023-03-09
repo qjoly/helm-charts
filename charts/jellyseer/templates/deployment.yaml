@@ -1,16 +1,16 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: {{ include "freshrss.fullname" . }}
+  name: {{ include "jellyseer.fullname" . }}
   labels:
-    {{- include "freshrss.labels" . | nindent 4 }}
+    {{- include "jellyseer.labels" . | nindent 4 }}
 spec:
   {{- if not .Values.autoscaling.enabled }}
   replicas: {{ .Values.replicaCount }}
   {{- end }}
   selector:
     matchLabels:
-      {{- include "freshrss.selectorLabels" . | nindent 6 }}
+      {{- include "jellyseer.selectorLabels" . | nindent 6 }}
   template:
     metadata:
       {{- with .Values.podAnnotations }}
@@ -18,13 +18,13 @@ spec:
         {{- toYaml . | nindent 8 }}
       {{- end }}
       labels:
-        {{- include "freshrss.selectorLabels" . | nindent 8 }}
+        {{- include "jellyseer.selectorLabels" . | nindent 8 }}
     spec:
       {{- with .Values.imagePullSecrets }}
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
-      serviceAccountName: {{ include "freshrss.serviceAccountName" . }}
+      serviceAccountName: {{ include "jellyseer.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
       containers:
@@ -33,6 +33,11 @@ spec:
             {{- toYaml .Values.securityContext | nindent 12 }}
           image: "{{ .Values.image.repository }}:{{ .Values.image.tag | default .Chart.AppVersion }}"
           imagePullPolicy: {{ .Values.image.pullPolicy }}
+          env:
+            - name: LOG_LEVEL
+              value: "{{ .Values.environment.LOG_LEVEL | default "debug" }}"
+            - name: TZ
+              value: "{{ .Values.environment.TZ | default "Europe/Paris" }}"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
@@ -41,22 +46,22 @@ spec:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 190
+            initialDelaySeconds: 60
           readinessProbe:
             httpGet:
               path: /
               port: http
-            initialDelaySeconds: 190
+            initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
 {{- if .Values.persistence.enabled }}
           volumeMounts:
-            - name: config
-              mountPath: /config/
-      volumes:
+            - mountPath: /app/config
+              name: config
+      volumes: 
         - name: config
           persistentVolumeClaim:
-            claimName:  {{ include "freshrss.fullname" . }}
+            claimName: {{ .Values.persistence.pvcClaim | default (include "jellyseer.fullname" .)}}
 {{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
