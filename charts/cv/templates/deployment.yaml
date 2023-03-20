@@ -49,15 +49,6 @@ spec:
             initialDelaySeconds: 30
           resources:
             {{- toYaml .Values.resources | nindent 12 }}
-{{- if .Values.persistence.enabled }}
-          volumeMounts:
-            - mountPath: /app/config
-              name: config
-      volumes: 
-        - name: config
-          persistentVolumeClaim:
-            claimName: {{ .Values.persistence.pvcClaim | default (include "cv.fullname" .)}}
-{{- end }}
       {{- with .Values.nodeSelector }}
       nodeSelector:
         {{- toYaml . | nindent 8 }}

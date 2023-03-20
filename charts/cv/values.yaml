@@ -33,7 +33,7 @@ securityContext: {}
 
 service:
   type: ClusterIP
-  port: 5055
+  port: 80
 
 ingress:
   enabled: false
