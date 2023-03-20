@@ -1,6 +1,6 @@
 apiVersion: v2
 name: cv
-description: A Helm chart for Kubernetes
+description: My personal curriculum vitae
 type: application
 version: 0.1.0
-appVersion: "1.4.1"
+appVersion: "1.0.0"
