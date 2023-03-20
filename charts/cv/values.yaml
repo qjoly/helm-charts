@@ -1,4 +1,4 @@
-# Default values for cv.
+# Default values for jellyseer.
 # This is a YAML-formatted file.
 # Declare variables to be passed into your templates.
 
@@ -56,12 +56,6 @@ ingress:
   domain: quentin.joly.link
   entrypoint: websecure # Useless if you use ingress
   certresolver: letsencrypt # Useless if you use ingress
-
-persistence:
-  storageClassName: "" # leave empty if you want to use default
-  enabled: false 
-  size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
-  pvcClaim: "" # leave empty unless if you want to use an existing PVC
 
 resources:
   limits:
