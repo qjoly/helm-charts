@@ -1,5 +1,16 @@
 apiVersion: v1
 entries:
+  aptly:
+  - apiVersion: v2
+    appVersion: 1.0.0
+    created: "2023-04-09T14:44:41.106099737Z"
+    description: A simple Debian repository website
+    digest: bba72e137ef34b6c8682629d7440a73d4ce058b2d83211bd860a39a1e94db68e
+    name: aptly
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/aptly-0.1.0/aptly-0.1.0.tgz
+    version: 0.1.0
   baikal:
   - apiVersion: v2
     appVersion: 0.9.2
@@ -1051,4 +1062,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-03-20T12:57:32.990487769Z"
+generated: "2023-04-09T14:44:41.106247038Z"
