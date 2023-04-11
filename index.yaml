@@ -3,6 +3,16 @@ entries:
   aptly:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-04-11T12:09:34.276400938Z"
+    description: A simple Debian repository website
+    digest: 849dbb39bc6b59d7586adc7501d1de8ff1bc88aae5eedf05ff429b67e1f8551c
+    name: aptly
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/aptly-0.1.3/aptly-0.1.3.tgz
+    version: 0.1.3
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-04-11T09:28:19.008157267Z"
     description: A simple Debian repository website
     digest: a5340560c482c2fc6ed267c9e5060402cffbd946066d837351d6c2133b230fc3
@@ -1072,4 +1082,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-04-11T09:28:19.008407172Z"
+generated: "2023-04-11T12:09:34.276556739Z"
