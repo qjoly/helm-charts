@@ -17,7 +17,6 @@ helm install myjoplin qjoly/joplin # Install your app
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
-| cv | My personal curriculum vitae | 0.1.0 | 1.0.0 |
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.7 | 2.10.9-beta |
 | baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
