@@ -33,6 +33,7 @@ securityContext: {}
 
 environment:
   WEB_URL: "https://repo.thebidouilleur.xyz"
+  REPO_NAME: "My Repository"
 
 service:
   type: ClusterIP

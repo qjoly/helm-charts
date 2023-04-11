@@ -36,6 +36,8 @@ spec:
           env:
             - name: WEB_URL
               value: "{{ .Values.environment.WEB_URL | default "http://localhost:8080" }}"
+            - name: REPO_NAME
+              value: "{{ .Values.environment.REPO_NAME | default "MY_REPO" }}"
           ports:
             - name: http
               containerPort: {{ .Values.service.port }}
