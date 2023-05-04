@@ -17,19 +17,19 @@ helm install myjoplin qjoly/joplin # Install your app
 
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
-| home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
-| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.7 | 2.10.9-beta |
-| baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
-| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.1.0 | 4.1.0 |
-| openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
-| jellyseer | A Helm chart for Kubernetes | 0.1.0 | 1.4.1 |
-| prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
-| aptly | A simple Debian repository website | 0.1.3 | 1.0.0 |
-| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
+| baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
+| jellyseer | A Helm chart for Kubernetes | 0.1.0 | 1.4.1 |
+| openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
+| home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
-| freshrss | A WebUI to read article via RSS | 0.1.6 | 1.20.2 |
 | wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.1.2 | 2.6.2 |
+| freshrss | A WebUI to read article via RSS | 0.1.6 | 1.20.2 |
+| prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
+| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.1.0 | 4.1.0 |
+| aptly | A simple Debian repository website | 0.1.3 | 1.0.0 |
+| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.8 | 2.10.10-beta |
+| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
 
 
 # Disclaimer
