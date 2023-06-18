@@ -450,6 +450,26 @@ entries:
     version: 0.1.0
   joplin:
   - apiVersion: v1
+    appVersion: 2.11-beta
+    created: "2023-06-18T17:07:56.906986248Z"
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: ee69c6a0cab76ce91a58111bf9190baf9639e21b7adc1c0410d4a13af7d0db8a
+    home: https://joplinapp.org/
+    keywords:
+    - joplin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: joplin
+    sources:
+    - https://github.com/laurent22/joplin
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-0.4.0/joplin-0.4.0.tgz
+    version: 0.4.0
+  - apiVersion: v1
     appVersion: 2.10.10-beta
     created: "2023-05-04T14:10:21.931134882Z"
     description: Joplin is an open source note-taking app. Capture your thoughts and
@@ -763,6 +783,48 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/mosquitto-0.1.0/mosquitto-0.1.0.tgz
     version: 0.1.0
+  nextcloud:
+  - apiVersion: v2
+    appVersion: 26.0.2
+    created: "2023-06-18T17:07:57.160288399Z"
+    dependencies:
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.*
+    - condition: mariadb.enabled
+      name: mariadb
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.0.*
+    - condition: redis.enabled
+      name: redis
+      repository: https://charts.bitnami.com/bitnami
+      version: 16.12.*
+    description: A file sharing server that puts the control and security of your
+      own data back into your hands.
+    digest: 337f84ee39457f4350126f67947e75f472f0d1b356a04d465c96ea70301b5a27
+    home: https://nextcloud.com/
+    icon: https://cdn.rawgit.com/docker-library/docs/defa5ffc7123177acd60ddef6e16bddf694cc35f/nextcloud/logo.svg
+    keywords:
+    - nextcloud
+    - storage
+    - http
+    - web
+    - php
+    maintainers:
+    - email: skjnldsv@protonmail.com
+      name: skjnldsv
+    - email: christian.ingenhaag@googlemail.com
+      name: chrisingenhaag
+    - email: jeff@billimek.com
+      name: billimek
+    name: nextcloud
+    sources:
+    - https://github.com/nextcloud/helm
+    - https://github.com/nextcloud/docker
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/nextcloud-3.5.13/nextcloud-3.5.13.tgz
+    version: 3.5.13
   openldap:
   - apiVersion: v2
     appVersion: 2.6.3-debian-11-r52
@@ -1132,4 +1194,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-18T12:20:52.501068526Z"
+generated: "2023-06-18T17:07:57.160516811Z"
