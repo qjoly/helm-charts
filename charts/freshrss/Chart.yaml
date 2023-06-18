@@ -2,8 +2,8 @@ apiVersion: v2
 name: freshrss
 description: A WebUI to read article via RSS
 type: application
-version: 0.1.6
-appVersion: "1.20.2"
+version: 0.1.7
+appVersion: "1.21.0"
 keywords:
 - freshrss
 home: https://freshrss.org/
