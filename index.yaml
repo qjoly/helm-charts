@@ -429,6 +429,16 @@ entries:
     version: 0.1.1
   jellyseer:
   - apiVersion: v2
+    appVersion: 1.5.0
+    created: "2023-06-18T12:20:52.500947319Z"
+    description: A Helm chart for Kubernetes
+    digest: 6bd376658649ba19d8740cd838617d42a9eb9aac4bf93d2412a8950096d35463
+    name: jellyseer
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/jellyseer-0.2.0/jellyseer-0.2.0.tgz
+    version: 0.2.0
+  - apiVersion: v2
     appVersion: 1.4.1
     created: "2023-03-09T14:18:44.059087792Z"
     description: A Helm chart for Kubernetes
@@ -1122,4 +1132,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-18T12:13:39.133499861Z"
+generated: "2023-06-18T12:20:52.501068526Z"
