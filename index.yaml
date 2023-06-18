@@ -257,6 +257,26 @@ entries:
     version: 1.0.0
   freshrss:
   - apiVersion: v2
+    appVersion: 1.21.0
+    created: "2023-06-18T12:13:39.133063158Z"
+    description: A WebUI to read article via RSS
+    digest: cb3e5196ea40de4f8579f4c7c7d1eae8950b75bb38c0be464da02a9cb69e59f2
+    home: https://freshrss.org/
+    keywords:
+    - freshrss
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.1.7/freshrss-0.1.7.tgz
+    version: 0.1.7
+  - apiVersion: v2
     appVersion: 1.20.2
     created: "2023-03-09T14:18:43.923341885Z"
     description: A WebUI to read article via RSS
@@ -1102,4 +1122,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-05-04T14:10:21.931657078Z"
+generated: "2023-06-18T12:13:39.133499861Z"
