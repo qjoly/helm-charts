@@ -27,7 +27,7 @@ common:
 
   # ingress
   ingress:
-    enabled: true
+    enabled: false
     hostName: vim.thoughtless.eu
     tls:
       enabled: true
