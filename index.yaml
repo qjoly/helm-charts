@@ -1,5 +1,33 @@
 apiVersion: v1
 entries:
+  PrezVim:
+  - apiVersion: v2
+    appVersion: 0.8.0
+    created: "2023-06-20T08:42:47.927310905Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.0
+    description: PrezVim is a french presentation to introduce Vim to new users.
+    digest: b3bd11b648a9e4c67828b87a1175146cd2480f5f02c4fa1017bc68c845ffde40
+    home: https://vim.avec.une-tasse-de.cafe/
+    icon: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/langfr-150px-Vimlogo.svg.png
+    keywords:
+    - cyberprez
+    - vim
+    - presentation
+    - french
+    kubeVersion: '>=1.16.0-0'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: PrezVim
+    sources:
+    - https://github.com/qjoly/prezvim
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/PrezVim-5.1.2/PrezVim-5.1.2.tgz
+    version: 5.1.2
   aptly:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1232,4 +1260,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-20T07:07:53.007621089Z"
+generated: "2023-06-20T08:42:47.92774181Z"
