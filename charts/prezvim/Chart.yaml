@@ -1,0 +1,24 @@
+---
+apiVersion: v2
+appVersion: 0.8.0
+description: PrezVim is a french presentation to introduce Vim to new users.
+name: PrezVim
+version: 5.1.2
+kubeVersion: ">=1.16.0-0"
+keywords:
+  - cyberprez
+  - vim
+  - presentation
+  - french
+home: https://vim.avec.une-tasse-de.cafe/
+icon: https://upload.wikimedia.org/wikipedia/commons/thumb/9/9f/Vimlogo.svg/langfr-150px-Vimlogo.svg.png
+sources:
+  - https://github.com/qjoly/prezvim
+maintainers:
+- email: github@thoughtless.eu
+  name: QJOLY
+  url: https://thebidouilleur.xyz
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.0
