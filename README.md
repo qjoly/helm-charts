@@ -29,7 +29,8 @@ helm install myjoplin qjoly/joplin # Install your app
 | baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.1.0 | 4.1.0 |
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
-| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.3.8 | 2.10.10-beta |
+| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.4.0 | 2.11-beta |
+| nextcloud | A file sharing server that puts the control and security of your own data back into your hands. | 3.5.13 | 26.0.2 |
 
 
 # Disclaimer
