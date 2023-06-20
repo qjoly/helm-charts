@@ -106,7 +106,6 @@ spec:
           {{- end }}
 {{- if .Values.persistence.enabled }}
           volumeMounts:
-  {{- $relname := .Release.Name -}}
   {{- range .Values.persistence.volumes }}
             - mountPath: {{ .containerMount }}
               name: {{ .name }}
@@ -118,7 +117,7 @@ spec:
            {{- if (.pvcClaim) }} 
             claimName: {{ .pvcClaim }}
            {{ else }}
-            claimName: {{ $relname }}-{{ .name }}
+            claimName: {{ $dot.Release.Name }}-{{ .name }}
            {{- end }}
   {{- end }}
 {{- end }}

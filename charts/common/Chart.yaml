@@ -3,7 +3,7 @@ description: Helm chart for deployment generic app on Kubernetes
 maintainers:
 - name: QJOLY
   email: github@thoughtless.eu
-name: generic-app
+name: common
 version: v0.1.0
 appVersion: "0"
 kubeVersion: ">= 1.18"
