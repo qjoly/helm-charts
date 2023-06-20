@@ -24,7 +24,7 @@ jobs:
          with:
             token: ${{ secrets.GITHUB_TOKEN }}
 
-       - name: Set up Bitnami chart (for dependencies)
+       - name: Set up dependences charts (for dependencies)
          run: |
             helm repo add bitnami https://charts.bitnami.com/bitnami
             helm repo add qjoly https://qjoly.github.io/helm-charts
