@@ -1,65 +1,96 @@
-replicaCount: 1
+common:
+  app:
+    servicePort: 80
+    containerPort: 80
 
-image:
-  repository: lscr.io/linuxserver/freshrss
-  pullPolicy: IfNotPresent
-  tag: "1.21.0"
+  # deployment
+  deployment:
+    memoryRequest: null
+    cpuRequest: null
+    memoryLimit: null
+    cpuLimit: null
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 25%
+        maxSurge: 25%
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+  # container
+  image:
+    repository:
+      name: null
+      isPrivate: false
+      secretName: null
+    name: lscr.io/linuxserver/freshrss
+    tag: 1.21.0
+    pullPolicy: Always
 
-serviceAccount:
-  create: false
-  annotations: {}
-  name: ""
+  # ingress
+  ingress:
+    enabled: false
+    hostName: rss.thoughtless.eu
+    tls:
+      enabled: true
+      secretName: ""
+    # For Ingress CRD
+    ingressClassName: istio
+    # For IngressRoute CRD
+    isIngressRoute: true
+    entrypoint: websecure
+    certResolver: letsencrypt # leave empty if you don't use, tls.enabled must be true and secretName must me empty
 
-podAnnotations: {}
+      
+  # env variables
+  variables:
+    secret: {}
+  #    user: "qjoly"
+  #    password: "hugepassword"
+    nonSecret: {}
+  #    author: qjoly
+  #    app: 1
 
-podSecurityContext: {}
-  # fsGroup: 2000
+  # horizontal autoscaler
+  hpa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 2
+    avgCpuUtilization: 50
 
-securityContext: 
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  #  runAsUser: 1000
+  # startupProbe
+  startupProbe:
+    enabled: false
+    httpGet:
+      path: "/"
+    periodSeconds: 10
+    failureThreshold: 20
+    timeoutSeconds: 1
 
-service:
-  type: ClusterIP
-  port: 80
+  # readinessProbe
+  readinessProbe:
+    enabled: true
+    httpGet:
+      path: "/"
+    initialDelaySeconds: 20
+    periodSeconds: 30
+    failureThreshold: 2
+    timeoutSeconds: 3
 
+  # livenessProbe
+  livenessProbe:
+    enabled: true
+    httpGet:
+      path: "/"
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    failureThreshold: 1
+    timeoutSeconds: 3
 
-persistence:
-  storageClassName: ""
-  enabled: true 
+  persistence:
+    enabled: false
+    volumes:
+      - name: "data"
+        storageClassName: "" # leave empty if you want to use default
+        size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
+        pvcClaim: "" # leave empty unless if you want to use an existing PVC
+        containerMount: "/config/"
 
-ingress:
-  enabled: false
-  className: "" # Only if you use ingress 
-  annotations: {}
-  domain: rss.thoughtless.eu
-  entrypoint: websecure # Useless if you use ingressroute
-  certresolver: letsencrypt # Useless if you use ingressroute
-
-resources: {}
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-
-autoscaling:
-  enabled: false
-  minReplicas: 1
-  maxReplicas: 100
-  targetCPUUtilizationPercentage: 80
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
