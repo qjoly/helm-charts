@@ -1,4 +1,4 @@
-apiVersion: v1
+apiVersion: v2
 name: wakapi
 description: Wakapi is an open-source tool that helps you keep track of the time you have spent coding.
 version: 1.0.0
