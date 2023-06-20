@@ -26,7 +26,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
-| common | Helm chart for generic monolithic app on Kubernetes | v0.1.5 | 0 |
+| common | Helm chart for generic monolithic app on Kubernetes | v0.1.6 | 0 |
 | wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.1.2 | 2.6.2 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
 | freshrss | A WebUI to read article via RSS | 1.0.0 | 1.21.0 |
