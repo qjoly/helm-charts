@@ -28,7 +28,7 @@ common:
   # ingress
   ingress:
     enabled: false
-    hostName: vim.thoughtless.eu
+    hostName: wakapi.lan
     tls:
       enabled: true
       secretName: ""
@@ -48,10 +48,8 @@ common:
       WAKAPI_DB_NAME: "wakapi"
       WAKAPI_DB_USER: "wakapuser"
       WAKAPI_DB_PASSWORD: "wakapass"
-      WAKAPI_DB_HOST: "mywakapi-postgresql" # if postgresql.enabled, must be RELEASE-NAME-postgresql (ex: my-wakapi-postgresql)
+      WAKAPI_DB_HOST: "wakapi-postgresql" # if postgresql.enabled, must be RELEASE-NAME-postgresql (ex: my-wakapi-postgresql)
       WAKAPI_DB_PORT: "5432"
-      ENVIRONMENT: "prod"
-
   hpa:
     enabled: false
     minReplicas: 1
@@ -91,7 +89,7 @@ common:
     enabled: false
     volumes:
       - name: "data"
-        storageClassName: "longhorn" # leave empty if you want to use default
+        storageClassName: "" # leave empty if you want to use default
         size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
         pvcClaim: "" # leave empty unless if you want to use an existing PVC
         containerMount: "/data"
