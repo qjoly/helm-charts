@@ -1,7 +1,0 @@
-{{- if .Values.ingress.enabled -}}
-{{- if not .Values.ingress.isIngressRoute -}}
-
-# TODO ! No Ingress
-
-{{- end }}
-{{- end }}

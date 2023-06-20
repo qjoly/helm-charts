@@ -1,72 +1,111 @@
-replicaCount: 1
+common:
+  app:
+    servicePort: 80
+    containerPort: 3000
 
-image:
-  repository: n1try/wakapi
-  pullPolicy: IfNotPresent
-  tag: "2.6.2"
+  # deployment
+  deployment:
+    memoryRequest: null
+    cpuRequest: null
+    memoryLimit: null
+    cpuLimit: null
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 25%
+        maxSurge: 25%
 
-database:
-  enabled: true # Disable if you want to use SQLite as Database
-  dbname: wakapidb
-  dbuser: wakapiuser
-  dbpassword: veryhugepasswordhere
+  # container
   image:
-    repository: postgres
-    pullPolicy: IfNotPresent
-    tag: 15
+    repository:
+      name: null
+      isPrivate: false
+      secretName: null
+    name: n1try/wakapi
+    tag: 2.7
+    pullPolicy: Always
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+  # ingress
+  ingress:
+    enabled: false
+    hostName: vim.thoughtless.eu
+    tls:
+      enabled: true
+      secretName: ""
+    # For Ingress CRD
+    ingressClassName: istio
+    # For IngressRoute CRD
+    isIngressRoute: true
+    entrypoint: websecure
+    certResolver: letsencrypt # leave empty if you don't use, tls.enabled must be true and secretName must me empty
 
-podAnnotations: {}
+      
+  # env variables
+  variables:
+    secret: {}
+    nonSecret:
+      WAKAPI_DB_TYPE: "postgres"
+      WAKAPI_DB_NAME: "wakapi"
+      WAKAPI_DB_USER: "wakapuser"
+      WAKAPI_DB_PASSWORD: "wakapass"
+      WAKAPI_DB_HOST: "mywakapi-postgresql" # if postgresql.enabled, must be RELEASE-NAME-postgresql (ex: my-wakapi-postgresql)
+      WAKAPI_DB_PORT: "5432"
+      ENVIRONMENT: "prod"
 
-podSecurityContext: 
-  fsGroup: 2000
+  hpa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 2
+    avgCpuUtilization: 50
 
-securityContext: 
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  #  runAsUser: 1000
+  # startupProbe
+  startupProbe:
+    enabled: false
+    httpGet:
+      path: "/"
+    periodSeconds: 10
+    failureThreshold: 20
+    timeoutSeconds: 1
 
-service:
-  wakapi:
-    type: ClusterIP
-    port: 3000
-  database:
-    type: ClusterIP
-    port: 5432
+  # readinessProbe
+  readinessProbe:
+    enabled: true
+    httpGet:
+      path: "/"
+    initialDelaySeconds: 20
+    periodSeconds: 30
+    failureThreshold: 2
+    timeoutSeconds: 3
 
+  # livenessProbe
+  livenessProbe:
+    enabled: true
+    httpGet:
+      path: "/"
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    failureThreshold: 1
+    timeoutSeconds: 3
 
-persistence:
-  storageClassName: "" # leave empty if you want to use default
-  enabled: true 
-  size: "1Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
-# Uncomment if you want to use an existing PVC
-#  pvcClaim: ur_pvc
+  persistence:
+    enabled: false
+    volumes:
+      - name: "data"
+        storageClassName: "longhorn" # leave empty if you want to use default
+        size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
+        pvcClaim: "" # leave empty unless if you want to use an existing PVC
+        containerMount: "/data"
 
-ingress:
-  isIngressRoute: false
+postgresql:
   enabled: true
-  className: "" # Only if you use ingress
-  annotations: {}
-  domain: ur-domain.tld
-  entrypoint: websecure # Useless if you use ingressroute
-  certresolver: letsencrypt
+  auth:
+    postgresPassword: "changeme"
+    database: wakapi
+    username: wakapuser
+    password: wakapass
+  persistence:
+    enabled: false
+    existingClaim: ""
+    storageClass: ""
+    # size: 8Gi
 
-resources: {}
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
