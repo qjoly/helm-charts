@@ -1,0 +1,26 @@
+{{- if and (.Values.ingress.enabled) (.Values.ingress.isIngressRoute) }}
+apiVersion: traefik.containo.us/v1alpha1
+kind: IngressRoute
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  entryPoints: 
+    - {{ .Values.ingress.entrypoint }}
+  routes:
+  - match: Host(`{{ .Values.ingress.hostName }}`)
+    kind: Rule
+    services:
+    - name: {{ .Release.Name }}
+      port: {{ .Values.app.servicePort }}
+  {{- if .Values.ingress.tls.enabled }}
+  tls:
+    {{- if .Values.ingress.tls.secretName }}
+  - secretName: {{ .Values.ingress.tls.secretName }}
+    {{- else if .Values.ingress.certResolver }}
+    certResolver: {{ .Values.ingress.certResolver }}
+    {{- end}}
+  {{- end}}
+{{- end}}
+

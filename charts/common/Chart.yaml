@@ -1,0 +1,15 @@
+apiVersion: v1
+description: Helm chart for deployment generic app on Kubernetes
+maintainers:
+- name: QJOLY
+  email: github@thoughtless.eu
+name: generic-app
+version: v0.1.0
+appVersion: "0"
+kubeVersion: ">= 1.18"
+home: https://github.com/QJoly/generic-helm-template
+keywords:
+  - generic
+sources:
+  - https://github.com/QJoly/generic-helm-template
+

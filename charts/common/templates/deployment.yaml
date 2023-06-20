@@ -1,0 +1,125 @@
+{{- $dot := . }}
+kind: Deployment
+apiVersion: apps/v1
+metadata:
+  name: {{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+spec:
+  replicas: {{ .Values.minReplicas }}
+  selector:
+    matchLabels:
+      app: {{ .Release.Name }}
+  {{- with .Values.strategy }}
+  strategy:
+    type: {{ .type }}
+    rollingUpdate:
+      maxUnavailable: {{ .rollingUpdate.maxUnavailable }}
+      maxSurge: {{ .rollingUpdate.maxSurge }}
+  {{- end }}
+  template:
+    metadata:
+      labels:
+        app: {{ .Release.Name }}
+    spec:
+      {{- if .Values.image.repository.isPrivate }}
+      imagePullSecrets:
+        - name: "{{ .Values.image.repository.secretName }}"
+      {{- end }}
+      containers:
+        - name: {{ .Release.Name }}
+          imagePullPolicy: {{ .Values.image.pullPolicy }}
+          {{- if .Values.image.repository.name }}
+          image: "{{ .Values.image.repository.name }}/{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          {{- else }}
+          image: "{{ .Values.image.name }}:{{ .Values.image.tag }}"
+          {{- end }}
+          ports:
+          - containerPort: {{ .Values.app.containerPort }}
+          resources:
+            requests:
+              {{- if .Values.deployment.memoryRequest }}
+              memory: "{{ .Values.deployment.memoryRequest }}"
+              {{- end }}
+              {{- if .Values.deployment.cpuRequest }}
+              cpu: "{{ .Values.deployment.cpuRequest }}"
+              {{- end }}
+            limits:
+              {{- if .Values.deployment.memoryLimit }}
+              memory: "{{ .Values.deployment.memoryLimit }}"
+              {{- end }}
+              {{- if .Values.deployment.cpuLimit }}
+              cpu: "{{ .Values.deployment.cpuLimit }}"
+              {{- end }}
+          {{- if or (.Values.variables.nonSecret) (.Values.variables.secret) }}
+          env:
+          {{- if .Values.variables.nonSecret }}
+          {{- range $index, $value := .Values.variables.nonSecret }}
+          - name: {{ $index }}
+            value: {{ $value | toString | quote }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.variables.secret }}
+          {{- range $index, $value := .Values.variables.secret }}
+          - name: {{ $index }}
+            valueFrom:
+              secretKeyRef:
+                name: {{ $dot.Release.Name }}-{{ $index | lower | replace "_" "-" }}
+                key: secret
+          {{- end }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.startupProbe.enabled }}
+          {{- with .Values.startupProbe }}
+          startupProbe:
+            httpGet:
+              path: {{ .httpGet.path }}
+              port: {{ $dot.Values.app.containerPort }}
+            periodSeconds: {{ .periodSeconds }}
+            failureThreshold: {{ .failureThreshold }}
+            timeoutSeconds: {{ .timeoutSeconds }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.readinessProbe.enabled }}
+          {{- with .Values.readinessProbe }}
+          readinessProbe:
+            httpGet:
+              path: {{ .httpGet.path }}
+              port: {{ $dot.Values.app.containerPort }}
+            initialDelaySeconds: {{ .initialDelaySeconds }}
+            periodSeconds: {{ .periodSeconds }}
+            failureThreshold: {{ .failureThreshold }}
+            timeoutSeconds: {{ .timeoutSeconds }}
+          {{- end }}
+          {{- end }}
+          {{- if .Values.livenessProbe.enabled }}
+          {{- with .Values.livenessProbe }}
+          livenessProbe:
+            httpGet:
+              path: {{ .httpGet.path }}
+              port: {{ $dot.Values.app.containerPort }}
+            initialDelaySeconds: {{ .initialDelaySeconds }}
+            periodSeconds: {{ .periodSeconds }}
+            failureThreshold: {{ .failureThreshold }}
+            timeoutSeconds: {{ .timeoutSeconds }}
+          {{- end }}
+          {{- end }}
+{{- if .Values.persistence.enabled }}
+          volumeMounts:
+  {{- $relname := .Release.Name -}}
+  {{- range .Values.persistence.volumes }}
+            - mountPath: {{ .containerMount }}
+              name: {{ .name }}
+  {{- end }}
+      volumes: 
+  {{- range .Values.persistence.volumes }}
+        - name: {{ .name }}
+          persistentVolumeClaim:
+           {{- if (.pvcClaim) }} 
+            claimName: {{ .pvcClaim }}
+           {{ else }}
+            claimName: {{ $relname }}-{{ .name }}
+           {{- end }}
+  {{- end }}
+{{- end }}
+

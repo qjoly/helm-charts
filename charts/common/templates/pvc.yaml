@@ -1,0 +1,23 @@
+{{- if (.Values.persistence.enabled) }}
+{{- $relname := .Release.Name -}}
+  {{- range .Values.persistence.volumes }}
+    {{- if not (.pvcClaim) }}
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  labels:
+    app: {{ $relname }} 
+  name: {{ $relname }}-{{ .name }}
+spec:
+  {{- if (.storageClassName) }}
+  storageClassName: {{ .storageClassName }}
+  {{- end }}
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requests:
+      storage: {{ .size }}
+    {{- end }}
+  {{- end }}
+{{- end }}
