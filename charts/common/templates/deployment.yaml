@@ -69,40 +69,17 @@ spec:
           {{- end }}
           {{- end }}
           {{- end }}
-          {{- if .Values.startupProbe.enabled }}
-          {{- with .Values.startupProbe }}
+          {{- if .Values.startupProbeEnabled }}
           startupProbe:
-            httpGet:
-              path: {{ .httpGet.path }}
-              port: {{ $dot.Values.app.containerPort }}
-            periodSeconds: {{ .periodSeconds }}
-            failureThreshold: {{ .failureThreshold }}
-            timeoutSeconds: {{ .timeoutSeconds }}
+{{ toYaml .Values.startupProbe | indent 12 }}
           {{- end }}
-          {{- end }}
-          {{- if .Values.readinessProbe.enabled }}
-          {{- with .Values.readinessProbe }}
+          {{- if .Values.readinessProbeEnabled }}
           readinessProbe:
-            httpGet:
-              path: {{ .httpGet.path }}
-              port: {{ $dot.Values.app.containerPort }}
-            initialDelaySeconds: {{ .initialDelaySeconds }}
-            periodSeconds: {{ .periodSeconds }}
-            failureThreshold: {{ .failureThreshold }}
-            timeoutSeconds: {{ .timeoutSeconds }}
+{{ toYaml .Values.readinessProbe | indent 12 }}
           {{- end }}
-          {{- end }}
-          {{- if .Values.livenessProbe.enabled }}
-          {{- with .Values.livenessProbe }}
+          {{- if .Values.livenessProbeEnabled }}
           livenessProbe:
-            httpGet:
-              path: {{ .httpGet.path }}
-              port: {{ $dot.Values.app.containerPort }}
-            initialDelaySeconds: {{ .initialDelaySeconds }}
-            periodSeconds: {{ .periodSeconds }}
-            failureThreshold: {{ .failureThreshold }}
-            timeoutSeconds: {{ .timeoutSeconds }}
-          {{- end }}
+{{ toYaml .Values.readinessProbe | indent 12 }}
           {{- end }}
 {{- if .Values.persistence.enabled }}
           volumeMounts:

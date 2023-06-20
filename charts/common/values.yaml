@@ -1,7 +1,9 @@
+define: &containerPort 80
+
 # application
 app:
   servicePort: 80
-  containerPort: 80
+  containerPort: *containerPort
 
 # deployment
 deployment:
@@ -57,33 +59,38 @@ hpa:
   avgCpuUtilization: 50
 
 # startupProbe
+startupProbeEnabled: true
 startupProbe:
-  enabled: false
   httpGet:
     path: "/"
+    port: *containerPort
   periodSeconds: 10
   failureThreshold: 20
   timeoutSeconds: 1
 
 # readinessProbe
+readinessProbeEnabled: true
 readinessProbe:
-  enabled: true
   httpGet:
     path: "/"
+    port: *containerPort
   initialDelaySeconds: 20
   periodSeconds: 30
   failureThreshold: 2
   timeoutSeconds: 3
 
 # livenessProbe
+livenessProbeEnabled: true
 livenessProbe:
   enabled: true
   httpGet:
     path: "/"
+    port: *containerPort
   initialDelaySeconds: 20
   periodSeconds: 60
   failureThreshold: 1
   timeoutSeconds: 3
+
 
 persistence:
   enabled: false

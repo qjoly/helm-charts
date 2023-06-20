@@ -4,7 +4,7 @@ maintainers:
 - name: QJOLY
   email: github@thoughtless.eu
 name: common
-version: v0.1.0
+version: v0.1.5
 appVersion: "0"
 kubeVersion: ">= 1.18"
 home: https://github.com/QJoly/generic-helm-template
