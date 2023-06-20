@@ -152,6 +152,25 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/baikal-0.1.0/baikal-0.1.0.tgz
     version: 0.1.0
+  common:
+  - apiVersion: v1
+    appVersion: "0"
+    created: "2023-06-20T07:07:53.007516088Z"
+    description: Helm chart for deployment generic app on Kubernetes
+    digest: 236e07691bb25615ccde91237b3bb1487831f7bc37b32d586c589c709f18ae94
+    home: https://github.com/QJoly/generic-helm-template
+    keywords:
+    - generic
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: common
+    sources:
+    - https://github.com/QJoly/generic-helm-template
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/common-v0.1.0/common-v0.1.0.tgz
+    version: v0.1.0
   cv:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1213,4 +1232,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-20T07:01:58.954193669Z"
+generated: "2023-06-20T07:07:53.007621089Z"
