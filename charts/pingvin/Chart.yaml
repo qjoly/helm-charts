@@ -2,8 +2,8 @@ apiVersion: v2
 name: pingvin
 description: Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer
 type: application
-version: 0.1.5
-appVersion: "0.3.6"
+version: 1.0.0
+appVersion: "0.15.0"
 keywords:
 - pingvin
 home: https://github.com/stonith404/pingvin-share
@@ -14,3 +14,7 @@ maintainers:
 sources:
 - https://github.com/stonith404/pingvin-share
 - https://github.com/QJoly/helm-charts
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.7
