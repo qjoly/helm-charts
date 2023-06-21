@@ -21,8 +21,8 @@ common:
       name: null
       isPrivate: false
       secretName: null
-    name: lscr.io/linuxserver/smokeping
-    tag: 1.21.0
+    name: linuxserver/smokeping
+    tag: 2.8.2
     pullPolicy: Always
 
   # ingress
