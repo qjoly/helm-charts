@@ -2,6 +2,7 @@
 echo $@
 basedir=$(pwd)
 for chart in "$@"; do
+  echo "---------------------------------------"
   chart_name=$(echo "$chart" | cut -d"/" -f2 )
   echo "Chart Name: $chart_name"
   cd charts/$chart_name
@@ -11,6 +12,7 @@ for chart in "$@"; do
   else
       helm dependency build
       helm install $chart_name . --wait --timeout 300s 
+      echo "$chart_name is installed"
       helm test $chart_name
   fi
   
