@@ -1,9 +1,8 @@
-
+#!/bin/bash
 echo $@
 basedir=$(pwd)
 for chart in "$@"; do
-  echo "$chart" 
-  chart_name=$(echo "$chart" | awk -F'/' '{print $(NF-1)}')
+  chart_name=$(echo "$chart" | cut -d"/" -f2 )
   echo "Chart Name: $chart_name"
   cd charts
   helm lint $chart_name
