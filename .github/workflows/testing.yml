@@ -33,6 +33,11 @@ jobs:
        - name: Install kubectl
          uses: Azure/setup-kubectl@v3
 
+       - name: Set up library chart (for dependencies)
+         run: |
+            helm repo add bitnami https://charts.bitnami.com/bitnami
+            helm repo add qjoly https://qjoly.github.io/helm-charts
+
        - name: Run lint for any chart concerned by the commit
          if: steps.changed-files-specific.outputs.any_changed == 'true'
          run: |
