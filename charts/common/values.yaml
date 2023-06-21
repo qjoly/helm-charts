@@ -94,7 +94,7 @@ livenessProbe: {}
 
 persistence:
   enabled: false
-  volumes: {}
+  volumes: []
     # - name: "data"
     #   storageClassName: "longhorn" # leave empty if you want to use default
     #   size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
