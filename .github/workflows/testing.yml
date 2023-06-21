@@ -21,19 +21,33 @@ jobs:
          with:
             token: ${{ secrets.GITHUB_TOKEN }} 
        
-       - name: Helm Lint
-         run: |
-           cd .github/workflows/
-           ./helm_lint.sh
+       - name: Get changed files in the charts folder
+         id: changed-files-specific
+         uses: tj-actions/changed-files@v36
+         with:
+           files: charts
 
        - name: Create k8s Kind Cluster
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
          uses: helm/kind-action@v1.5.0
          
        - name: Install kubectl
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
          uses: Azure/setup-kubectl@v3
-         
-       - name: Deploy all charts to kind
-         run: |
-           cd .github/workflows/
-           ./helm_deploy.sh
 
+       - name: Set up library chart (for dependencies)
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
+         run: |
+            helm repo add bitnami https://charts.bitnami.com/bitnami
+            helm repo add qjoly https://qjoly.github.io/helm-charts
+
+       - name: Run lint for any chart concerned by the commit
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
+         run: |
+           .github/workflows/lint_modified_charts.sh ${{ steps.changed-files-specific.outputs.all_changed_files }}
+ 
+       - name: Run test for any chart concerned by the commit
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
+         run: |
+           .github/workflows/deploy_modified_charts.sh ${{ steps.changed-files-specific.outputs.all_changed_files }}
+ 
