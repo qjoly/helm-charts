@@ -10,8 +10,8 @@ for chart in "$@"; do
       echo "No CI for this chart."
   else
       helm dependency build
-      helm install $d . --wait --timeout 300s 
-      helm test $d
+      helm install $chart_name . --wait --timeout 300s 
+      helm test $chart_name
   fi
   
   if [ $? -ne 0 ]; then
@@ -19,13 +19,14 @@ for chart in "$@"; do
     exit 1
   else
     echo "Success ! "
-    helm delete $d || true 
+    helm delete $chart_name || true 
   fi
 
   if [ $? -ne 0 ]; then
     echo "Error in lint of $chart_name"
     exit 1
   fi
+
   cd $basedir
 done
 
