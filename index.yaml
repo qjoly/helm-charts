@@ -183,6 +183,27 @@ entries:
   common:
   - apiVersion: v1
     appVersion: "0"
+    created: "2023-06-21T08:19:59.278539531Z"
+    description: Helm chart for generic monolithic app on Kubernetes
+    digest: a070fd38bb7e7bbe30ccdac1e4f40263274bd6dd69aac54238728ef7ae2b4726
+    home: https://github.com/QJoly/generic-helm-template
+    keywords:
+    - generic
+    - monolithic
+    - ingress-route
+    - ingress
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: common
+    sources:
+    - https://github.com/QJoly/generic-helm-template
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/common-v0.1.7/common-v0.1.7.tgz
+    version: v0.1.7
+  - apiVersion: v1
+    appVersion: "0"
     created: "2023-06-20T14:20:53.304727714Z"
     description: Helm chart for generic monolithic app on Kubernetes
     digest: 7107189eee3fdfec6c78ad5575788a31d3d86f17093292160c739a2605ddc474
@@ -1326,4 +1347,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-20T14:20:53.304852215Z"
+generated: "2023-06-21T08:19:59.278654432Z"
