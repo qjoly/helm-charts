@@ -28,12 +28,15 @@ jobs:
            files: charts
 
        - name: Create k8s Kind Cluster
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
          uses: helm/kind-action@v1.5.0
          
        - name: Install kubectl
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
          uses: Azure/setup-kubectl@v3
 
        - name: Set up library chart (for dependencies)
+         if: steps.changed-files-specific.outputs.any_changed == 'true'
          run: |
             helm repo add bitnami https://charts.bitnami.com/bitnami
             helm repo add qjoly https://qjoly.github.io/helm-charts
