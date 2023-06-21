@@ -1,0 +1,31 @@
+#!/bin/bash
+echo $@
+basedir=$(pwd)
+for chart in "$@"; do
+  chart_name=$(echo "$chart" | cut -d"/" -f2 )
+  echo "Chart Name: $chart_name"
+  cd charts/$chart_name
+
+  if [ -f ".no_ci" ]; then
+      echo "No CI for this chart."
+  else
+      helm dependency build
+      helm install $d . --wait --timeout 300s 
+      helm test $d
+  fi
+  
+  if [ $? -ne 0 ]; then
+    echo "Error during deployment"
+    exit 1
+  else
+    echo "Success ! "
+    helm delete $d || true 
+  fi
+
+  if [ $? -ne 0 ]; then
+    echo "Error in lint of $chart_name"
+    exit 1
+  fi
+  cd $basedir
+done
+
