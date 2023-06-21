@@ -108,3 +108,10 @@ persistence:
     # - name: "temp"
     #   pvcClaim: "existing" # leave empty unless if you want to use an existing PVC
     #   containerMount: "/testest"
+tests:
+  classicHttp: # default helm test method 
+    enabled: true
+  curlHostHeader: # curl using ingress.hostName as Host in header
+    enabled: true
+    path: ""
+

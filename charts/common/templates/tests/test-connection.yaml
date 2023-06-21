@@ -1,7 +1,8 @@
+{{- if (.Values.tests.classicHttp.enabled) }}
 apiVersion: v1
 kind: Pod
 metadata:
-  name: test-connection-{{ .Release.Name }}
+  name: test-connection-wget-{{ .Release.Name }}
   labels:
     app: {{ .Release.Name }}
   annotations:
@@ -13,3 +14,22 @@ spec:
       command: ['wget']
       args: ['{{ .Release.Name }}:{{ .Values.app.servicePort }}']
   restartPolicy: Never
+{{ end }}
+{{- if (.Values.tests.curlHostHeader.enabled) }}
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: test-connection-curl-{{ .Release.Name }}
+  labels:
+    app: {{ .Release.Name }}
+  annotations:
+    "helm.sh/hook": test
+spec:
+  containers:
+    - name: curl
+      image: curlimages/curl:7.70.0 
+      command: ['curl']
+      args: ['{{ .Release.Name }}:{{ .Values.app.servicePort }}{{ .Values.tests.curlHostHeader.path }}', '-H', '"Host:{{ .Values.ingress.hostName }}:{{ .Values.app.servicePort }}"']
+  restartPolicy: Never
+{{ end }}
