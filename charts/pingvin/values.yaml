@@ -86,7 +86,7 @@ common:
     timeoutSeconds: 3
 
   persistence:
-    enabled: true
+    enabled: false
     volumes:
       - name: "data"
         storageClassName: "" # leave empty if you want to use default
