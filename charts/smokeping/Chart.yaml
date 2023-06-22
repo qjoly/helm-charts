@@ -1,0 +1,20 @@
+apiVersion: v2
+name: smokeping
+description: SmokePing is a latency logging and graphing and alerting system
+type: application
+version: 1.0.0
+appVersion: "2.8.2"
+keywords:
+- smokeping
+home: https://oss.oetiker.ch/smokeping/
+maintainers:
+- email: github@thoughtless.eu
+  name: QJOLY
+  url: https://thebidouilleur.xyz
+sources:
+- https://github.com/qjoly/helm-charts
+- https://github.com/oetiker/SmokePing
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.8
