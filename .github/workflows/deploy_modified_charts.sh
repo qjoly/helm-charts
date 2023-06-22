@@ -13,7 +13,7 @@ for chart in "$@"; do
       helm dependency build
       helm install $chart_name . --wait --timeout 300s 
       echo "$chart_name is installed"
-      helm test $chart_name
+      helm test $chart_name --logs
   fi
   
   if [ $? -ne 0 ]; then
