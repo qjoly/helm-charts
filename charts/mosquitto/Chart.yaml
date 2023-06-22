@@ -2,7 +2,7 @@ apiVersion: v2
 name: mosquitto
 description: Eclipse Mosquitto is an message broker that implements the MQTT protocol
 type: application
-version: 0.1.0
+version: 0.1.1
 appVersion: "2.0.15"
 keywords:
 - MQTT
