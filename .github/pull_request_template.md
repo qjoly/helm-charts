@@ -36,6 +36,6 @@ Please mention any related issues that will be resolved or enhanced by this char
 
 **Reviewers**
 
-@reviewer1, @reviewer2
+@<reviewer1>, @<reviewer2>
 
 Please tag relevant reviewers who should review this pull request.
