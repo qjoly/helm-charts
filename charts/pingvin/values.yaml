@@ -70,7 +70,7 @@ common:
     enabled: true
     httpGet:
       path: "/"
-    initialDelaySeconds: 20
+    initialDelaySeconds: 30
     periodSeconds: 30
     failureThreshold: 2
     timeoutSeconds: 3
