@@ -2,7 +2,7 @@ apiVersion: v2
 type: application
 name: aptly
 description: A simple Debian repository website
-version: 1.0.0
+version: 1.0.1
 appVersion: "1.0.0"
 maintainers:
 - name: QJOLY
