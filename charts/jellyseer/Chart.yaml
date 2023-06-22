@@ -1,6 +1,13 @@
 apiVersion: v2
 name: jellyseer
-description: A Helm chart for Kubernetes
+description: Jellyseerr is a free and open source software application for managing requests for your media library
 type: application
-version: 0.2.0
+version: 1.0.0
 appVersion: "1.5.0"
+icon: https://github.com/Fallenbagel/jellyseerr/blob/develop/public/android-chrome-192x192.png?raw=true
+sources:
+  - https://github.com/Fallenbagel/jellyseerr
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.8
