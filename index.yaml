@@ -1083,6 +1083,31 @@ entries:
     version: 1.0.1
   pingvin:
   - apiVersion: v2
+    appVersion: 0.15.0
+    created: "2023-06-22T07:20:24.822057592Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Pingvin Share is self-hosted file sharing platform and an alternative
+      for WeTransfer
+    digest: ccc1abd070e94e60d5e52b6144a5825f6f09fcf73f6671bad97f2a6a855f47d3
+    home: https://github.com/stonith404/pingvin-share
+    keywords:
+    - pingvin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: pingvin
+    sources:
+    - https://github.com/stonith404/pingvin-share
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/pingvin-1.0.0/pingvin-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
     appVersion: 0.3.6
     created: "2022-12-14T11:01:43.054007953Z"
     description: Pingvin Share is self-hosted file sharing platform and an alternative
@@ -1421,4 +1446,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T06:20:41.630120303Z"
+generated: "2023-06-22T07:20:24.822203193Z"
