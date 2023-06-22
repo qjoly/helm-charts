@@ -1064,6 +1064,27 @@ entries:
   mosquitto:
   - apiVersion: v2
     appVersion: 2.0.15
+    created: "2023-06-22T13:14:27.921569183Z"
+    description: Eclipse Mosquitto is an message broker that implements the MQTT protocol
+    digest: 972b7639f95023d1dfa9f717a49e8eda5c8b32bf1ada6067c5381fdf9f099bbd
+    home: https://mosquitto.org/
+    keywords:
+    - MQTT
+    - mosquitto
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: mosquitto
+    sources:
+    - https://github.com/eclipse/mosquitto
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/mosquitto-0.1.1/mosquitto-0.1.1.tgz
+    version: 0.1.1
+  - apiVersion: v2
+    appVersion: 2.0.15
     created: "2022-12-21T13:26:28.01047789Z"
     description: Eclipse Mosquitto is an message broker that implements the MQTT protocol
     digest: 341db2a1a01292096ca0f23c31b29b2d7c2897a7fb9026e3f6f8b566004370ca
@@ -1544,4 +1565,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T09:37:41.181035141Z"
+generated: "2023-06-22T13:14:27.921684484Z"
