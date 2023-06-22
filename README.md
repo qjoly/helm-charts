@@ -20,7 +20,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
 | jellyseer | A Helm chart for Kubernetes | 0.2.0 | 1.5.0 |
-| aptly | A simple Debian repository website | 0.1.3 | 1.0.0 |
+| aptly | A simple Debian repository website | 1.0.0 | 1.0.0 |
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | PrezVim | PrezVim is a french presentation to introduce Vim to new users. | 5.1.2 | 0.8.0 |
 | pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 1.0.0 | 0.15.0 |
@@ -30,7 +30,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.1.2 | 2.6.2 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
 | freshrss | A WebUI to read article via RSS | 1.0.0 | 1.21.0 |
-| baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
+| baikal | Baïkal is a lightweight CalDAV+CardDAV server | 1.0.1 | 0.9.2 |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.1.0 | 4.1.0 |
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 1.0.0 | 2.11-beta |

@@ -1,65 +1,112 @@
-# Default values for baikal.
-# This is a YAML-formatted file.
-# Declare variables to be passed into your templates.
+define: &containerPort 80
 
-replicaCount: 1
+common:
+  app:
+    servicePort: 80
+    containerPort: *containerPort
 
-image:
-  repository: ckulka/baikal
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: ""
+  # deployment
+  deployment:
+    memoryRequest: null
+    cpuRequest: null
+    memoryLimit: null
+    cpuLimit: null
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 25%
+        maxSurge: 25%
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+  # container
+  image:
+    repository:
+      name: null
+      isPrivate: false
+      secretName: null
+    name: ckulka/baikal
+    tag: 0.9.2
+    pullPolicy: Always
 
-podAnnotations: {}
+  # ingress
+  ingress:
+    enabled: false
+    hostName: baikal.thoughtless.eu
+    tls:
+      enabled: true
+      secretName: ""
+    # For Ingress CRD
+    ingressClassName: 
+    # For IngressRoute CRD
+    isIngressRoute: true
+    entrypoint: websecure
+    certResolver: letsencrypt # leave empty if you don't use, tls.enabled must be true and secretName must me empty
 
-podSecurityContext: {}
-  # fsGroup: 2000
+      
+  # env variables
+  variables:
+    secret: {}
+  #    user: "qjoly"
+  #    password: "hugepassword"
+    nonSecret: {}
+  #    author: qjoly
+  #    app: 1
 
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+  # horizontal autoscaler
+  hpa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 2
+    avgCpuUtilization: 50
 
-service:
-  type: ClusterIP
-  port: 80
+  # startupProbe
+  startupProbeEnabled: false
+  startupProbe:
+    httpGet:
+      path: "/"
+      port: *containerPort
+    periodSeconds: 10
+    failureThreshold: 20
+    timeoutSeconds: 1
 
-ingress:
-  isIngressRoute: false
-  enabled: true
-  className: "" # Useless if you use ingress
-  annotations: {}
-  domain: ur-domain.tld
-  entrypoint: websecure # Useless if you use ingress
-  certresolver: letsencrypt # Useless if you use ingress
+  # readinessProbe
+  readinessProbeEnabled: true
+  readinessProbe:
+    httpGet:
+      path: "/"
+      port: *containerPort
+    initialDelaySeconds: 20
+    periodSeconds: 30
+    failureThreshold: 2
+    timeoutSeconds: 3
 
+  # livenessProbe
+  livenessProbeEnabled: true
+  livenessProbe:
+    httpGet:
+      path: "/"
+      port: *containerPort
+    initialDelaySeconds: 20
+    periodSeconds: 60
+    failureThreshold: 1
+    timeoutSeconds: 3
 
-resources: {}
-  # We usually recommend not to specify default resources and to leave this as a conscious
-  # choice for the user. This also increases chances charts run on environments with little
-  # resources, such as Minikube. If you do want to specify resources, uncomment the following
-  # lines, adjust them as necessary, and remove the curly braces after 'resources:'.
-  # limits:
-  #   cpu: 100m
-  #   memory: 128Mi
-  # requests:
-  #   cpu: 100m
-  #   memory: 128Mi
+  persistence:
+    enabled: true
+    volumes:
+      - name: "data"
+        storageClassName: "" # leave empty if you want to use default
+        size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
+        pvcClaim: "" # leave empty unless if you want to use an existing PVC
+        containerMount: "/var/www/baikal/Specific"
+      - name: "config"
+        storageClassName: "" # leave empty if you want to use default
+        size: "1Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
+        pvcClaim: "" # leave empty unless if you want to use an existing PVC
+        containerMount: "/var/www/baikal/config"
 
-persistence:
-  storageClassName: "" # leave empty if you want to use default
-  enabled: true 
-  size: "1Gi" # Only for data (a PVC of 10Mo will be created)
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+  tests:
+    classicHttp: # default helm test method 
+      enabled: true
+    curlHostHeader: # curl using ingress.hostName as Host in header
+      enabled: true
+      path: "/"
