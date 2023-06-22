@@ -1335,6 +1335,31 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
+  smokeping:
+  - apiVersion: v2
+    appVersion: 2.8.2
+    created: "2023-06-22T06:20:41.629796801Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: SmokePing is a latency logging and graphing and alerting system
+    digest: 514a8a0d1fe76a9eecd3e26b7c5d33bb26b8e691ef4bbeeb7e6d4734a30f130f
+    home: https://oss.oetiker.ch/smokeping/
+    keywords:
+    - smokeping
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: smokeping
+    sources:
+    - https://github.com/qjoly/helm-charts
+    - https://github.com/oetiker/SmokePing
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/smokeping-1.0.0/smokeping-1.0.0.tgz
+    version: 1.0.0
   wakapi:
   - apiVersion: v1
     appVersion: 2.6.2
@@ -1396,4 +1421,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T05:08:48.783701751Z"
+generated: "2023-06-22T06:20:41.630120303Z"
