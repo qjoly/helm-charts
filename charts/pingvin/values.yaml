@@ -1,51 +1,107 @@
-replicaCount: 1
+common:
+  app:
+    servicePort: 80
+    containerPort: 3000
 
-image:
-  repository: stonith404/pingvin-share
-  pullPolicy: IfNotPresent
-  # Overrides the image tag whose default is the chart appVersion.
-  tag: "latest"
+  # deployment
+  deployment:
+    memoryRequest: null
+    cpuRequest: null
+    memoryLimit: null
+    cpuLimit: null
+    strategy:
+      type: RollingUpdate
+      rollingUpdate:
+        maxUnavailable: 25%
+        maxSurge: 25%
 
-imagePullSecrets: []
-nameOverride: ""
-fullnameOverride: ""
+  # container
+  image:
+    repository:
+      name: null
+      isPrivate: false
+      secretName: null
+    name: stonith404/pingvin-share
+    tag: v0.15.0
+    pullPolicy: Always
 
-podAnnotations: {}
+  # ingress
+  ingress:
+    enabled: false
+    hostName: pingvin.thoughtless.eu
+    tls:
+      enabled: true
+      secretName: ""
+    # For Ingress CRD
+    ingressClassName: istio
+    # For IngressRoute CRD
+    isIngressRoute: true
+    entrypoint: websecure
+    certResolver: letsencrypt # leave empty if you don't use, tls.enabled must be true and secretName must me empty
 
-podSecurityContext: {}
-  # fsGroup: 2000
+      
+  # env variables
+  variables:
+    secret: {}
+  #    user: "qjoly"
+  #    password: "hugepassword"
+    nonSecret: {}
+  #    author: qjoly
+  #    app: 1
 
-securityContext: {}
-  # capabilities:
-  #   drop:
-  #   - ALL
-  # readOnlyRootFilesystem: true
-  # runAsNonRoot: true
-  # runAsUser: 1000
+  # horizontal autoscaler
+  hpa:
+    enabled: false
+    minReplicas: 1
+    maxReplicas: 2
+    avgCpuUtilization: 50
 
-service:
-  type: ClusterIP
-  port: 3000
+  # startupProbe
+  startupProbe:
+    enabled: false
+    httpGet:
+      path: "/"
+    periodSeconds: 10
+    failureThreshold: 20
+    timeoutSeconds: 1
 
-ingress:
-  isIngressRoute: false
-  enabled: true
-  className: "" # Only if you use ingress
-  annotations: {}
-  domain: ur-domain.tld
-  entrypoint: websecure # Useless if you use ingress
-  certresolver: letsencrypt
+  # readinessProbe
+  readinessProbe:
+    enabled: true
+    httpGet:
+      path: "/"
+    initialDelaySeconds: 30
+    periodSeconds: 30
+    failureThreshold: 2
+    timeoutSeconds: 3
 
+  # livenessProbe
+  livenessProbe:
+    enabled: true
+    httpGet:
+      path: "/"
+    initialDelaySeconds: 30
+    periodSeconds: 60
+    failureThreshold: 1
+    timeoutSeconds: 3
 
-resources: {}
+  persistence:
+    enabled: false
+    volumes:
+      - name: "data"
+        storageClassName: "" # leave empty if you want to use default
+        size: "5Gi" 
+        pvcClaim: "" # Fill only if you want to use existing pvc
+        containerMount: "/opt/app/backend/data/"
+      - name: "image"
+        storageClassName: "" # leave empty if you want to use default
+        size: "2Gi" 
+        pvcClaim: "" 
+        containerMount: "/opt/app/frontend/public/img"
 
-persistence:
-  storageClassName: "" # leave empty if you want to use default
-  enabled: true 
-  size: "50Gi" 
-
-nodeSelector: {}
-
-tolerations: []
-
-affinity: {}
+  tests:
+    classicHttp: # default helm test method 
+      enabled: true
+    curlHostHeader: # curl using ingress.hostName as Host in header
+      enabled: true
+      path: "/"
