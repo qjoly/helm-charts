@@ -12,9 +12,9 @@ maintainers:
   name: QJOLY
   url: https://thebidouilleur.xyz
 sources:
-- https://github.com/FreshRSS/FreshRSS
+- https://github.com/qjoly/helm-charts
 - https://github.com/oetiker/SmokePing
 dependencies:
   - name: common
     repository: https://qjoly.github.io/helm-charts/
-    version: v0.1.7
+    version: v0.1.8
