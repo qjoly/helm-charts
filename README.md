@@ -20,7 +20,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | Name  | Description | Chart Version | App Version |
 |-------|-------------|---------------|-------------|
 | jellyseer | A Helm chart for Kubernetes | 0.2.0 | 1.5.0 |
-| aptly | A simple Debian repository website | 1.0.0 | 1.0.0 |
+| aptly | A simple Debian repository website | 1.0.1 | 1.0.0 |
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | PrezVim | PrezVim is a french presentation to introduce Vim to new users. | 5.1.2 | 0.8.0 |
 | pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 1.0.0 | 0.15.0 |
