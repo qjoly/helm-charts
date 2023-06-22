@@ -21,7 +21,7 @@ helm install myjoplin qjoly/joplin # Install your app
 |-------|-------------|---------------|-------------|
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
-| jellyseer | A Helm chart for Kubernetes | 0.2.0 | 1.5.0 |
+| jellyseer | Jellyseerr is a free and open source software application for managing requests for your media library | 1.0.0 | 1.5.0 |
 | nextcloud | A file sharing server that puts the control and security of your own data back into your hands. | 3.5.13 | 26.0.2 |
 | smokeping | SmokePing is a latency logging and graphing and alerting system | 1.0.0 | 2.8.2 |
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
