@@ -623,6 +623,34 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/jellyseer-0.1.0/jellyseer-0.1.0.tgz
     version: 0.1.0
   joplin:
+  - apiVersion: v2
+    appVersion: 2.11-beta
+    created: "2023-06-22T05:08:48.783516149Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.7
+    - condition: postgresql.enabled
+      name: postgresql
+      repository: https://charts.bitnami.com/bitnami
+      version: 11.6.12
+    description: Joplin is an open source note-taking app. Capture your thoughts and
+      securely access them from any device.
+    digest: 700525aacce1d086e40975790a9fc56ff801b1131d1b57026390404304a42ed9
+    home: https://joplinapp.org/
+    keywords:
+    - joplin
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: joplin
+    sources:
+    - https://github.com/laurent22/joplin
+    - https://github.com/QJoly/helm-charts
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/joplin-1.0.0/joplin-1.0.0.tgz
+    version: 1.0.0
   - apiVersion: v1
     appVersion: 2.11-beta
     created: "2023-06-18T17:07:56.906986248Z"
@@ -1368,4 +1396,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-21T15:24:33.106889579Z"
+generated: "2023-06-22T05:08:48.783701751Z"
