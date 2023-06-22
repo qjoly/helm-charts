@@ -702,6 +702,24 @@ entries:
   jellyseer:
   - apiVersion: v2
     appVersion: 1.5.0
+    created: "2023-06-22T13:22:39.153916133Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Jellyseerr is a free and open source software application for managing
+      requests for your media library
+    digest: 176acbd26ba5a498a1041d7765240d13b2ab2667016d85a91420a8024e1b275e
+    icon: https://github.com/Fallenbagel/jellyseerr/blob/develop/public/android-chrome-192x192.png?raw=true
+    name: jellyseer
+    sources:
+    - https://github.com/Fallenbagel/jellyseerr
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/jellyseer-1.0.0/jellyseer-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.5.0
     created: "2023-06-18T12:20:52.500947319Z"
     description: A Helm chart for Kubernetes
     digest: 6bd376658649ba19d8740cd838617d42a9eb9aac4bf93d2412a8950096d35463
@@ -1565,4 +1583,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T13:14:27.921684484Z"
+generated: "2023-06-22T13:22:39.154356639Z"
