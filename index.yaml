@@ -62,6 +62,30 @@ entries:
   baikal:
   - apiVersion: v2
     appVersion: 0.9.2
+    created: "2023-06-22T08:42:17.691423701Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Baïkal is a lightweight CalDAV+CardDAV server
+    digest: 8c3f4e2e4e51278d2aef0c4b731947af439d49a95c23c26b9bb7422f2bd360b7
+    home: https://sabre.io/baikal/
+    keywords:
+    - baikal
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: baikal
+    sources:
+    - https://github.com/sabre-io/Baikal
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/baikal-1.0.1/baikal-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 0.9.2
     created: "2023-06-22T07:55:55.909278387Z"
     dependencies:
     - name: common
@@ -1470,4 +1494,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T07:55:55.909448187Z"
+generated: "2023-06-22T08:42:17.691652013Z"
