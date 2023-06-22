@@ -1,6 +1,21 @@
 apiVersion: v2
+type: application
 name: aptly
 description: A simple Debian repository website
-type: application
-version: 0.1.3
+version: 1.0.0
 appVersion: "1.0.0"
+maintainers:
+- name: QJOLY
+  email: github@thoughtless.eu
+kubeVersion: ">= 1.18"
+home: https://github.com/QJoly/DebianRepository
+keywords:
+  - aptly
+  - Debian
+  - Repository
+sources:
+  - https://github.com/QJoly/DebianRepository
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.8
