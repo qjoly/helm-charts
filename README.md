@@ -22,7 +22,6 @@ helm install myjoplin qjoly/joplin # Install your app
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
 | jellyseer | A Helm chart for Kubernetes | 0.2.0 | 1.5.0 |
-| epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.1.0 | 4.1.0 |
 | nextcloud | A file sharing server that puts the control and security of your own data back into your hands. | 3.5.13 | 26.0.2 |
 | smokeping | SmokePing is a latency logging and graphing and alerting system | 1.0.0 | 2.8.2 |
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
@@ -35,7 +34,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | PrezVim | PrezVim is a french presentation to introduce Vim to new users. | 5.1.2 | 0.8.0 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 1.0.0 | 2.11-beta |
 | freshrss | A WebUI to read article via RSS | 1.0.0 | 1.21.0 |
-| mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
+| mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.1 | 2.0.15 |
 
 
 # Disclaimer
