@@ -31,6 +31,31 @@ entries:
   aptly:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-06-22T09:06:45.675321806Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: A simple Debian repository website
+    digest: 9e2fead1ce56a08c96fb3d25090a3e3b496a038a8b15211f299fb4be8d47800b
+    home: https://github.com/QJoly/DebianRepository
+    keywords:
+    - aptly
+    - Debian
+    - Repository
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: aptly
+    sources:
+    - https://github.com/QJoly/DebianRepository
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/aptly-1.0.0/aptly-1.0.0.tgz
+    version: 1.0.0
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-04-11T12:09:34.276400938Z"
     description: A simple Debian repository website
     digest: 849dbb39bc6b59d7586adc7501d1de8ff1bc88aae5eedf05ff429b67e1f8551c
@@ -1494,4 +1519,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T08:42:17.691652013Z"
+generated: "2023-06-22T09:06:45.675601708Z"
