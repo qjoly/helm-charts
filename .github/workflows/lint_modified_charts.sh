@@ -1,7 +1,12 @@
 #!/bin/bash
 echo $@
 basedir=$(pwd)
+chart_list=()
 for chart in "$@"; do
+  chart_name=$(echo "$chart" | cut -d"/" -f2 )
+  chart_list+=("$chart_name")
+done
+for chart in "${chart_list[@]}"; do
   chart_name=$(echo "$chart" | cut -d"/" -f2 )
   echo "Chart Name: $chart_name"
   cd charts
