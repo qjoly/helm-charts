@@ -23,7 +23,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | aptly | A simple Debian repository website | 0.1.3 | 1.0.0 |
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | PrezVim | PrezVim is a french presentation to introduce Vim to new users. | 5.1.2 | 0.8.0 |
-| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
+| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 1.0.0 | 0.15.0 |
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
 | common | Helm chart for generic monolithic app on Kubernetes | v0.1.8 | 0 |
