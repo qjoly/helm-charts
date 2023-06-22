@@ -26,15 +26,16 @@ helm install myjoplin qjoly/joplin # Install your app
 | pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 0.1.5 | 0.3.6 |
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
-| common | Helm chart for generic monolithic app on Kubernetes | v0.1.7 | 0 |
+| common | Helm chart for generic monolithic app on Kubernetes | v0.1.8 | 0 |
 | wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.1.2 | 2.6.2 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.0 | 2.0.15 |
 | freshrss | A WebUI to read article via RSS | 1.0.0 | 1.21.0 |
 | baikal | Baïkal is a lightweight CalDAV+CardDAV server | 0.1.7 | 0.9.2 |
 | epicgames-freegame | Automatically login and redeem promotional free games from the Epic Games Store. | 1.1.0 | 4.1.0 |
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
-| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 0.4.0 | 2.11-beta |
+| joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 1.0.0 | 2.11-beta |
 | nextcloud | A file sharing server that puts the control and security of your own data back into your hands. | 3.5.13 | 26.0.2 |
+| smokeping | SmokePing is a latency logging and graphing and alerting system | 1.0.0 | 2.8.2 |
 
 
 # Disclaimer
