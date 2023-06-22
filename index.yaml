@@ -678,6 +678,31 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/generic-app-v0.1.0/generic-app-v0.1.0.tgz
     version: v0.1.0
+  gotify:
+  - apiVersion: v2
+    appVersion: 2.2.4
+    created: "2023-06-22T19:52:06.655221535Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: a simple server for sending and receiving messages
+    digest: e2c23d51a00eed3d3402d717b9b4572d51d1b70a136e0483c020d113fabecf22
+    home: https://gotify.net/
+    keywords:
+    - gotify
+    - notification
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: gotify
+    sources:
+    - https://github.com/gotify/server
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/gotify-1.0.0/gotify-1.0.0.tgz
+    version: 1.0.0
   home-assistant:
   - apiVersion: v2
     appVersion: 1.16.0
@@ -1608,4 +1633,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-22T14:46:09.899974397Z"
+generated: "2023-06-22T19:52:06.655337537Z"
