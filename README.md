@@ -35,6 +35,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | home-assistant | Open source home automation. | 0.1.2 | 1.16.0 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 1.0.0 | 2.11-beta |
 | nextcloud | A file sharing server that puts the control and security of your own data back into your hands. | 3.5.13 | 26.0.2 |
+| smokeping | SmokePing is a latency logging and graphing and alerting system | 1.0.0 | 2.8.2 |
 
 
 # Disclaimer
