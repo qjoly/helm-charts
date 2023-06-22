@@ -1,11 +1,19 @@
 #!/bin/bash
 echo $@
 basedir=$(pwd)
-chart_list=()
+echo "---------------------------------------"
+echo "Input: ${@}"
+echo "Extract chart names"
+edited_charts_list=()
 for chart in "$@"; do
   chart_name=$(echo "$chart" | cut -d"/" -f2 )
-  chart_list+=("$chart_name")
+  edited_charts_list+=("$chart_name")
 done
+echo "Remove duplicates..."
+chart_list=($(printf "%s\n" "${edited_charts_list[@]}" | sort -u))
+echo "New list: ${chart_list[@]}"
+echo "---------------------------------------"
+
 for chart in "${chart_list[@]}"; do
   echo "---------------------------------------"
   chart_name=$(echo "$chart" | cut -d"/" -f2 )
