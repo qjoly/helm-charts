@@ -110,4 +110,3 @@ common:
     curlHostHeader: # curl using ingress.hostName as Host in header
       enabled: true
       path: "/"
-
