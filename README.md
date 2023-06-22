@@ -27,7 +27,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | plex-nfs | Plex Media Server Helm chart | 2.2.3 | 1.29.2 |
 | openldap | OpenLDAP is the open-source solution for LDAP (Lightweight Directory Access Protocol). | 1.0.4 | 2.6.3-debian-11-r52 |
 | baikal | Baïkal is a lightweight CalDAV+CardDAV server | 1.0.1 | 0.9.2 |
-| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 1.0.0 | 0.15.0 |
+| pingvin | Pingvin Share is self-hosted file sharing platform and an alternative for WeTransfer | 1.0.1 | 0.15.0 |
 | aptly | A simple Debian repository website | 1.0.1 | 1.0.0 |
 | wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.1.2 | 2.6.2 |
 | common | Helm chart for generic monolithic app on Kubernetes | v0.1.8 | 0 |
