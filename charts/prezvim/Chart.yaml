@@ -1,6 +1,6 @@
 ---
 apiVersion: v2
-appVersion: 0.8.0
+appVersion: 1.0.0
 description: PrezVim is a french presentation to introduce Vim to new users.
 name: PrezVim
 version: 5.1.2
@@ -21,4 +21,4 @@ maintainers:
 dependencies:
   - name: common
     repository: https://qjoly.github.io/helm-charts/
-    version: v0.1.0
+    version: v0.1.8
