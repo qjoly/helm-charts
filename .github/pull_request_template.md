@@ -1,6 +1,11 @@
 ## Chart Addition Pull Request
 
-**What this PR does / why we need it**:
+Name: CHART_NAME
+version: CHART_VERSION
+tests:
+
+- [ ] classicHttp
+- [ ] curlHostHeader
 
 **Additional Information**
 
