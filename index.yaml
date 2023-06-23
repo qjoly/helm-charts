@@ -706,6 +706,31 @@ entries:
   home-assistant:
   - apiVersion: v2
     appVersion: 2023.7.0.dev20230622
+    created: "2023-06-23T13:20:41.02039955Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Open source home automation.
+    digest: cc312fdc268ad94af93415cb2c64b6f3de3a3faa43acd20a67ed0fa383213f5f
+    home: https://home-assistant.io/
+    icon: https://design.home-assistant.io/images/logo-variants.png
+    keywords:
+    - IOT
+    - home-assistant
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: home-assistant
+    sources:
+    - https://github.com/home-assistant/core
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/home-assistant-1.0.1/home-assistant-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 2023.7.0.dev20230622
     created: "2023-06-23T13:16:51.796790626Z"
     dependencies:
     - name: common
@@ -1658,4 +1683,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-23T13:16:51.797249751Z"
+generated: "2023-06-23T13:20:41.02051825Z"
