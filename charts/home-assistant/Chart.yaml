@@ -2,5 +2,20 @@ apiVersion: v2
 name: home-assistant
 description: Open source home automation.
 type: application
-version: 0.1.2
-appVersion: "1.16.0"
+version: 1.0.0
+appVersion: "2023.7.0.dev20230622"
+icon: https://design.home-assistant.io/images/logo-variants.png
+maintainers:
+- name: QJOLY
+  email: github@thoughtless.eu
+kubeVersion: ">= 1.18"
+home: https://home-assistant.io/
+keywords:
+  - IOT
+  - home-assistant
+sources:
+  - https://github.com/home-assistant/core
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.8
