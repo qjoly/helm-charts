@@ -1,7 +1,9 @@
+define: &containerPort 80
+
 common:
   app:
     servicePort: 80
-    containerPort: 80
+    containerPort: *containerPort
 
   # deployment
   deployment:
@@ -33,7 +35,7 @@ common:
       enabled: true
       secretName: ""
     # For Ingress CRD
-    ingressClassName: istio
+    ingressClassName: ""
     # For IngressRoute CRD
     isIngressRoute: true
     entrypoint: websecure
@@ -46,8 +48,6 @@ common:
   #    user: "qjoly"
   #    password: "hugepassword"
     nonSecret: {}
-  #    author: qjoly
-  #    app: 1
 
   # horizontal autoscaler
   hpa:
@@ -57,47 +57,44 @@ common:
     avgCpuUtilization: 50
 
   # startupProbe
+  startupProbeEnabled: false
   startupProbe:
-    enabled: false
     httpGet:
       path: "/"
+      port: *containerPort
     periodSeconds: 10
     failureThreshold: 20
     timeoutSeconds: 1
 
   # readinessProbe
+  readinessProbeEnabled: true
   readinessProbe:
-    enabled: true
     httpGet:
       path: "/"
-    initialDelaySeconds: 20
+      port: *containerPort
+    initialDelaySeconds: 5
     periodSeconds: 30
     failureThreshold: 2
     timeoutSeconds: 3
 
   # livenessProbe
+  livenessProbeEnabled: true
   livenessProbe:
-    enabled: true
     httpGet:
       path: "/"
-    initialDelaySeconds: 20
+      port: *containerPort
+    initialDelaySeconds: 5
     periodSeconds: 60
     failureThreshold: 1
     timeoutSeconds: 3
 
   persistence:
     enabled: false
-    volumes:
-      - name: "data"
-        storageClassName: "longhorn" # leave empty if you want to use default
-        size: "5Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
-        pvcClaim: "" # leave empty unless if you want to use an existing PVC
-        containerMount: "/data"
-      - name: "logs"
-        storageClassName: "" # leave empty if you want to use default
-        size: "1Gi" # We recommend to allocate a minimum of 1GB if you do not use attachments
-        pvcClaim: "" # leave empty unless if you want to use an existing PVC
-        containerMount: "/var/log"
-      - name: "temp"
-        pvcClaim: "existing" # leave empty unless if you want to use an existing PVC
-        containerMount: "/testest"
+    volumes: []
+
+  tests:
+    classicHttp: # default helm test method 
+      enabled: true
+    curlHostHeader: # curl using ingress.hostName as Host in header
+      enabled: true
+      path: "/"
