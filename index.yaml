@@ -712,25 +712,6 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.6/freshrss-0.0.6.tgz
     version: 0.0.6
-  generic-app:
-  - apiVersion: v1
-    appVersion: "0"
-    created: "2023-06-20T07:01:58.95408157Z"
-    description: Helm chart for deployment generic app on Kubernetes
-    digest: 3bc47a2f051b7524d0b632dc46cbea1e2349b2f6d2ff1594777016b52a887672
-    home: https://github.com/QJoly/generic-helm-template
-    keywords:
-    - generic
-    kubeVersion: '>= 1.18'
-    maintainers:
-    - email: github@thoughtless.eu
-      name: QJOLY
-    name: generic-app
-    sources:
-    - https://github.com/QJoly/generic-helm-template
-    urls:
-    - https://github.com/QJoly/helm-charts/releases/download/generic-app-v0.1.0/generic-app-v0.1.0.tgz
-    version: v0.1.0
   gotify:
   - apiVersion: v2
     appVersion: 2.2.4
