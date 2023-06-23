@@ -84,6 +84,32 @@ entries:
   aptly:
   - apiVersion: v2
     appVersion: 1.0.0
+    created: "2023-06-23T16:39:41.31884598Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: A simple Debian repository website
+    digest: 1c0ccdbeaef98b2b9170fa463fdeb03ab83f5752bf5a7181a9494cffb3c45c78
+    home: https://github.com/QJoly/DebianRepository
+    icon: https://www.aptly.info/img/logo.png
+    keywords:
+    - aptly
+    - Debian
+    - Repository
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: aptly
+    sources:
+    - https://github.com/QJoly/DebianRepository
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/aptly-1.0.2/aptly-1.0.2.tgz
+    version: 1.0.2
+  - apiVersion: v2
+    appVersion: 1.0.0
     created: "2023-06-22T09:37:41.180917939Z"
     dependencies:
     - name: common
@@ -163,6 +189,31 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/aptly-0.1.0/aptly-0.1.0.tgz
     version: 0.1.0
   baikal:
+  - apiVersion: v2
+    appVersion: 0.9.2
+    created: "2023-06-23T16:39:41.487141496Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Baïkal is a lightweight CalDAV+CardDAV server
+    digest: b3c81979ba046011e8e27f3ee23f73afa98e960465395290c54b77d3442eeb97
+    home: https://sabre.io/baikal/
+    icon: https://sabre.io/img/baikal.png
+    keywords:
+    - baikal
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: baikal
+    sources:
+    - https://github.com/sabre-io/Baikal
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/baikal-1.0.2/baikal-1.0.2.tgz
+    version: 1.0.2
   - apiVersion: v2
     appVersion: 0.9.2
     created: "2023-06-22T08:42:17.691423701Z"
@@ -437,6 +488,31 @@ entries:
   freshrss:
   - apiVersion: v2
     appVersion: 1.21.0
+    created: "2023-06-23T16:39:41.659304419Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.0
+    description: A WebUI to read article via RSS
+    digest: d1ead4d9a161d82c8e2b20c4f481c12460a793d68b3c0db1a947e62278505c5d
+    home: https://freshrss.org/
+    icon: https://developer.asustor.com/uploadIcons/0020_117518_1617012201_freshrss_256.png
+    keywords:
+    - freshrss
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+      url: https://thebidouilleur.xyz
+    name: freshrss
+    sources:
+    - https://github.com/FreshRSS/FreshRSS
+    - https://github.com/QJoly/helm-charts
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/freshrss-1.0.1/freshrss-1.0.1.tgz
+    version: 1.0.1
+  - apiVersion: v2
+    appVersion: 1.21.0
     created: "2023-06-20T10:05:05.809831212Z"
     dependencies:
     - name: common
@@ -610,6 +686,31 @@ entries:
     - https://github.com/QJoly/helm-charts/releases/download/freshrss-0.0.6/freshrss-0.0.6.tgz
     version: 0.0.6
   gotify:
+  - apiVersion: v2
+    appVersion: 2.2.4
+    created: "2023-06-23T16:39:41.853139183Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: a simple server for sending and receiving messages
+    digest: 157e0bf6dac9c6286fade034f87e32165eb68208aa9404ca35f185a5694c0a96
+    home: https://gotify.net/
+    icon: https://raw.githubusercontent.com/gotify/logo/master/gotify-logo.png
+    keywords:
+    - gotify
+    - notification
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: gotify
+    sources:
+    - https://github.com/gotify/server
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/gotify-1.0.1/gotify-1.0.1.tgz
+    version: 1.0.1
   - apiVersion: v2
     appVersion: 2.2.4
     created: "2023-06-22T19:52:06.655221535Z"
@@ -1642,4 +1743,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-23T16:22:29.476557701Z"
+generated: "2023-06-23T16:39:41.853307083Z"
