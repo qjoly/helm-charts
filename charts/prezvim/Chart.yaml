@@ -3,7 +3,7 @@ apiVersion: v2
 appVersion: 1.0.0
 description: PrezVim is a french presentation to introduce Vim to new users.
 name: PrezVim
-version: 5.1.2
+version: 5.1.3
 kubeVersion: ">=1.16.0-0"
 keywords:
   - cyberprez
