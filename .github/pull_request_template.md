@@ -1,14 +1,6 @@
 ## Chart Addition Pull Request
 
-**Chart Details**
-
-- Chart Name:
-- Description:
-- Version:
-- Tests:
-- Authors:
-- Sources:
-- Reason for Update (if applicable):
+**What this PR does / why we need it**:
 
 **Additional Information**
 
