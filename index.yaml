@@ -55,6 +55,32 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/PrezVim-5.1.2/PrezVim-5.1.2.tgz
     version: 5.1.2
+  Sonarr:
+  - apiVersion: v2
+    appVersion: 3.0.10
+    created: "2023-06-23T16:22:29.4761231Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Sonarr is a PVR for Usenet and BitTorrent users.
+    digest: a53e358094365bbe57502cd61aa8b6dd95e476dc47671edde7b4e7b69ce10d72
+    home: https://sonarr.tv/
+    keywords:
+    - Sonarr
+    - Plex
+    - Series
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: Sonarr
+    sources:
+    - https://github.com/Sonarr/Sonarr
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/Sonarr-1.0.0/Sonarr-1.0.0.tgz
+    version: 1.0.0
   aptly:
   - apiVersion: v2
     appVersion: 1.0.0
@@ -1738,4 +1764,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-23T14:09:19.081284076Z"
+generated: "2023-06-23T16:22:29.476557701Z"
