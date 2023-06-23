@@ -1,0 +1,21 @@
+apiVersion: v2
+type: application
+name: Sonarr
+description: Sonarr is a PVR for Usenet and BitTorrent users.
+version: 1.0.0
+appVersion: "3.0.10"
+maintainers:
+- name: QJOLY
+  email: github@thoughtless.eu
+kubeVersion: ">= 1.18"
+home: https://sonarr.tv/
+keywords:
+  - Sonarr
+  - Plex
+  - Series
+sources:
+  - https://github.com/Sonarr/Sonarr
+dependencies:
+  - name: common
+    repository: https://qjoly.github.io/helm-charts/
+    version: v0.1.8
