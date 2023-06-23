@@ -1624,6 +1624,34 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/prezdocker-0.1.0/prezdocker-0.1.0.tgz
     version: 0.1.0
+  radarr:
+  - apiVersion: v2
+    appVersion: 4.5.2
+    created: "2023-06-23T14:09:19.080884977Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: Radarr is a movie collection manager for Usenet and BitTorrent users
+    digest: be4d5d4ff66af6343e40bbf51539ab87a1a89fbdf9e9394b7835d188e59ad2d6
+    home: https://radarr.video/
+    keywords:
+    - radarr
+    - plex
+    - movie
+    - collection
+    - torrent
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: radarr
+    sources:
+    - https://github.com/Radarr/Radarr
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/radarr-1.0.0/radarr-1.0.0.tgz
+    version: 1.0.0
   smokeping:
   - apiVersion: v2
     appVersion: 2.8.2
@@ -1710,4 +1738,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-23T13:52:00.468143849Z"
+generated: "2023-06-23T14:09:19.081284076Z"
