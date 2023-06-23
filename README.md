@@ -21,7 +21,7 @@ helm install myjoplin qjoly/joplin # Install your app
 |-------|-------------|---------------|-------------|
 | prezdocker | Interactive presentation to learn Docker in a quick and easy way | 0.1.3 | 0.1.0 |
 | gotify | a simple server for sending and receiving messages | 1.0.0 | 2.2.4 |
-| home-assistant | Open source home automation. | 1.0.0 | 2023.7.0.dev20230622 |
+| home-assistant | Open source home automation. | 1.0.1 | 2023.7.0.dev20230622 |
 | jellyseer | Jellyseerr is a free and open source software application for managing requests for your media library | 1.0.0 | 1.5.0 |
 | nextcloud | A file sharing server that puts the control and security of your own data back into your hands. | 3.5.13 | 26.0.2 |
 | smokeping | SmokePing is a latency logging and graphing and alerting system | 1.0.0 | 2.8.2 |
