@@ -32,7 +32,7 @@ helm install myjoplin qjoly/joplin # Install your app
 | aptly | A simple Debian repository website | 1.0.1 | 1.0.0 |
 | wakapi | Wakapi is an open-source tool that helps you keep track of the time you have spent coding. | 0.1.2 | 2.6.2 |
 | common | Helm chart for generic monolithic app on Kubernetes | v0.1.8 | 0 |
-| PrezVim | PrezVim is a french presentation to introduce Vim to new users. | 5.1.2 | 0.8.0 |
+| PrezVim | PrezVim is a french presentation to introduce Vim to new users. | 5.1.3 | 1.0.0 |
 | joplin | Joplin is an open source note-taking app. Capture your thoughts and securely access them from any device. | 1.0.0 | 2.11-beta |
 | freshrss | A WebUI to read article via RSS | 1.0.0 | 1.21.0 |
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.1 | 2.0.15 |
