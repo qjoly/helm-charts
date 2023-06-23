@@ -806,6 +806,33 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/home-assistant-0.1.1/home-assistant-0.1.1.tgz
     version: 0.1.1
+  jackett:
+  - apiVersion: v2
+    appVersion: 0.21.290
+    created: "2023-06-23T16:40:46.002430747Z"
+    dependencies:
+    - name: common
+      repository: https://qjoly.github.io/helm-charts/
+      version: v0.1.8
+    description: 'Jackett works as a proxy server: it translates queries from apps
+      into tracker-site-specific http queries.'
+    digest: 39af252a5c189d4ddff24582bfc2aaf235c99980e3c29b47df51cb8c50ae77cf
+    home: https://radarr.video/
+    keywords:
+    - Jackett
+    - Plex
+    - Series
+    kubeVersion: '>= 1.18'
+    maintainers:
+    - email: github@thoughtless.eu
+      name: QJOLY
+    name: jackett
+    sources:
+    - https://github.com/Jackett/Jackett
+    type: application
+    urls:
+    - https://github.com/QJoly/helm-charts/releases/download/jackett-1.0.0/jackett-1.0.0.tgz
+    version: 1.0.0
   jellyseer:
   - apiVersion: v2
     appVersion: 1.5.0
@@ -1743,4 +1770,4 @@ entries:
     urls:
     - https://github.com/QJoly/helm-charts/releases/download/wakapi-0.0.1/wakapi-0.0.1.tgz
     version: 0.0.1
-generated: "2023-06-23T16:39:41.853307083Z"
+generated: "2023-06-23T16:40:46.002857052Z"
