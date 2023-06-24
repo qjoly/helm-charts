@@ -41,11 +41,6 @@ helm install myjoplin qjoly/joplin # Install your app
 | mosquitto | Eclipse Mosquitto is an message broker that implements the MQTT protocol | 0.1.1 | 2.0.15 |
 
 
-# Disclaimer
-
-:warning: Only traefik is compatible with my charts. I do not plan to support any other ingress. (Ingress != IngressRoute) 
-
-**:warning: I do not use any Ingress object ! Only __IngressRoute__ !!**
 
 # Contributing 
 
